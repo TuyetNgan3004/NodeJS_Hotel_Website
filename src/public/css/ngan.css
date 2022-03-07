@@ -1,0 +1,273 @@
+/* phần Ngân */
+
+
+
+/* Trang danh sách phòng */
+
+/* leftside */
+.content-title {
+    text-align: center;
+}
+
+.date-checkin {
+   text-align: center;
+   margin: 10px 0;
+}
+
+.room-categories {
+   font-size: 1.6rem;
+}
+
+.room-categories-item {
+   text-align: center;
+   justify-content: space-around;
+   margin: 20px 20px 10px 20px;
+   overflow: hidden;
+   cursor: pointer;
+   
+}
+
+.room-categories-item i {
+   margin-left: 123px;
+}
+
+.room-categories-detail {
+   display: block;
+   text-align: center;
+   overflow: hidden;
+   max-height: 0;
+   transition: max-height 0.2s ease-in-out;
+   
+}
+
+.room-categories-detail p {
+   margin: 10px 0;
+}
+
+.room-categories-detail p:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.room-categories-item:hover, room-categories-item.is-open {
+   font-weight: 600;
+}
+
+
+/* rightside */
+
+.search-bar-container{
+    display: block;
+    text-align: right;
+}
+
+.input-with-icon-container {
+    display: inline-flex;
+    border: 1px solid #ccc; 
+    padding: 10px;
+    justify-content: space-between;
+}
+
+
+.search-bar-input {
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+}
+
+.check-in-icon {
+   font-size: 1.8rem;
+}
+
+
+.search-bar-icon {
+    font-size: 1.8rem;
+}
+
+
+
+ /* Chi tiết phòng */
+ .room-detail {
+    display: flex;
+ }
+ 
+ .room-detail-pic {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .room-detail-pic img {
+   border-radius: 5px;
+ }
+ 
+ .main-pic {
+    display: flex;
+    margin: auto;
+ }
+ 
+ .main-pic img {
+    width: 640px;
+    height: 480px;
+ }
+ 
+ .sub-pic {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+ }
+ 
+ .sub-pic img {
+    width: 120px;
+    height: 110px;
+    
+ }
+ 
+ .booking-room {
+    display: flex;
+    flex-direction: column;
+   margin: 122px;
+ }
+ 
+ .booking-room-button {
+    height: 36px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white-color);
+    outline: none;
+    width: 50%;
+    margin: 24px auto;
+ }
+ 
+ .room-detail-btn {
+   margin: 0 auto;
+   padding: 30px;
+ }
+
+ .room-detail-description p{
+    margin-top: 24px;
+ }
+ 
+ .room-detail-description-name{
+   font-size: 3.0rem;
+   font-weight: 600;
+ }
+ .room-detail-description-price{
+    color: var(--second-color);
+    font-size: 2.6rem;
+    font-weight: 600;
+ }
+ .room-detail-description-content{
+   font-size: 2.0rem;
+ }
+ 
+ 
+ /* Trang chi tiết đặt phòng */
+ .booking-room-head{
+    display: flex;
+ }
+ 
+ .booking-room-pic{
+   margin-bottom: 30px;
+ }
+ 
+ .booking-room-pic img {
+    width: 550px;
+    height: 500px;
+ }
+ 
+ .booking-room-description{
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 2.2rem;
+ }
+ 
+ .booking-room-description p{
+    padding: 12px 16px;
+ }
+ 
+ .room-detail-description-note {
+    font-size: 1.8rem;
+    color: gray;
+ }
+ 
+.booking-room-title {
+   text-align: center;
+   margin: 30px 0 00;
+}
+
+ .title-item {
+    font-size: 2.8rem;
+    font-weight: 400;
+ }
+
+.container-form-input-pay {
+   display: flex;
+   justify-content: space-between;
+}
+
+ .form-group-row {
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ /* phần mã khuyến mãi */
+ hr {
+    margin: 30px 0;
+ }
+
+ .form-row{
+    padding: 30px 0;
+    display: flex;
+   
+ }
+ .form-label{
+    min-width: 212px;
+    padding: 10px 5px;
+    font-size: 1.8rem;
+   
+ }
+ 
+ .form-input-end{
+    /* flex: 1; */
+    padding: 10px 10px;
+    font-size: 1.8rem;
+    border-radius: 5px;
+ }
+ 
+ .form-label-pay {
+    min-width: 212px;
+    padding: 10px 5px;
+    font-size: 1.8rem;
+ }
+ 
+ .form-input-pay {
+   margin: 15px 10px;
+  
+ }
+ 
+ .total-money {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.0rem;
+    font-weight: 600;
+    margin: 30px 0;
+ }
+ 
+ .button-confirm {
+    display: flex;
+ }
+ 
+ .booking-room-button-confirm {
+    height: 36px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--white-color);
+    outline: none;
+    width: 90%;
+    margin: 10px 64px;
+    
+ }

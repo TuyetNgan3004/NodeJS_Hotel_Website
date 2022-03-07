@@ -1,0 +1,178 @@
+:root {
+   --primary-color: #263238;
+   --second-color: #bf9a54;
+   --white-color: #fff;
+   --black-color: #000;
+   --text-light-color:#656565;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-family: 'Roboto', sans-serif;
+   font-size: 10px;
+}
+
+.grid {
+   width: 1200px;
+   max-width: 100%;
+   margin: 0 auto;
+}
+
+
+/* Row and Col */
+.row {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.col-12 {
+   width: 100%;
+}
+
+.col-8 {
+   width: calc((100%/3)*2);
+}
+
+.col-6 {
+   width: calc(100% / 2)
+}
+
+.col-4 {
+   width: calc(100% / 3);
+}
+
+
+.logo {
+   font-size: 3rem;
+   letter-spacing: 2px;
+   font-weight: 500;
+}
+
+.logo.logo-sec-color {
+   color: var(--second-color);
+}
+
+.btn {
+   background-color: transparent;
+   font-size: 1.4rem;
+   border: 1px solid #fff;
+   padding: 12px 22px;
+   color: var(--white-color);
+   text-decoration: none;
+   min-width: 20px;
+}
+
+.btn-reverse {
+   background-color: transparent;
+   font-size: 1.4rem;
+   border: 1px solid var(--second-color);
+   padding: 12px 22px;
+   color: var(--primary-color);
+   text-decoration: none;
+   min-width: 20px;
+}
+
+.btn--size-s {
+   font-size: 1.4rem;
+}
+
+.btn--size-md {
+   font-size: 1.8rem;
+}
+
+.btn--size-lg {
+   font-size: 2.2rem;
+}
+
+/* Ngân thêm */
+.btn--size-s--black {
+   
+   border: 1px solid var(--second-color);
+   color: var(--primary-color);
+   
+}
+
+.btn--size-s:hover {
+   
+   border: 1px solid var(--primary-color);
+   color: var(--second-color-color);
+   background-color: var(--primary-color);
+}
+
+.padding-left-10 {
+   padding-left: 10px;
+}
+
+.padding-right-10 {
+   padding-right: 10px;
+}
+
+
+/* .input-with-icon-container-detail {
+   align-items: flex-end;
+} */
+
+
+.btn--size-full {
+   width: 100% !important;
+}
+
+.btn:hover {
+   border: none;
+   background-color: var(--second-color);
+   cursor: pointer;
+}
+
+.btn-reverse:hover {
+   border: none;
+   color: var(--second-color) ;
+   background-color: var(--primary-color);
+   cursor: pointer;
+}
+
+.btn.btn-welcome {
+   margin-top: 50px;
+}
+
+/* Open/Close Site Bar */
+
+
+/* Animation */
+@keyframes scaleOut {
+   from {
+      opacity: 1;
+      transform: scale(100%);
+   }
+   to {
+      opacity: 0.9;
+      transform: scale(110%);
+   }
+}
+
+@keyframes slideRight {
+   from {
+      transform: translateX(80%);
+   }
+   to {
+
+      transform: translateX(0);
+   }
+}
+
+@keyframes hoverBtn {
+   from {
+      border: 1px solid #fff;
+      background-color: transparent;
+   }
+   to {
+      border: none;
+      background-color: var(--second-color);
+   }
+}
+
+

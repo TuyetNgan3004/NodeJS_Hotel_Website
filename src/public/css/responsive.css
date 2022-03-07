@@ -1,0 +1,671 @@
+/* Media query */
+
+/* special screen */
+@media (max-width: 81.1875em) {
+
+   /* Trang chi tiết đặt phòng */
+   .booking-room-head{
+      justify-content: center;
+   }
+
+   .booking-room-pic img {
+      width: 450px;
+      height: 400px;   
+   }
+
+   .booking-room-description {
+      width: 400px;
+      height: 400px;
+      max-width: 100%;
+   }
+   
+   .room-detail-description-name {
+      font-size: 2.8rem;
+   }
+   .room-detail-description-price {
+      font-size: 2.4rem;
+   }
+
+   .room-detail-description-content {
+      font-size: 1.8rem;
+   }
+
+   .room-detail-description-note {
+      font-size: 1.4rem;
+   }
+
+   .title-item {
+      font-size: 2.6rem;    
+  }
+  /* Trang chi tiết phòng */
+
+   .room-detail {
+      justify-content: space-between;
+   }
+  
+   .main-pic img {
+     width: 430px;
+     height: 350px;
+   }
+   
+   .sub-pic {
+      margin: 10px 10px;
+   }
+   
+   .sub-pic img {
+      width: 90px;
+      height: 90px;
+   }
+   
+   .booking-room {
+      margin: auto 0;
+   }
+
+   .date-checkin {
+      margin: 10px 50px;
+   }
+
+   .room-detail-description {
+      margin: 10px 28px;
+   }
+
+
+   /* Trang danh sách phòng phần Ngân */
+ 
+   /* .col-8 {
+      width: calc( 100% / 2);
+   } */
+
+   .room-list-container {
+      margin: 0 30px;
+   }
+
+   .search-bar-container {
+      margin: 0 30px;
+   }
+
+   /* Tứ area */
+
+   .feedback-all {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .feedback-all .wrap{
+      width: 700px;
+   }
+
+   .form-textarea{
+      max-width: 100%;
+   }
+
+   .feedback-rightside{
+      margin-top: 100px;
+   }
+
+   .service__item{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      margin-bottom: 300px;
+   }
+
+   .service__item-image{
+      flex: none;
+      width: 700px;
+      height: 600px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .service__item-details{
+      flex: none;
+      width: 100%;
+      padding: 0 80px;
+   }
+
+   .service__item-list{
+      justify-content: center;
+      margin-bottom: 150px;
+   }
+
+   .service__item2{
+      display: flex;
+      flex-wrap:wrap;
+      flex-direction: column-reverse;
+      height: 100%;
+      margin-top: 220px;
+   }
+
+   .service__item-details2{
+      flex: none;
+      padding: 0 80px;
+      width: 100%;
+   }
+
+   .service__item-details2 p{
+      width: 100%;
+      margin-left: 15px; ;
+   }
+
+/* PC */
+@media (min-width: 64em) {
+  
+
+}  
+
+/* Tablet & mobile */
+@media (max-width: 63.9375em) {
+   .grid {
+      padding: 0 46px;
+   }
+
+   .header__list {
+      background-color: rgba(255, 255, 255, 0.3);
+      width: 100%;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      text-align: right;
+      padding: 16px 20px 20px 0;
+      z-index: 1;
+   }
+
+   .header__nav-item {
+      display: block;
+      padding: 10px;
+      margin: 0;
+   }
+
+   .mobile-bar {
+      display: block;
+   }
+
+   .slider-area .slider-slogan {
+      bottom: 45%;
+   }
+
+   .room-card {
+      margin: 0 14px;
+   }
+
+   .s-col-none {
+      display: none !important;
+   }
+
+   .s-col-6 {
+      width: calc(100% /2) !important;
+   }
+
+
+   /* Trang booking-room phần Ngân */
+
+   .booking-room-head{
+      flex-direction: column;
+      margin: auto;
+   }
+
+   .booking-room-pic img {
+      width: 550px;
+      height: 550px;   
+   }
+
+   .booking-room-pic {
+     margin: 0 auto;
+   }
+
+   .booking-room-description {
+      width: 586px;
+      height: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+   }
+
+   .room-detail-description-name {
+      font-size: 3.2rem;
+   }
+   .room-detail-description-price {
+      font-size: 2.8rem;
+   }
+   .room-detail-description-content {
+      font-size: 2.2rem;
+   }
+   .room-detail-description-note {
+      font-size: 1.8rem;
+   }
+
+   .title-item {
+      font-size: 3.0rem;
+  }
+
+  /* Trang chi tiết phòng phần Ngân */
+
+  .main-pic img {
+   width: 250px;
+   height: 300px;
+ }
+
+      /*Tứ area*/
+   .service__list-item{
+      margin-bottom: 50px;
+   }
+
+   .service__list {
+      display: flex;
+      flex-wrap:wrap;
+   }
+
+   .service__item{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      margin-bottom: 300px;
+   }
+
+   .service__item-image{
+      flex: none;
+      width: 500px;
+      height: 400px;
+   }
+
+   .service__item-details{
+      flex: none;
+      width: 100%;
+   }
+
+   .service__item-list{
+      justify-content: center;
+      margin-bottom: 50px;
+   }
+
+   .service__item2{
+      display: flex;
+      flex-wrap:wrap;
+      flex-direction: column-reverse;
+      margin-top: 50px;
+   }
+
+   .service__item-details2{
+      flex: none;
+   }
+
+   .service__item-desc{
+      font-size: 1.8rem;
+   }
+
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+
+     /* Trang booking room phần Ngân */
+   .form {
+      padding: 0 120px;
+      width: 638px;
+   }     
+
+   .form-group-row {
+      flex-direction: column;
+   }
+
+   .padding-left-10 {
+      padding-left: 0px;
+  }
+
+  .padding-right-10 {
+      padding-right: 0px;
+   }
+
+   .col-6 {
+      width: 100%;
+   }
+
+   .container-form-input-pay {
+      flex-direction: column;
+   }
+
+    /* Trang chi tiết phòng phần Ngân */
+
+  .main-pic img {
+      width: 300px;
+      height: 300px;
+   }
+   
+   .sub-pic img {
+      margin: 10px 20px;
+   }
+
+   .booking-room {
+      margin: auto;
+   }
+
+   .date-checkin {
+      margin: 10px;
+   }
+   
+   /* Trang danh sách phòng phần Ngân */
+   .row {
+      flex-direction: column;
+   }
+
+   .col-8 {
+      width: 100%;
+   }
+
+   .col-4 {
+      width: 100%;
+   }
+
+   .search-bar-container {
+      text-align: center;
+      margin-top: 10px;
+   }
+   
+
+}
+
+/* Mobile and Smaller */
+@media (max-width: 46.1875em) {
+   .grid-sm {
+      padding: 0 10px !important;
+   }
+
+   .hot-room-desc,
+   .hot-room-desc p {
+      text-align: center;
+   }
+
+   .room-list,
+   .service-list {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .room-card {
+      width: 70%;
+      margin-bottom: 20px;
+   }
+
+   .hot-service-area {
+      padding-top: 120px;
+      padding-bottom: 200px;
+   }
+   
+   .hot-service-area .service-img-container {
+      width: 70%;
+      height: 200px;
+      margin-bottom: 20px;
+   }
+
+   .room-img-container {
+      min-height: 100px !important;
+   }
+
+   /* Footer */
+   .footer-content {
+      flex-direction: column;
+   }
+
+   .footer-socials,
+   .footer-info {
+      width: 100%;
+      margin: 0 !important;
+   }
+   
+   .footer-socials {
+      margin-top: 30px !important;
+      text-align: left;
+   }
+  
+    /* Trang chi tiết đặt phòng phần Ngân */
+
+    .booking-room-pic img {
+      width: 250px;
+      height: 300px;   
+   }  
+   .booking-room-description {
+      width: 280px;
+      height: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+   }
+
+   .room-detail-description-name {
+      font-size: 2.0rem;
+   }
+   .room-detail-description-price {
+      font-size: 2.0rem;
+   }
+   .room-detail-description-content {
+      font-size: 1.8rem;
+   }
+   .room-detail-description-note {
+      font-size: 1.6rem;
+   }
+
+   .title-item {
+      font-size: 2.2rem;
+  }
+
+  .form {
+      margin: auto;
+      padding: 0 20px;
+      width: 300px;
+   } 
+
+   .form-group-row {
+      display: flex;
+      flex-direction: column;
+      
+   }
+
+   .container-form-input-pay {
+      flex-direction: column;
+   }
+  
+   .padding-left-10 {
+      padding-left: 0px;
+  }
+
+  .padding-right-10 {
+      padding-right: 0px;
+   }
+
+   .col-6 {
+      width: 100%;
+   }
+
+    /* Trang chi tiết phòng phần Ngân */
+
+   .col-12 {
+      width: 100%;
+   }
+  .main-pic img {
+      width: 400px;
+      height: 500px;
+   }
+
+   .room-detail {
+      flex-direction: column;
+   }
+
+   .sub-pic img {
+      width: 100px;
+      height: 100px;
+      margin: 5px 20px;
+   }
+
+   .date-checkin {
+      margin: 10px 60px;
+   }
+
+   /* Trang danh sách phòng phần Ngân */
+   .row {
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .col-8 {
+      width: 100%;
+   }
+
+   .col-4 {
+      width: 100%;
+   }
+
+   .search-bar-container {
+      text-align: center;
+      margin-top: 10px;
+   }
+
+/* Tứ area */
+   
+   iframe {
+      width: 400px;
+      height: 400px;
+   }
+   
+   .feedback-all .wrap{
+      width: 400px;
+   }
+
+   .form-textarea{
+      max-width: 100%;
+   }
+
+   .feedback-rightside{
+      margin-top: 50px;
+   }
+
+   .service__item{
+      justify-content: center;
+      margin-bottom: 185px;
+   }
+
+   .service__item-image{
+      width: 400px;
+      height: 300px;
+      display: block; 
+      margin-left: auto; 
+      margin-right: auto;
+   }
+
+   .service__item-details{
+      margin-top: 0;
+      width: 600px;
+      margin: 0;
+   }
+
+   .service__item-desc{
+      font-size: 1.7rem;
+   }
+
+   .service__item2{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      flex-direction: column-reverse;
+   }
+
+   .service__item-details2{
+      padding: 0;
+   }
+
+}
+
+/* Smaller */
+@media (max-width: 29.125em) {
+   .xs-col-full {
+      width: 100% !important;
+   }
+
+   .header-info-left {
+      justify-content: center;
+   }
+
+   .header__navbar {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+   }
+  
+   .nav-item-icon,
+   .mobile-bar {
+      padding: 0 8px;
+   }
+
+   .slider-slogan {
+      padding: 26px !important;
+      bottom: 36% !important;
+   }
+
+   .support-location-content {
+      padding: 0 !important;
+   }
+
+   .support-location-img-right {
+      margin-top: 20px;
+   }
+   
+   .content-title {
+      font-size: 3.2rem;
+   }
+
+   .room-card .room-type, 
+   .room-card .room-price {
+      font-size: 2rem;
+   }
+
+   /* Trang chi tiết phòng phần Ngân */
+   .main-pic img {
+      width: 350px;
+      height: 450px;
+   }
+
+   .date-checkin {
+      margin: 10px 60px;
+   }
+
+   /* Tứ area */
+   iframe {
+      width: 300px;
+      height: 300px;
+   }
+
+   .feedback-all {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .feedback-all .wrap{
+      width: 300px;
+   }
+
+   .form-textarea{
+      max-width: 100%;
+   }
+
+   .feedback-rightside{
+      margin-top: 50px;
+   }
+
+   .service__item{
+      display: flex;
+      flex-wrap:wrap;
+   }
+
+   .service__item-image{
+     width: 330px;
+     height: 250px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+   .service__item-details{
+     width: 530px;
+   }
+}
+
+}
