@@ -19,12 +19,12 @@
                 <div class="room-detail">
                     <div class="room-detail-pic col-12">
                         <div class="main-pic">
-                            <img src="https://i.pinimg.com/564x/af/15/29/af15290f3e346b822ef3e4cc55a8cf72.jpg" alt="">
+                            <img src="{{rooms.r_img}}" alt="">
                         </div>
                         <div class="sub-pic">
-                            <img src="https://i.pinimg.com/564x/af/15/29/af15290f3e346b822ef3e4cc55a8cf72.jpg" alt="">
-                            <img src="https://i.pinimg.com/564x/af/15/29/af15290f3e346b822ef3e4cc55a8cf72.jpg" alt="">
-                            <img src="https://i.pinimg.com/564x/af/15/29/af15290f3e346b822ef3e4cc55a8cf72.jpg" alt="">
+                            <img src="{{rooms.r_img}}" alt="">
+                            <img src="{{rooms.r_img}}" alt="">
+                            <img src="{{rooms.r_img}}" alt="">
                         </div>
                     </div>
                     <div class="booking-room col-12">
@@ -48,12 +48,12 @@
                     </div>
                 </div>
                 <div class="room-detail-description">
-                    <p class="room-detail-description-name">Phòng Standard</p>
-                    <p class="room-detail-description-price">500.000VND</p>
-                    <p class="room-detail-description-content">Phòng Standard được thiết kế tinh tế sang trọng nội thất đầy đủ tiện nghi hiện đại, cửa sổ kính rộng thoáng bao quát toàn cảnh thành phố mang đến cho bạn một không gian thanh bình và dễ chịu sẽ là sự lựa chọn cho những doanh nhân và khách du lịch.</p>
-                    <p class="room-detail-description-note">Số người ở: 2 người</p>
-                    <p class="room-detail-description-note">Số giường đôi: 1 chiếc </p>
-                    <p class="room-detail-description-note">Tiện ích: Tivi, tủ lạnh, máy lạnh, wifi, nước suối,...</p>
+                    <p class="room-detail-description-name">{{rooms.r_name}}</p>
+                    <p class="room-detail-description-price">{{rooms.r_price}}</p>
+                    <p class="room-detail-description-content">{{rooms.r_desc}}</p>
+                    <p class="room-detail-description-note">Số người ở: {{rooms.r_people}}</p>
+                    <p class="room-detail-description-note">Số giường đôi: {{rooms.r_bed}} </p>
+                    <p class="room-detail-description-note">Tiện ích: {{rooms.r_utilities}} </p>
                 </div>
             </div>
          </div>
