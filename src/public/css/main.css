@@ -339,14 +339,19 @@
 
 .hot-service-area .service-img {
    width: 100%;
+   background-position: center;
 }
 
-.hot-service-area .hot-service-btn {
+.hot-service-area .hot-service-text {
    position: absolute;
    text-align: center;
    top: 50%;
+   transform: translateY(-50%);
    left: 0;
    right: 0;
+   font-size: 2.6rem;
+   color: var(--white-color);
+   cursor: pointer;
 }
 
 /* Form control */
