@@ -1,0 +1,294 @@
+<!-- Start main -->
+<main class="main-section">
+   <!-- Start Slider -->
+   <div class="slider-area slider-height2">
+      <div class="slider-slogan-container">
+         <div class="slider-slogan">
+            <span class="slider-slogan-text">
+               Danh sách phòng
+            </span>
+         </div>
+      </div>
+   </div>
+
+   <!-- End Slider -->
+
+   <!-- Start Content -->
+   <div class="content-section">
+      <div class="content-container">
+         <div class="grid">
+            <div class="row">
+               <div class="room-sort-searching col-4">
+                  <div class="content-title">
+                     Tìm kiếm nhanh
+                  </div>
+
+                  <div class="date-checkin search-left">
+                     <div class="input-with-icon-container">
+                        <input class="search-bar-input" type="datetime-local" name="input-search"
+                           placeholder="Ngày nhận phòng">
+                        <i class="check-in-icon fa-solid fa-calendar"></i>
+                     </div>
+                  </div>
+                  <div class="date-checkin search-left">
+                     <div class="input-with-icon-container">
+                        <input type="datetime-local" class="search-bar-input" placeholder="Ngày trả phòng">
+                        <i class="check-in-icon fa-solid fa-calendar"></i>
+                     </div>
+                  </div>
+
+                  <div class="room-categories">
+                     <div class="room-categories-item">
+                        <span>Loại phòng</span>
+                        <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
+                     </div>
+                     <div class="room-categories-detail">
+                        <p href="#">Phòng Standard</p>
+                        <p href="#">Phòng Superior</p>
+                        <p href="#">Phòng Deluxe</p>
+                        <p href="#">Phòng Suite</p>
+                     </div>
+
+                     <div class="room-categories-item">
+                        <span>Số người ở</span>
+                        <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
+                     </div>
+                     <div class="room-categories-detail">
+                        <p href="#">1 người</p>
+                        <p href="#">2 người</p>
+                        <p href="#">3 người</p>
+                        <p href="#">4 người</p>
+                     </div>
+
+                     <div class="room-categories-item">
+                        <span>Giá phòng</span>
+                        <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
+                     </div>
+                     <div class="room-categories-detail">
+                        <p href="#">500.000VND - 700.000VND</p>
+                        <p href="#">700.000VND - 1.000.000VND</p>
+                        <p href="#">1.000.000VND - 1.500.000VND</p>
+                        <p href="#">1.500.000VND - 2.000.000VND</p>
+                     </div>
+                  </div>
+
+
+               </div>
+
+               <div class="rooms-container col-8">
+                  <div class="search-bar-container">
+                     <div class="input-with-icon-container">
+                        <input class="search-bar-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                        <i class="search-bar-icon fa-solid fa-magnifying-glass"></i>
+                     </div>
+                  </div>
+
+                  <div class="room-list-container">
+                    
+                        <div class="room-list">
+                        <!-- Room item 1 -->
+                         {{#each rooms}}
+                           <div class="room-card--size-s">
+                              <div class="room-img-container">
+                                 <a href="rooms/{{this.r_slug}}" class="room-link">
+                                    <img
+                                       src="{{this.r_img}}"
+                                       alt="room-img" class="room-img">
+                                 </a>
+                              </div>
+
+                              <div class="room-info">
+                                 
+                                 <span class="room-type">{{this.r_name}}</span>
+                                 <p class="room-people">{{this.r_people}}</p>
+                                 <div class="room-value">
+                                    <span class="room-price">{{this.r_price}}</span>
+                                    <i class="fa-solid fa-dong-sign"></i>
+
+                                 </div>
+                              </div>
+                           </div>
+                         {{/each}}
+                        
+                        {{!-- <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img src="https://stayflexi.com/ROOT.war/media/user_12404/GrandVelas.jpeg"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Superior</span>
+                              <p class="room-people">4 người lớn</p>
+                              <div class="room-value">
+                                 <span class="room-price">1,500,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+                                 <!-- <p class="room-price-per">per night</p> -->
+                              </div>
+                           </div>
+                        </div>
+
+                       
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img
+                                    src="https://www.gannett-cdn.com/presto/2020/05/18/USAT/9ae54ef7-217d-4877-a614-4760325f9a9b-Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom.jpg?width=2560"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Suite</span>
+                              <p class="room-people">2 người lớn, 1 trẻ em</p>
+                              <div class="room-value">
+                                 <span class="room-price">2,000,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+                                 <!-- <p class="room-price-per">per night</p> -->
+                              </div>
+                           </div>
+                        </div> --}}
+                    
+                    
+                     {{!-- <div class="room-list">
+                        <!-- Room item 1 -->
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img
+                                    src="https://vnn-imgs-f.vgcloud.vn/2020/10/16/17/the-dark-future-of-hotels-on-golden-land-in-hanoi-600x400.jpg"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Deluxe</span>
+                              <p class="room-people">2 người lớn, 1 trẻ em</p>
+                              <div class="room-value">
+                                 <span class="room-price">1,000,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Room item 1 -->
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img src="https://stayflexi.com/ROOT.war/media/user_12404/GrandVelas.jpeg"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Superior</span>
+                              <p class="room-people">4 người lớn</p>
+                              <div class="room-value">
+                                 <span class="room-price">1,500,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+                                 <!-- <p class="room-price-per">per night</p> -->
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Room item 1 -->
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img
+                                    src="https://www.gannett-cdn.com/presto/2020/05/18/USAT/9ae54ef7-217d-4877-a614-4760325f9a9b-Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom.jpg?width=2560"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Suite</span>
+                              <p class="room-people">2 người lớn, 1 trẻ em</p>
+                              <div class="room-value">
+                                 <span class="room-price">2,000,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+                                 <!-- <p class="room-price-per">per night</p> -->
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="room-list">
+                        <!-- Room item 1 -->
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img
+                                    src="https://vnn-imgs-f.vgcloud.vn/2020/10/16/17/the-dark-future-of-hotels-on-golden-land-in-hanoi-600x400.jpg"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Deluxe</span>
+                              <p class="room-people">2 người lớn, 1 trẻ em</p>
+                              <div class="room-value">
+                                 <span class="room-price">1,000,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Room item 1 -->
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img src="https://stayflexi.com/ROOT.war/media/user_12404/GrandVelas.jpeg"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Superior</span>
+                              <p class="room-people">4 người lớn</p>
+                              <div class="room-value">
+                                 <span class="room-price">1,500,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+                                 <!-- <p class="room-price-per">per night</p> -->
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Room item 1 -->
+                        <div class="room-card--size-s">
+                           <div class="room-img-container">
+                              <a href="" class="room-link">
+                                 <img
+                                    src="https://www.gannett-cdn.com/presto/2020/05/18/USAT/9ae54ef7-217d-4877-a614-4760325f9a9b-Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom.jpg?width=2560"
+                                    alt="room-img" class="room-img">
+                              </a>
+                           </div>
+
+                           <div class="room-info">
+                              <span class="room-type">Phòng Suite</span>
+                              <p class="room-people">2 người lớn, 1 trẻ em</p>
+                              <div class="room-value">
+                                 <span class="room-price">2,000,000</span>
+                                 <i class="fa-solid fa-dong-sign"></i>
+                                 <!-- <p class="room-price-per">per night</p> -->
+                              </div>
+                           </div>
+                        </div>
+                     </div> --}}
+                  </div>
+               </div>
+
+            </div>
+
+         </div>
+      </div>
+      <!-- End Content -->
+   </div>
+
+
+</main>
+<!-- End main -->
+{{!-- Script chọn ngày giờ--}}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
