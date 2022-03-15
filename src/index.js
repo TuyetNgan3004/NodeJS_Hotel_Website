@@ -22,6 +22,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 route(app)
+
 app.listen(port, () => {
    console.log(`app listen at http://localhost:${port}`);
 })
