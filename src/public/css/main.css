@@ -477,5 +477,10 @@
 }
 
 
+/* Room searching class */
+.room-filter-none {
+   display: none;
+}
+
 
 

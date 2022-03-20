@@ -7,5 +7,6 @@ function route(app) {
    app.use('/', homeRouter);
    app.use('/room', roomRouter );
    app.use('/login', loginRouter);
+}
 
 module.exports = route;
