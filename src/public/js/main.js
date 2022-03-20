@@ -2,11 +2,10 @@
 // Open/close mobile-menu-bar
 var menuBtn = document.getElementById('close-sitebar-btn');
 var siteMenu = document.getElementById('header-bottom');
-console.log(window.getComputedStyle(siteMenu).overflow ==='hidden')
 
-menuBtn.onclick = function() {
+menuBtn.onclick = function () {
    if (window.getComputedStyle(siteMenu).overflow === 'hidden') {
-     siteMenu.style.overflow = 'visible';
+      siteMenu.style.overflow = 'visible';
    }
    else {
       siteMenu.style.overflow = 'hidden';
@@ -53,4 +52,31 @@ datPhong.onclick = function() {
 }
 
    
+
+// Filter rooms by searchbar 
+const searchingWord = document.querySelector('#myInput').addEventListener("keyup", function () {
+   const keyword = document.querySelector('#myInput');
+   const value = keyword.value.toLowerCase();
+
+   const rooms = document.querySelectorAll('.myDIV').forEach(room => {
+      const roomType = room.querySelector('.js-room-type').innerText;
+      const priceElement = room.querySelector('.js-room-price').innerText;
+      const price = priceElement.replaceAll(',', '')
+
+      if (value == '') {
+         room.classList.remove("room-filter-none")
+      }
+
+      else if (roomType.toLowerCase().indexOf(value) > -1 || price.toLowerCase().indexOf(value) > -1) {
+         room.classList.remove("room-filter-none")
+      }
+
+      else {
+         room.classList.add("room-filter-none")
+      }
+   });
+})
+
+
+
 

@@ -80,12 +80,13 @@
                <div class="rooms-container col-8">
                   <div class="search-bar-container">
                      <div class="input-with-icon-container">
-                        <input class="search-bar-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                        <input id="myInput" class="search-bar-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
                         <i class="search-bar-icon fa-solid fa-magnifying-glass"></i>
                      </div>
                   </div>
 
                   <div class="room-list-container">
+
                     
                         <div class="row">
                         <!-- Room item 1 -->
@@ -95,18 +96,17 @@
                            <div class="room-card--size-s">
                               <div class="room-img-container">
                                  <a href="/room/{{this._id}}" class="room-link">
-                                    <img
-                                       src="{{this.r_img.thumbnail}}"
-                                       alt="room-img" class="room-img">
+                                    <img src="{{this.r_img.thumbnail}}" alt="room-img" class="room-img">
                                  </a>
                               </div>
 
                               <div class="room-info">
+
                                  
                                  <span class="room-type">{{this.r_name}}</span>
                                  <p class="room-people">{{this.r_people.adult}} người lớn, {{this.r_people.children}} trẻ em</p>
                                  <div class="room-value">
-                                    <span class="room-price">{{this.r_price}}</span>
+                                    <span class="room-price js-room-price">{{this.r_price}}</span>
                                     <i class="fa-solid fa-dong-sign"></i>
 
                                  </div>
