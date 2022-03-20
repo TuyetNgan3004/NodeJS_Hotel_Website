@@ -346,9 +346,9 @@
    }
    
    /* Trang danh sách phòng phần Ngân */
-   .row {
+   /* .row {
       flex-direction: column;
-   }
+   } */
 
    .col-8 {
       width: 100%;
@@ -502,10 +502,10 @@
    }
 
    /* Trang danh sách phòng phần Ngân */
-   .row {
+   /* .row {
       flex-direction: column;
       justify-content: center;
-   }
+   } */
 
    .col-8 {
       width: 100%;

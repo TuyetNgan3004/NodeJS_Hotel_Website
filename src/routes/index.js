@@ -10,7 +10,5 @@ function route(app) {
    app.use('/room', roomRouter );
    app.use('/login', loginRouter);
   app.use('/', feedbackRouter);
-   app.use('/', serviceRouter);
-
 
 module.exports = route;
