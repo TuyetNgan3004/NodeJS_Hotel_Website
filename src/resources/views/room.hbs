@@ -32,7 +32,8 @@
                   </div>
                   <div class="date-checkin search-left">
                      <div class="input-with-icon-container">
-                        <input type="datetime-local" class="search-bar-input" placeholder="Ngày trả phòng">
+                        <input class="search-bar-input" type="datetime-local" name="input-search"
+                         placeholder="Ngày trả phòng">
                         <i class="check-in-icon fa-solid fa-calendar"></i>
                      </div>
                   </div>
@@ -43,10 +44,10 @@
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
                      <div class="room-categories-detail">
-                        <p href="#">Phòng Standard</p>
-                        <p href="#">Phòng Superior</p>
-                        <p href="#">Phòng Deluxe</p>
-                        <p href="#">Phòng Suite</p>
+                        <a href="/room/standard">Phòng Standard</a>
+                        <a href="#">Phòng Superior</a>
+                        <a  href="#">Phòng Deluxe</a>
+                        <a  href="#">Phòng Suite</a>
                      </div>
 
                      <div class="room-categories-item">
@@ -54,10 +55,10 @@
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
                      <div class="room-categories-detail">
-                        <p href="#">1 người</p>
-                        <p href="#">2 người</p>
-                        <p href="#">3 người</p>
-                        <p href="#">4 người</p>
+                        <a href="#">1 người</a>
+                        <a  href="#">2 người</a>
+                        <a  href="#">3 người</a>
+                        <a href="#">4 người</a>
                      </div>
 
                      <div class="room-categories-item">
@@ -65,10 +66,11 @@
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
                      <div class="room-categories-detail">
-                        <p href="#">500.000VND - 700.000VND</p>
-                        <p href="#">700.000VND - 1.000.000VND</p>
-                        <p href="#">1.000.000VND - 1.500.000VND</p>
-                        <p href="#">1.500.000VND - 2.000.000VND</p>
+                        <a href="#"> Dưới 700.000VND</a>
+                        <a href="#">700.000VND - 1.000.000VND</a>
+                        <a href="#">1.100.000VND - 1.500.000VND</a>
+                        <a href="#">1.600.000VND - 2.000.000VND</a>
+                        <a href="#">2.100.000VND - 3.500.000VND</a>
                      </div>
                   </div>
 
@@ -84,21 +86,25 @@
                   </div>
 
                   <div class="room-list-container">
-                        <div class="room-list">
+
+                    
+                        <div class="row">
                         <!-- Room item 1 -->
                          {{#each rooms}}
-                           <div class="myDIV room-card--size-s">
+                         <div class="col-4">
+
+                           <div class="room-card--size-s">
                               <div class="room-img-container">
-                                 <a href="room/{{this.r_slug}}" class="room-link">
-                                    <img
-                                       src="{{this.r_img}}"
-                                       alt="room-img" class="room-img">
+                                 <a href="/room/{{this._id}}" class="room-link">
+                                    <img src="{{this.r_img.thumbnail}}" alt="room-img" class="room-img">
                                  </a>
                               </div>
 
                               <div class="room-info">
-                                 <span class="room-type js-room-type">{{this.r_name}}</span>
-                                 <p class="room-people">{{this.r_people}}</p>
+
+                                 
+                                 <span class="room-type">{{this.r_name}}</span>
+                                 <p class="room-people">{{this.r_people.adult}} người lớn, {{this.r_people.children}} trẻ em</p>
                                  <div class="room-value">
                                     <span class="room-price js-room-price">{{this.r_price}}</span>
                                     <i class="fa-solid fa-dong-sign"></i>
@@ -106,6 +112,7 @@
                                  </div>
                               </div>
                            </div>
+                         </div>
                          {{/each}}
                         
                         {{!-- <div class="room-card--size-s">
