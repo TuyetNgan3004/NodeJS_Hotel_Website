@@ -32,19 +32,22 @@
 }
 
 .room-categories-detail {
-   display: block;
+   /* display: block; */
    text-align: center;
    overflow: hidden;
    max-height: 0;
    transition: max-height 0.2s ease-in-out;
-   
+   display: flex;
+   flex-direction: column;
 }
 
-.room-categories-detail p {
+.room-categories-detail a {
    margin: 10px 0;
+   text-decoration: none;
+   color: var(--black-color);
 }
 
-.room-categories-detail p:hover {
+.room-categories-detail a:hover {
   font-weight: 600;
   cursor: pointer;
 }
@@ -271,3 +274,13 @@
     margin: 10px 64px;
     
  }
+
+ /* icon success */
+ .icon-booking-success {
+   font-size: 50px;
+   color: rgb(66, 170, 66);
+   margin-bottom: 20px;
+}
+.form-input-success {
+   background-color: rgb(192, 189, 189);
+}

@@ -19,40 +19,42 @@
                 <div class="room-detail">
                     <div class="room-detail-pic col-12">
                         <div class="main-pic">
-                            <img src="{{rooms.r_img}}" alt="">
+                            <img src="{{rooms.r_img.thumbnail}}" alt="">
                         </div>
                         <div class="sub-pic">
-                            <img src="{{rooms.r_img}}" alt="">
-                            <img src="{{rooms.r_img}}" alt="">
-                            <img src="{{rooms.r_img}}" alt="">
+                            <img src="{{rooms.r_img.thumbnail}}" alt="">
+                            <img src="{{rooms.r_img.thumbnail}}" alt="">
+                            <img src="{{rooms.r_img.thumbnail}}" alt="">
                         </div>
                     </div>
                     <div class="booking-room col-12">
+                       <form >
                          <div class="date-checkin">
                            <div class="input-with-icon-container col-12">                            
-                                 <input class="search-bar-input" type="datetime-local" name="input-search"
-                                    placeholder="Ngày nhận phòng">
+                                 <input  class="search-bar-input" id="ngaynhan" name="checkin" type="datetime-local"  placeholder="Ngày nhận phòng" required>
                                     <i class="check-in-icon fa-solid fa-calendar"></i>                           
                            </div>
-                        </div>
+                         </div>
                         <div class="date-checkin">
                            <div class="input-with-icon-container col-12">
-                              <input type="datetime-local" class="search-bar-input" placeholder="Ngày trả phòng">
+                              <input class="search-bar-input" id="ngaytra" name="checkout" type="datetime-local" placeholder="Ngày trả phòng" required>
                               <i class="check-in-icon fa-solid fa-calendar"></i>
                            </div>
                         </div>
+                        </form>
                         
-                        <div class="room-detail-btn">
-                           <a class="btn btn--size-s--black" href="">ĐẶT PHÒNG NGAY</a>
+                        <div class="room-detail-btn" >
+                           <a id="datphong" class="btn btn--size-s--black" href="{{rooms._id}}/showBookingRoom">ĐẶT PHÒNG NGAY</a>
                         </div>
+                       
                     </div>
                 </div>
                 <div class="room-detail-description">
                     <p class="room-detail-description-name">{{rooms.r_name}}</p>
                     <p class="room-detail-description-price">{{rooms.r_price}}</p>
                     <p class="room-detail-description-content">{{rooms.r_desc}}</p>
-                    <p class="room-detail-description-note">Số người ở: {{rooms.r_people}}</p>
-                    <p class="room-detail-description-note">Số giường đôi: {{rooms.r_bed}} </p>
+                    <p class="room-detail-description-note">Số người ở: {{rooms.r_people.adult}} người lớn,  {{rooms.r_people.children}} trẻ em</p>
+                    <p class="room-detail-description-note">Giường: {{rooms.r_bed}} </p>
                     <p class="room-detail-description-note">Tiện ích: {{rooms.r_utilities}} </p>
                 </div>
             </div>

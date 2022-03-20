@@ -189,8 +189,6 @@
   
 }
 
-
-
 .support-hotel-area .location-img {
    width: 100%;
    border-radius: 4px;
@@ -224,12 +222,11 @@
 }
 .room-list {
    display: flex;
-   justify-content: space-around;
    margin-top: 30px;
 }
 
 .room-card {
-   width: 380px;
+   /* width: 380px; */
    overflow: hidden;
    border-radius: 10px;
    box-shadow: 4px 4px 10px #ccc;
@@ -258,7 +255,8 @@
 
 .room-type,
 .room-price {
-   font-size: 2.6rem;
+   font-size: 2.2rem;
+   font-weight: 400;
 }
 
 .room-value {
@@ -292,11 +290,12 @@
 /* Room-cart--size-s */
 
 .room-card--size-s {
-   width: 380px;
+   /* width: 380px; */
    overflow: hidden;
    border-radius: 10px;
    box-shadow: 4px 4px 10px #ccc;
    margin-right: 8px;
+   margin-top: 20px;
 }
 
 
