@@ -61,30 +61,9 @@
       margin: auto 0;
    }
 
-   .date-checkin {
-      margin: 10px 50px;
-   }
-
    .room-detail-description {
       margin: 10px 28px;
    }
-
-
-   /* Trang danh sách phòng phần Ngân */
- 
-   /* .col-8 {
-      width: calc( 100% / 2);
-   } */
-
-   .room-list-container {
-      margin: 0 30px;
-   }
-
-   .search-bar-container {
-      margin: 0 30px;
-   }
-
-   /* Tứ area */
 
    .feedback-all {
       flex-direction: column;
@@ -98,57 +77,7 @@
    .form-textarea{
       max-width: 100%;
    }
-
-   .feedback-rightside{
-      margin-top: 100px;
-   }
-
-   .service__item{
-      display: flex;
-      flex-wrap:wrap;
-      justify-content: center;
-      margin-bottom: 300px;
-   }
-
-   .service__item-image{
-      flex: none;
-      width: 700px;
-      height: 600px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-   }
-
-   .service__item-details{
-      flex: none;
-      width: 100%;
-      padding: 0 80px;
-   }
-
-   .service__item-list{
-      justify-content: center;
-      margin-bottom: 150px;
-   }
-
-   .service__item2{
-      display: flex;
-      flex-wrap:wrap;
-      flex-direction: column-reverse;
-      height: 100%;
-      margin-top: 220px;
-   }
-
-   .service__item-details2{
-      flex: none;
-      padding: 0 80px;
-      width: 100%;
-   }
-
-   .service__item-details2 p{
-      width: 100%;
-      margin-left: 15px; ;
-   }
-
+   
 /* PC */
 @media (min-width: 64em) {
   
@@ -186,21 +115,6 @@
    .slider-area .slider-slogan {
       bottom: 45%;
    }
-
-   .room-card {
-      margin: 0 14px;
-   }
-
-   .s-col-none {
-      display: none !important;
-   }
-
-   .s-col-6 {
-      width: calc(100% /2) !important;
-   }
-
-
-   /* Trang booking-room phần Ngân */
 
    .booking-room-head{
       flex-direction: column;
@@ -240,14 +154,6 @@
       font-size: 3.0rem;
   }
 
-  /* Trang chi tiết phòng phần Ngân */
-
-  .main-pic img {
-   width: 250px;
-   height: 300px;
- }
-
-      /*Tứ area*/
    .service__list-item{
       margin-bottom: 50px;
    }
@@ -257,71 +163,15 @@
       flex-wrap:wrap;
    }
 
-   .service__item{
-      display: flex;
-      flex-wrap:wrap;
-      justify-content: center;
-      margin-bottom: 300px;
+   .feedback-rightside {
+      margin-top: 20px;
    }
-
-   .service__item-image{
-      flex: none;
-      width: 500px;
-      height: 400px;
-   }
-
-   .service__item-details{
-      flex: none;
-      width: 100%;
-   }
-
-   .service__item-list{
-      justify-content: center;
-      margin-bottom: 50px;
-   }
-
-   .service__item2{
-      display: flex;
-      flex-wrap:wrap;
-      flex-direction: column-reverse;
-      margin-top: 50px;
-   }
-
-   .service__item-details2{
-      flex: none;
-   }
-
-   .service__item-desc{
-      font-size: 1.8rem;
-   }
-
 }
 
 /* Tablet */
 @media (min-width: 46.25em) and (max-width: 63.9375em) {
 
      /* Trang booking room phần Ngân */
-   .form {
-      padding: 0 120px;
-      width: 638px;
-   }     
-
-   .form-group-row {
-      flex-direction: column;
-   }
-
-   .padding-left-10 {
-      padding-left: 0px;
-  }
-
-  .padding-right-10 {
-      padding-right: 0px;
-   }
-
-   .col-6 {
-      width: 100%;
-   }
-
    .container-form-input-pay {
       flex-direction: column;
    }
@@ -340,28 +190,7 @@
    .booking-room {
       margin: auto;
    }
-
-   .date-checkin {
-      margin: 10px;
-   }
-   
    /* Trang danh sách phòng phần Ngân */
-   /* .row {
-      flex-direction: column;
-   } */
-
-   .col-8 {
-      width: 100%;
-   }
-
-   .col-4 {
-      width: 100%;
-   }
-
-   .search-bar-container {
-      text-align: center;
-      margin-top: 10px;
-   }
    
 
 }
@@ -383,20 +212,13 @@
       align-items: center;
    }
 
-   .room-card {
-      width: 70%;
-      margin-bottom: 20px;
-   }
-
    .hot-service-area {
       padding-top: 120px;
       padding-bottom: 200px;
    }
    
    .hot-service-area .service-img-container {
-      width: 70%;
       height: 200px;
-      margin-bottom: 20px;
    }
 
    .room-img-container {
@@ -449,18 +271,6 @@
       font-size: 2.2rem;
   }
 
-  .form {
-      margin: auto;
-      padding: 0 20px;
-      width: 300px;
-   } 
-
-   .form-group-row {
-      display: flex;
-      flex-direction: column;
-      
-   }
-
    .container-form-input-pay {
       flex-direction: column;
    }
@@ -473,15 +283,7 @@
       padding-right: 0px;
    }
 
-   .col-6 {
-      width: 100%;
-   }
-
     /* Trang chi tiết phòng phần Ngân */
-
-   .col-12 {
-      width: 100%;
-   }
   .main-pic img {
       width: 400px;
       height: 500px;
@@ -496,91 +298,10 @@
       height: 100px;
       margin: 5px 20px;
    }
-
-   .date-checkin {
-      margin: 10px 60px;
-   }
-
-   /* Trang danh sách phòng phần Ngân */
-   /* .row {
-      flex-direction: column;
-      justify-content: center;
-   } */
-
-   .col-8 {
-      width: 100%;
-   }
-
-   .col-4 {
-      width: 100%;
-   }
-
-   .search-bar-container {
-      text-align: center;
-      margin-top: 10px;
-   }
-
-/* Tứ area */
-   
-   iframe {
-      width: 400px;
-      height: 400px;
-   }
-   
-   .feedback-all .wrap{
-      width: 400px;
-   }
-
-   .form-textarea{
-      max-width: 100%;
-   }
-
-   .feedback-rightside{
-      margin-top: 50px;
-   }
-
-   .service__item{
-      justify-content: center;
-      margin-bottom: 185px;
-   }
-
-   .service__item-image{
-      width: 400px;
-      height: 300px;
-      display: block; 
-      margin-left: auto; 
-      margin-right: auto;
-   }
-
-   .service__item-details{
-      margin-top: 0;
-      width: 600px;
-      margin: 0;
-   }
-
-   .service__item-desc{
-      font-size: 1.7rem;
-   }
-
-   .service__item2{
-      display: flex;
-      flex-wrap:wrap;
-      justify-content: center;
-      flex-direction: column-reverse;
-   }
-
-   .service__item-details2{
-      padding: 0;
-   }
-
 }
 
 /* Smaller */
 @media (max-width: 29.125em) {
-   .xs-col-full {
-      width: 100% !important;
-   }
-
    .header-info-left {
       justify-content: center;
    }
@@ -623,16 +344,6 @@
       height: 450px;
    }
 
-   .date-checkin {
-      margin: 10px 60px;
-   }
-
-   /* Tứ area */
-   iframe {
-      width: 300px;
-      height: 300px;
-   }
-
    .feedback-all {
       flex-direction: column;
       align-items: center;
@@ -644,27 +355,6 @@
 
    .form-textarea{
       max-width: 100%;
-   }
-
-   .feedback-rightside{
-      margin-top: 50px;
-   }
-
-   .service__item{
-      display: flex;
-      flex-wrap:wrap;
-   }
-
-   .service__item-image{
-     width: 330px;
-     height: 250px;
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-   }
-
-   .service__item-details{
-     width: 530px;
    }
 }
 

@@ -16,16 +16,16 @@ html {
    font-family: 'Roboto', sans-serif;
    font-size: 10px;
 }
-
+/* 
 .grid {
    width: 1200px;
    max-width: 100%;
    margin: 0 auto;
-}
+} */
 
 
 /* Row and Col */
-.row {
+/* .row {
    display: flex;
    flex-wrap: wrap;
 }
@@ -44,7 +44,7 @@ html {
 
 .col-4 {
    width: calc(100% / 3);
-}
+} */
 
 
 .logo {
@@ -112,14 +112,9 @@ html {
    padding-right: 10px;
 }
 
-
-/* .input-with-icon-container-detail {
-   align-items: flex-end;
-} */
-
-
 .btn--size-full {
    width: 100% !important;
+   display: block;
 }
 
 .btn:hover {
@@ -138,8 +133,6 @@ html {
 .btn.btn-welcome {
    margin-top: 50px;
 }
-
-/* Open/Close Site Bar */
 
 
 /* Animation */

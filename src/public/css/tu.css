@@ -1,19 +1,15 @@
-
 /* SERVICE CONTENT */
-.content-service{
-   background-color: var(--white-color);
+.row-reverse {
+   flex-direction: row-reverse;
 }
- 
-.service-title {
-   font-size: 3.0rem;
-   font-weight: 400;
-   padding: 50px 0;
-   color: var(--primary-color);
-   text-align: center;
+
+.service-row {
+   margin-top: 20px;
 }
 
 .service__list-option{
-    margin: auto;
+   background-color: var(--white-color);
+   padding: 10px 0 50px 0;
 }
 
 .service__list{
@@ -40,16 +36,12 @@
 }
 
 .service__list-item .service__list-img-link:hover img{
-   transform: scale(1.5);
+   transform: scale(1.2);
 }
 
 figure{
    overflow: hidden;
-   border-top-left-radius: 50% 50%; border-top-right-radius: 50% 50%; border-bottom-right-radius: 50% 50%; border-bottom-left-radius: 50% 50%;
-}
-
-.service__list-img-link{
-   cursor: pointer;
+   border-radius: 50%;
 }
 
 .service__list-img-link img {
@@ -64,40 +56,17 @@ figure{
    margin-top: 30px;
  }
 
- .service__item-list{
-    padding-bottom: 50px;
+ .service__item-details{
+   color: var(--black-color);
  }
-
- .service__item{
-   height: 450px;
-   width: 100%;
-    display: flex;
-    margin-top: 100px;
- }
-
- .service__item-reverse{
-  flex-direction: row-reverse; 
-  height: 450px;
-  width: 100%;
-   display: flex;
-   margin-top: 100px;
+ 
+ .item-img {
+    width: 100%;
  }
 
  .service__item-image{
-    overflow: hidden;
-    flex: 1;
- }
-
- .service__item-image-reverse{
-  overflow: hidden;
-  flex: 1;
-  margin-left: 30px;
- }
- 
- .service__item-details{
-   color: var(--black-color);
-   margin-left: 30px;
-   flex: 1;
+   width: 100%;
+   padding-top: 100%;
  }
 
  .service__item-details-reverse{
@@ -119,7 +88,10 @@ figure{
  /* END SERVICE CONTENT */
 
 
- /* FEEDBACK CONTENT */ 
+ /* FEEDBACK CONTENT */
+.feedback-row {
+   padding: 0 30px;
+} 
 .feedback-content-section{
    margin-bottom: 50px;
 }
@@ -132,7 +104,7 @@ figure{
 }
 
 .feedback-all {
-   display: flex;
+   padding: 0 10px;
 }
 
 .feedback-leftside{
@@ -140,26 +112,21 @@ figure{
 }
 
 iframe{
-   width: 700px;
-   height: 532px;
+   width: 100%;
+   height: 100%;
+   min-height: 600px;
    border: 0;
 }
 
 .feedback-rightside{
-   flex: 3;
+   padding: 20px;
+   min-height: 600px;
    border: 1px solid var(--white-color);
 }
 
 .feedback-rightside h4 {
    color: var(--white-color);
    font-size: 18px;
-}
-
-
-
-.feedback-rightside > .wrap{
-   padding: 20px;
-   height: 530px;
 }
 
 .feedback__form-item{
