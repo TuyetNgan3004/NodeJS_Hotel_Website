@@ -38,18 +38,17 @@ config1 = {
 }
 // flatpickr("input[type=datetime-local]", config1);
 
-// // kiểm tra chọn ngày nhận ngày trả trước khi đặt phòng của trang chi tiết phòng
-// var datPhong = document.getElementById('datphong');
-// var checkIn = document.getElementById('ngaynhan');
-// var checkOut = document.getElementById('ngaytra');
+// kiểm tra chọn ngày nhận ngày trả trước khi đặt phòng của trang chi tiết phòng
+var datPhong = document.getElementById('datphong');
+var checkIn = document.getElementById('ngaynhan');
+var checkOut = document.getElementById('ngaytra');
 
-// datPhong.onclick = function() {
-//    if(checkIn.value === "" || checkOut.value === "" ){
-//       alert ("Vui lòng chọn ngày nhận và ngày trả phòng !!!");
-//       return false;
-//    }
-// }
-
+datPhong.onclick = function() {
+    if(checkIn.value === "" || checkOut.value === "" ){
+       alert ("Vui lòng chọn ngày nhận và ngày trả phòng !!!");
+       return false;
+    }
+ }
 
 // Filter rooms by searchbar 
 const searchingWord = document.querySelector('#myInput').addEventListener("keyup", function () {
@@ -62,7 +61,6 @@ const searchingWord = document.querySelector('#myInput').addEventListener("keyup
       if (value == '') {
          room.classList.remove("room-filter-none")
       }
-
       else if (itemsRemoveComma.toLowerCase().indexOf(value) > -1) {
          room.classList.remove("room-filter-none")
       }
