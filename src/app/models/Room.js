@@ -4,10 +4,7 @@ const Schema = mongoose.Schema;
 const Room = new Schema ({
     r_name: { type: String, maxLength: 255 },
     r_type: { type: String, maxLength: 255 },
-    r_people: { 
-        adult: { type: String, maxLength: 255 },
-        children: { type: String, maxLength: 255 }
-     },
+    r_people: { type: String, maxLength: 255 },
     r_price: { type: String, maxLength: 255 },
     r_img: { 
         thumbnail: { type: String, maxLength: 255 },

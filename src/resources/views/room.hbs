@@ -43,11 +43,13 @@
                         <span>Loại phòng</span>
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
+
+                     
                      <div class="room-categories-detail">
-                        <a href="/room/standard">Phòng Standard</a>
-                        <a href="#">Phòng Superior</a>
-                        <a  href="#">Phòng Deluxe</a>
-                        <a  href="#">Phòng Suite</a>
+                        <a  href="/room/query/standard">Phòng Standard</a>
+                        <a  href="/room/query/superior">Phòng Superior</a>
+                        <a  href="/room/query/deluxe">Phòng Deluxe</a>
+                        <a  href="/room/query/suite">Phòng Suite</a>
                      </div>
 
                      <div class="room-categories-item">
@@ -55,13 +57,13 @@
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
                      <div class="room-categories-detail">
-                        <a href="#">1 người</a>
-                        <a  href="#">2 người</a>
-                        <a  href="#">3 người</a>
-                        <a href="#">4 người</a>
+                        <a href="/room/query/1">1 người</a>
+                        <a href="/room/query/2">2 người</a>
+                        <a href="/room/query/3">3 người</a>
+                        <a href="/room/query/4">4 người</a>
                      </div>
 
-                     <div class="room-categories-item">
+                     {{!-- <div class="room-categories-item">
                         <span>Giá phòng</span>
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
@@ -71,7 +73,7 @@
                         <a href="#">1.100.000VND - 1.500.000VND</a>
                         <a href="#">1.600.000VND - 2.000.000VND</a>
                         <a href="#">2.100.000VND - 3.500.000VND</a>
-                     </div>
+                     </div> --}}
                   </div>
 
 
@@ -104,7 +106,7 @@
                               <div class="room-info">
                                  
                                  <span class="room-type">{{this.r_name}}</span>
-                                 <p class="room-people">{{this.r_people.adult}} người lớn, {{this.r_people.children}} trẻ em</p>
+                                 <p class="room-people">{{this.r_people}} người</p>
                                  <div class="room-value">
                                     <span class="room-price">{{this.r_price}}</span>
                                     <i class="fa-solid fa-dong-sign"></i>
