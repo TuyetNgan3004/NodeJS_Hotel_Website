@@ -7,11 +7,11 @@
 /* leftside */
 .content-title {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .date-checkin {
-   text-align: center;
-   margin: 10px 0;
+   margin-bottom: 10px;
 }
 
 .room-categories {
@@ -19,32 +19,31 @@
 }
 
 .room-categories-item {
-   text-align: center;
-   justify-content: space-around;
-   margin: 20px 20px 10px 20px;
-   overflow: hidden;
-   cursor: pointer;
-   
+   display: flex;
+   padding: 16px 2px;
+   justify-content: space-between; 
+   cursor: pointer;  
 }
 
-.room-categories-item i {
-   margin-left: 123px;
+.room-categories-item span {
+   font-size: 1.8rem;
+   font-weight: 500;
 }
 
 .room-categories-detail {
-   /* display: block; */
-   text-align: center;
+   display: flex;
    overflow: hidden;
    max-height: 0;
    transition: max-height 0.2s ease-in-out;
-   display: flex;
    flex-direction: column;
 }
 
 .room-categories-detail a {
-   margin: 10px 0;
+   display: block;
+   padding:16px 0;
    text-decoration: none;
    color: var(--black-color);
+   border-bottom: 1px solid #d3b69a;
 }
 
 .room-categories-detail a:hover {
@@ -58,23 +57,23 @@
 
 
 /* rightside */
-
-.search-bar-container{
-    display: block;
-    text-align: right;
+.search-room {
+   margin-bottom: 50px;
 }
-
 .input-with-icon-container {
-    display: inline-flex;
-    border: 1px solid #ccc; 
-    padding: 10px;
-    justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
+   border-radius: 3px;
+   border: 1px solid #ccc; 
+   padding: 12px 10px;
 }
 
 
 .search-bar-input {
     border: none;
     outline: none;
+    width: 80%;
+    height: 100%;
     font-size: 1.6rem;
 }
 
