@@ -13,7 +13,7 @@ class FeedbackController {
           .save()
           .then(() => res.redirect("/feedback"))
           .catch(next);
-  }
+    }
  }
  
  module.exports = new FeedbackController;
