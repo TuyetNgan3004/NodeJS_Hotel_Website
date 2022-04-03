@@ -15,48 +15,35 @@
 
       <div class="content-section">
          <div class="content-container">
-            <div class="grid">      
-                <div class="room-detail">
-                    <div class="room-detail-pic col-12">
-                        <div class="main-pic">
-                            <img src="{{rooms.r_img.thumbnail}}" alt="">
-                        </div>
-                        <div class="sub-pic">
-                            <img src="{{rooms.r_img.thumbnail}}" alt="">
-                            <img src="{{rooms.r_img.thumbnail}}" alt="">
-                            <img src="{{rooms.r_img.thumbnail}}" alt="">
-                        </div>
+            <div class="grid wide">                   
+                 <div class="booking-room-head">
+                    <div class="booking-room-pic">
+                        <img src="{{rooms.r_img.thumbnail}}" alt="">
                     </div>
-                    <div class="booking-room col-12">
-                       <form>
-                         <div class="date-checkin">
-                           <div class="input-with-icon-container col-12">                            
-                                 <input  class="search-bar-input" id="ngaynhan"  type="datetime-local"  placeholder="Ngày nhận phòng" >
-                                    <i class="check-in-icon fa-solid fa-calendar"></i>                           
-                           </div>
-                         </div>
-                        <div class="date-checkin">
-                           <div class="input-with-icon-container col-12">
-                              <input class="search-bar-input"  id="ngaytra"  type="datetime-local" placeholder="Ngày trả phòng" >
-                              <i class="check-in-icon fa-solid fa-calendar"></i>
-                           </div>
-                        </div>
-                        </form>
+                    <div class="booking-detail-description">
+                        <p class="booking-detail-description-name">{{rooms.r_name}}</p>
+                        <p class="booking-detail-description-price">{{rooms.r_price}}</p>
+                        <p class="booking-detail-description-content">{{rooms.r_desc}}</p>
+                        <p class="booking-detail-description-note">Số người ở: {{rooms.r_people}} người</p>
+                        <p class="booking-detail-description-note">Giường: {{rooms.r_bed}} </p>
+                        <p class="booking-detail-description-note">Tiện ích: {{rooms.r_utilities}}</p>
                         
-                        <div class="room-detail-btn" >
-                           <a id="datphong" class="btn btn--size-s--black" href="{{rooms._id}}/showBookingRoom">ĐẶT PHÒNG NGAY</a>
-                        </div>
-                       
+                     <div class="btn-booking-detail">
+                        <a class="btn btn-reverse btn--size-s " href="{{rooms._id}}/showBookingRoom">ĐẶT PHÒNG NGAY</a>
+                     </div>
+                        
                     </div>
                 </div>
-                <div class="room-detail-description">
+
+                
+                {{!-- <div class="room-detail-description">
                     <p class="room-detail-description-name">{{rooms.r_name}}</p>
                     <p class="room-detail-description-price">{{rooms.r_price}}</p>
                     <p class="room-detail-description-content">{{rooms.r_desc}}</p>
                     <p class="room-detail-description-note">Số người ở: {{rooms.r_people.adult}} người lớn,  {{rooms.r_people.children}} trẻ em</p>
                     <p class="room-detail-description-note">Giường: {{rooms.r_bed}} </p>
                     <p class="room-detail-description-note">Tiện ích: {{rooms.r_utilities}} </p>
-                </div>
+                </div> --}}
             </div>
          </div>
 

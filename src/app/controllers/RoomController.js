@@ -3,9 +3,8 @@ const Customer = require('../models/Customer');
 const { multipleToObject } = require('../../config/utility/mongoose');
 const { mongooseToObject } = require('../../config/utility/mongoose');
 
-
 //GET
-const showRoomList = async (req, res, next) => {
+const showRoomList =  (req, res, next) => {
     Room.find()
         .then(rooms => {
             res.render('room', { rooms: multipleToObject(rooms) });
@@ -13,7 +12,7 @@ const showRoomList = async (req, res, next) => {
         .catch(next);
 }
 
-const showRoomDetail = async (req, res, next) => {
+const showRoomDetail =  (req, res, next) => {
     //GET roomList/:id
     Room.findOne({ _id: req.params.id })
         .then(rooms => {
@@ -30,7 +29,7 @@ const showBookingRoom = (req, res, next) => {
         .catch(next);
 }
 
-const store = async (req, res, next) => {
+const store = (req, res, next) => {
     // console.log(req.body);
     const customer = new Customer(req.body);
     customer.save(function (err, result) {
