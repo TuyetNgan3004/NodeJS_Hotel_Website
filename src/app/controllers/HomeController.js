@@ -1,8 +1,7 @@
 class homeController {
    //[GET] /
    showIndex(req, res, next) {
-      // res.send('Hello');
-      res.render('home');
+      res.render('TabHome/home',{ layout: 'mainClient.hbs' });
    }  
 }
 

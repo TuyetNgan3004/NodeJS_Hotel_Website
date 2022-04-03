@@ -2,7 +2,7 @@ class FeedbackController {
     //[GET] /feedback/
     showFeedback(req, res, next) {
        // res.send('Hello');
-       res.render('feedback');
+       res.render('TabFeedBack/feedback', { layout: 'mainClient.hbs'});
     }  
 
     //[POST] /feedback/

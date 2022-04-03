@@ -1,7 +1,7 @@
 class ServiceController {
     //[GET] /
     showService(req, res, next) {
-       res.render('service');
+       res.render('TabServiceClient/service', { layout: 'mainClient.hbs' });
     }  
  }
  
