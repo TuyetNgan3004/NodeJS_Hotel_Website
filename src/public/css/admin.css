@@ -175,6 +175,20 @@
    color: var(--second-color);
 }
 
+
+/* Ngân thêm trang quản lí checkin */
+.page-title-detail {
+   font-size: 2rem;
+   font-weight: 500;
+   letter-spacing: 1.2px;
+   margin-bottom: 20px;
+   color: var(--second-color);
+}
+
+
+
+
+
 .filter-container {
    display: flex;
    flex-wrap: wrap;
@@ -204,6 +218,25 @@
    border-radius: 3px;
    background-color: var(--white-color);
 }
+
+
+
+
+
+/* Ngan thêm trang quản lí checkin */
+.table-checkin-room{
+   min-height: 50vh;
+   background-color: gray;
+}
+
+.table-checkin, .table-room {
+   margin-top: 20px;
+}
+
+
+
+
+
 
 .search-bar {
    display: flex;
@@ -281,6 +314,25 @@
 }
 
 .status-btn:hover {
+   transform: translateY(1px);
+   box-shadow: 1px 2px 4px #ccc;
+}
+
+.status-btn-delete {
+   display: inline-block;
+   text-align: center;
+   color: var(--white-color);
+   background-color: var(--second-color);
+   min-width: 90px;
+   font-size: 1.4rem;
+   padding: 8px 10px;
+   border-radius: 3px;
+   cursor: pointer;
+   box-shadow: 1px 4px 4px #ccc;
+   border: none;
+}
+
+.status-btn-delete:hover {
    transform: translateY(1px);
    box-shadow: 1px 2px 4px #ccc;
 }

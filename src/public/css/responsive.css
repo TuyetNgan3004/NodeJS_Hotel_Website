@@ -261,7 +261,7 @@
     /* Trang chi tiết đặt phòng phần Ngân */
 
     .booking-room-pic img {
-      width: 250px;
+      width: 300px;
       height: 300px;   
    }  
    .booking-room-description {
@@ -272,16 +272,16 @@
    }
 
    .room-detail-description-name {
-      font-size: 2.0rem;
-   }
-   .room-detail-description-price {
-      font-size: 2.0rem;
-   }
-   .room-detail-description-content {
       font-size: 1.8rem;
    }
-   .room-detail-description-note {
+   .room-detail-description-price {
+      font-size: 1.8rem;
+   }
+   .room-detail-description-content {
       font-size: 1.6rem;
+   }
+   .room-detail-description-note {
+      font-size: 1.4rem;
    }
 
    .title-item {
@@ -379,6 +379,26 @@
    .form-textarea{
       max-width: 100%;
    }
+
+   /* chi tiet dat phong Ngan */
+   .booking-room-pic img {
+      width: 250px;
+      height: 300px;   
+   }  
+
+   .room-detail-description-name {
+      font-size: 1.6rem;
+   }
+   .room-detail-description-price {
+      font-size: 1.6rem;
+   }
+   .room-detail-description-content {
+      font-size: 1.4rem;
+   }
+   .room-detail-description-note {
+      font-size: 1.2rem;
+   }
+
 }
 
 }

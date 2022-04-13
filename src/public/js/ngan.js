@@ -1,3 +1,23 @@
+//modal delete
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     var deleteId;
+//     var deleteForm = document.forms['delete-form'];
+//     var btnDelete = document.getElementById('btn-delete');
+
+//     $('#modal').on('show.modal', function (event) {
+//         var button = $(event.relatedTarget) // Button that triggered the modal
+//         deleteId = button.data('id') ;
+//     });
+
+//     var btnDelete = document.getElementById('del');
+    
+//     btnDelete.onclick = function() {         
+//         deleteForm.action = '/staff/'+ deleteId + '?_method= DELETE';
+//         deleteForm.submit();
+//     }
+// })
 
 //lấy dữ liệu ngày nhận và đặt phòng và tính tiền phòng
 
@@ -18,13 +38,14 @@ function Total(){
     var number_dCheckout = parseInt(d_checkout);
     var number_mCheckin = parseInt(m_checkin);
     var number_mCheckout = parseInt(m_checkout);
-
     if(number_dCheckin < number_dCheckout && number_mCheckin == number_mCheckout){
         var total_Day = number_dCheckout - number_dCheckin;  
-        var roomPrice = document.getElementById('room-price').textContent;
-        var sum = parseInt(roomPrice);
-        sum= sum* total_Day*1000;
-        var total = document.getElementById('total').innerText = sum +"VND";
+        var roomPrice = document.getElementById('room-price').textContent.replaceAll(',','');
+        var sum= parseInt(roomPrice)  
+        sum = sum * total_Day;
+        var total = document.getElementById('total').value = Intl.NumberFormat().format(sum);
+       
+        
     }
 
     else if(number_dCheckin > number_dCheckout && m_checkin < m_checkout){
@@ -40,7 +61,7 @@ function Total(){
                 var roomPrice = document.getElementById('room-price').textContent;
                 var sum = parseInt(roomPrice);
                 sum= sum* total_Day* 1000;
-                var total = document.getElementById('total').innerText = sum +"VND";
+                var total = document.getElementById('total').value = sum ;
             break;
         }  
 
@@ -53,7 +74,7 @@ function Total(){
                 var roomPrice = document.getElementById('room-price').textContent;
                 var sum = parseInt(roomPrice);
                 sum= sum* total_Day* 1000;
-                var total = document.getElementById('total').innerText = sum +"VND";
+                var total = document.getElementById('total').value = sum ;
 
             break;
         }  
@@ -64,7 +85,7 @@ function Total(){
                 var roomPrice = document.getElementById('room-price').textContent;
                 var sum = parseInt(roomPrice);
                 sum= sum* total_Day* 1000;
-                var total = document.getElementById('total').innerText = sum +"VND";
+                var total = document.getElementById('total').value = sum ;
 
             break;
         }

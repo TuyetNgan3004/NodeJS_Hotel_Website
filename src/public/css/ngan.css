@@ -131,6 +131,20 @@
 }
 
  /* Trang chi tiết đặt phòng */
+   #total {
+      margin: 0;
+      padding: 0;
+      font-size: 2.4rem;
+      font-weight: 600;
+      border: none;
+      width: 135px;
+      text-align: center;
+   }
+
+   #title-total{
+      padding-top: 10px;
+   }
+
  .booking-room-head{
     display: flex;
  }
@@ -184,9 +198,10 @@
    justify-content: space-between;
 }
 
- .form-group-row {
+ .form-group {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     /* flex-direction: column; */
  }
  
@@ -262,4 +277,83 @@
 }
 .form-input-success {
    background-color: rgb(192, 189, 189);
+   width: 100%;
+}
+
+.booking-input{
+   width: 100%;
+}
+
+/* modal delete */
+.modal{
+   background: rgba(0 0 0 /43%);
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100vw;
+   opacity: 0;
+   pointer-events: none;
+   
+}
+
+.modal.show{
+   opacity: 1;
+   pointer-events: auto;
+}
+.modalContent{
+   width: 400px;
+   position: relative;
+   top: 5%;
+   margin: auto;
+   background: var(--white-color);
+   box-shadow: 2px 5px 5px gray;
+   border-radius: 5px;
+   overflow: hidden;
+}
+
+.modal-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px;
+   background: var(--primary-color);
+   color: var(--white-color);
+   font-size: 1.6rem;
+   font-family: 'Roboto', sans-serif;
+}
+.modal-content{
+   padding: 15px;
+   font-size: 1.6rem;
+   font-family: 'Roboto', sans-serif;
+}
+.modal-footer{
+   text-align: right;
+   padding: 15px;
+   
+}
+
+.del, .cancel {
+   display: inline-block;
+   text-align: center;
+   color: var(--white-color);
+   background-color: rgb(56, 72, 80);
+   min-width: 90px;
+   font-size: 1.4rem;
+   padding: 8px 10px;
+   border-radius: 3px;
+   cursor: pointer;  
+   border: none;
+}
+.del {
+   margin-right: 8px;
+}
+
+.del:hover {
+   transform: translateY(1px);
+   background-color: var(--second-color);
+}
+
+.cancel:hover {
+   transform: translateY(1px);
+   background-color: var(--second-color);
 }

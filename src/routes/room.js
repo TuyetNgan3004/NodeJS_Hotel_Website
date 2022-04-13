@@ -12,6 +12,4 @@ router.get ('/:id', roomController.showRoomDetail);
 router.get ('/:id/showBookingRoom', roomController.showBookingRoom);
 router.post ('/:id/showBookingRoom/store', roomController.store);
 
-
-
 module.exports = router;

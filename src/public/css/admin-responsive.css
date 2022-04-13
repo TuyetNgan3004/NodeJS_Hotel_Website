@@ -35,6 +35,14 @@
       flex-direction: column-reverse;
    }
 
+    /* Ngân thêm trang danh sách nhân viên */
+   .filter-row-mobile-noreverse{
+      flex-direction: column;
+   }
+
+
+
+
    .filter-box {
       display: block;
       margin-top: 10px;

@@ -14,13 +14,19 @@
    <link rel="stylesheet" href="/css/main.css">
    <link rel="stylesheet" href="/css/grid.css">
    <link rel="stylesheet" href="/css/admin.css">
+   <link rel="stylesheet" href="/css/ngan.css">
    <link rel="stylesheet" href="/css/admin-responsive.css">
 
 
    <!-- Google fonts -->
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
 
+   {{!-- Boostrap v4.0.0 --}}
+   
    <title>Admin</title>
 </head>
 
@@ -30,5 +36,16 @@
       {{{body}}}
    </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+   config= {
+               // enableTime: true, (GIỜ)
+               dateFormat: "d-m-Y",
+               minDate: "today",
+            }
+flatpickr("input[type=datetime-local]", config);
+</script> 
+
 
 </html>

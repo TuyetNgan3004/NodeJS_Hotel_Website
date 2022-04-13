@@ -398,6 +398,7 @@
    border-radius: 4px;
    outline: none;
    font-size: 1.4rem;
+   width: 100%;
 }
 
 .login-btn {

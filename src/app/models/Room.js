@@ -15,6 +15,7 @@ const Room = new Schema ({
     r_desc: {type: String, maxLength: 255},
     r_bed: { type: String, maxLength: 255 },
     r_utilities: { type: String, maxLength: 255 },
+    r_status: { type: String, maxLength: 255 },
     
 }, {
     timestamps: true

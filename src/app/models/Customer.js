@@ -7,6 +7,7 @@ const Customer = new Schema ({
     c_email:{ type: String, maxLength: 255 },
     c_checkin:{ type: String, maxLength: 255 },
     c_checkout:{ type: String, maxLength: 255 },
+    c_total:{ type: String, maxLength: 255 },
     roomID: { type: String, ref: 'Rooms'},
 },{
     timestamps: true
