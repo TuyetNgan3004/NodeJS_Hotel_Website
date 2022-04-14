@@ -84,7 +84,12 @@
                             <span id="deleteId" class="status-btn-delete" data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Xoá</span>
                            </td>
                         </tr>
-                        {{/each}}                      
+                        {{else}}
+                        <tr>
+                           <td>Không có nhân viên</td>
+                        </tr>
+                        {{/each}}     
+                                         
                      </table>
             </div>
          </div>
@@ -110,36 +115,34 @@
 <form name="delete-form" method="POST"></form>
 
 <script>
-  
-   var dataId = document.getElementById('deleteId');
-   var deleteId= dataId.getAttribute('data-id');
-
+   var deleteId;
    var deleteForm = document.forms['delete-form'];
+   var btnDeleteModal = document.getElementById('del');
 
    var modal = document.querySelector('.modal'); 
    var iconClose = document.querySelector('.modal-header i');
    var cancel = document.querySelector('.cancel');  
-   var open_modal= document.getElementsByClassName('status-btn-delete');
-   
-   for(var i=0; i< open_modal.length; i++){  
-
-      console.log(open_modal[i]);    
-
-     open_modal[i].addEventListener('click', ()=>{
-        modal.classList.add('show'); 
-         
-        console.log(deleteId);
-      })
-   }
   
+   var open_modal= document.querySelectorAll('.status-btn-delete');
+   Array.from(open_modal).forEach(btnDelete => {
+      btnDelete.addEventListener('click', function(e) {
+         deleteId= e.target.getAttribute('data-id');
+         modal.classList.add('show');
+      })
+   })
 
    iconClose.addEventListener('click', ()=>{
       modal.classList.remove('show');
    })
+
    cancel.addEventListener('click', () =>{
       modal.classList.remove('show');
    })
-
+   
+   btnDeleteModal.onclick = function() {         
+      deleteForm.action = '/admin/staff/'+ deleteId + '?_method=DELETE';
+      deleteForm.submit();
+   }
     //document.addEventListener('DOMContentLoaded', function() {
      //   var deleteId;
      //   var deleteForm = document.forms['delete-form'];
