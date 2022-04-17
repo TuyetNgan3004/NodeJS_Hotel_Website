@@ -39,6 +39,21 @@ const quickSearchRoom = async (req, res, next) => {
     res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(result) });
 }
 
+const add =  (req, res, next) => {
+    Room.find()
+        .then(rooms => {
+            res.render('TabRoomsAdmin/addRoomAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) });
+        })
+        .catch(next);
+}
+
+const store =  (req, res, next) => {
+    const room = new Room(req.body);
+    room.save() 
+        .then( res.redirect('/admin/room'))
+        .catch(error =>{
+        })     
+}
 
 
-module.exports = { showRoom, showBooking,  showCheckIn , quickSearchRoom};
+module.exports = { showRoom, showBooking,  showCheckIn , quickSearchRoom, add, store};
