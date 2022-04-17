@@ -3,7 +3,6 @@ const router = express.Router();
 
 const roomAdminController = require('../app/controllers/RoomAdminController');
 
-router.get ('/room/query/:attribute', roomAdminController.quickSearchRoom);
-router.get('/room', roomAdminController.showRoom)
+router.get('/bookingRoom', roomAdminController.showBooking)
 
 module.exports = router;

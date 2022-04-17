@@ -294,6 +294,28 @@
       margin-right: -12px;
    }
 
+   /* Ngan them trang danh sách nhan viên */
+   .row-staff{
+      justify-content: end;
+   }
+   
+   /* Ngan theem trang quan li checkin */
+   .row-table-checkin {
+      margin-top: 20px;    
+   }
+
+   .row-margin{
+      margin-left: 0;
+      margin-right: 0;
+   }
+
+   .col {
+      padding-left: 12px;
+      padding-right: 12px;
+   }
+
+
+
    .col {
       padding-left: 12px;
       padding-right: 12px;

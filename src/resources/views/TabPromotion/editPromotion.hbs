@@ -1,0 +1,75 @@
+<div class="main">
+         <div class="header">
+            <div class="menu-mobile">
+               <label for="nav-mobile-input">
+                  <i class="fa-solid fa-bars"></i>
+               </label>
+            </div>
+
+            <div class="user-avatar">
+               <div class="user-img-container">
+                  <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt=""
+                     class="user-img">
+               </div>
+               <div class="user-info">
+                  <p class="user-name">User Name</p>
+                  <p class="user-role">User Role</p>
+               </div>
+
+               <div class="user-function">
+                  <a href="" class="function-item">Log Out</a>
+               </div>
+            </div>
+         </div>
+
+         <div class="content">
+            <div class="grid">
+               <p class="page-title">Tạo khuyến mãi mới</p>
+               <div class="table-list-container">
+                       <form method="POST" action="/promotion/{{promotion._id}}?_method=PUT">
+                     <div class="row">
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-number" class="form-label">Mã khuyến mãi</label>
+                           <input id="room-number" type="text" class="form-input" name="MaKM" value="{{promotion.MaKM}}">
+                        </div>
+
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-name" class="form-label">Giá khuyến mãi</label>
+                           <input id="room-name" type="text" class="form-input" name="GiaKM" value="{{promotion.GiaKM}}">
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-img" class="form-label">Ngày áp dụng</label>
+                           <input id="room-img" type="datetime" class="form-input" name="NgayApDung" value="{{promotion.NgayApDung}}">
+                        </div>
+
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-type" class="form-label">Ngày hết hạn</label>
+                           <input id="room-type" type="datetime" class="form-input" name="NgayHetHan" value="{{promotion.NgayHetHan}}">
+                        </div>
+                     </div>
+
+                     
+
+                     <div class="row no-gutters">
+                        <div class="col l-12 m-12 c-12">
+                           <div class="col l-12 m-12 c-12">
+                              <label class="form-label">Nội dung khuyến mãi</label>
+                           </div>
+                           <div class="col l-12 m-12 c-12">
+                                <input type="text" class="form-textarea" name="NoiDungKM" value="{{promotion.NoiDungKM}}">
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="row no-gutters submit-btn-container">
+                        <button type="submit" class="status-btn submit-btn">Lưu thông tin</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+    </div>
+</div>

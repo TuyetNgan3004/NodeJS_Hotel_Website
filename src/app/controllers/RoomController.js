@@ -54,7 +54,7 @@ const quickSearchRoom = async (req, res, next) => {
         return r.r_type.toLowerCase().indexOf(attribute.toLowerCase()) !== -1 ||
         r.r_people.toLowerCase().indexOf(attribute.toLowerCase()) !== -1
     })
-    res.render('TabRoomsClient/rooms', { layout: 'mainClient.hbs' }, { rooms: multipleToObject(result) });
+    res.render('TabRoomsClient/rooms', { layout: 'mainClient.hbs', rooms: multipleToObject(result) });
 }
 
 module.exports = { showRoomList, showRoomDetail, showBookingRoom, store, quickSearchRoom };

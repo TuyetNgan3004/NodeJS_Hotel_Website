@@ -1,4 +1,6 @@
 const Room = require('../models/Room');
+const Customer = require('../models/Customer');
+
 const { multipleToObject } = require('../../config/utility/mongoose');
 const { mongooseToObject } = require('../../config/utility/mongoose');
 
@@ -11,4 +13,32 @@ const showRoom =  (req, res, next) => {
         .catch(next);
 }
 
-module.exports = { showRoom };
+const showBooking =  (req, res, next) => {
+    Customer.find()
+        .then(customers => {
+            res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', customers: multipleToObject(customers) });
+        })
+        .catch(next);
+}
+
+const showCheckIn =  (req, res, next) => {
+    Room.find()
+        .then(rooms => {
+            res.render('TabCheckInAdmin/checkInAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) });
+        })
+        .catch(next);
+}
+
+const quickSearchRoom = async (req, res, next) => {
+    // lấy giá trị bấm bên categories
+    let attribute = req.params.attribute;
+    let room = await Room.find();
+    let result = room.filter((r) => {
+        return r.r_status.toLowerCase().indexOf(attribute.toLowerCase()) !== -1
+    })
+    res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(result) });
+}
+
+
+
+module.exports = { showRoom, showBooking,  showCheckIn , quickSearchRoom};

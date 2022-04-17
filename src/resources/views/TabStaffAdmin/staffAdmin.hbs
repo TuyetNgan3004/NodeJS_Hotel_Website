@@ -1,0 +1,166 @@
+ <div class="main">
+         <div class="header">
+            <div class="menu-mobile">
+               <label for="nav-mobile-input">
+                  <i class="fa-solid fa-bars"></i>
+               </label>
+            </div>
+
+            <div class="user-avatar">
+               <div class="user-img-container">
+                  <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt=""
+                     class="user-img">
+               </div>
+               <div class="user-info">
+                  <p class="user-name">User Name</p>
+                  <p class="user-role">User Role</p>
+               </div>
+
+               <div class="user-function">
+                  <a href="" class="function-item">Log Out</a>
+               </div>
+            </div>
+         </div>
+
+         <div class="content">
+            <div class="grid">
+               <p class="page-title">Danh sách nhân viên</p>
+               <div class="table-list-container">
+                
+                  <div class="row row-staff filter-row-mobile filter-row-mobile-noreverse">
+                     <!-- <div class="col l-8 m-12 c-12">
+                        <div class="filter-container">
+                           <a href="" class="filter-link"><span class="filter-box">Tất cả đơn</span></a>
+                           <a href="" class="filter-link"><span class="filter-box">Chưa xác nhận</span></a>
+                           <a href="" class="filter-link"><span class="filter-box">Đã xác nhận</span></a>
+                        </div>
+                     </div> -->
+                     
+
+                     <div class="col l-4 m-12 c-12">
+                        <div class="search-bar">
+                           <i class="search-icon fas fa-search"></i>
+                           <input class="search-input" type="text" placeholder="seaching here">
+                        </div>
+                     </div>
+                     
+                     
+                     <div class="col l-12 m-12 c-12">
+                       <div class="create-btn-container">
+                           <a href="staff/add">
+                               <span class="status-btn">
+                                  <i class="fas fa-plus"></i> Tạo nhân viên mới
+                               </span>
+                           </a>
+                       </div>
+                  </div>
+                 </div>
+                  <div class="table-container">
+                     <table class="data-table">
+                        <tr>
+                           <th scope="col">Mã nhân viên</th>
+                           <th scope="col">Tên nhân viên</th>
+                           <th scope="col">Ngày sinh</th>
+                           <th scope="col">Số điện thoại</th>
+                           <th scope="col">Tên tài khoản</th>
+                           <th scope="col">Mật khẩu</th>
+                           <th scope="col">Chức vụ</th>
+                           <th scope="col">Chỉnh sửa</th>
+                           <th scope="col">Xoá</th>
+                        </tr>
+                        {{#each staffs}}
+                        <tr>
+                           <td>{{this._id}}</td>
+                           <td>{{this.s_name}}</td>
+                           <td>{{this.s_datebirth}}</td>
+                           <td>{{this.s_phone}}</td>
+                           <td>{{this.s_account}}</td>
+                           <td>{{this.s_password}}</td>
+                           <td>{{this.s_position}}</td>                          
+                           <td>
+                              <span class="status-btn">Chỉnh sửa</span>
+                           </td>
+                           <td>
+                            <span id="deleteId" class="status-btn-delete" data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Xoá</span>
+                           </td>
+                        </tr>
+                        {{else}}
+                        <tr>
+                           <td>Không có nhân viên</td>
+                        </tr>
+                        {{/each}}     
+                                         
+                     </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div id="modal-delete" class="modal ">
+      <div class="modalContent">
+         <div class="modal-header">
+            <p>Xoá nội dung</p>   
+            <i class="fa-solid fa-xmark"></i>     
+         </div>
+         <div class="modal-content">
+            <p>Bạn có chắc chắn muốn xoá ?</p>
+         </div>
+         <div class="modal-footer">
+            <button id="del" class="del"  >Xoá</button>
+            <button id="cancel" class="cancel" >Huỷ</button>
+      </div>
+   </div>
+</div>      
+<form name="delete-form" method="POST"></form>
+
+<script>
+   var deleteId;
+   var deleteForm = document.forms['delete-form'];
+   var btnDeleteModal = document.getElementById('del');
+
+   var modal = document.querySelector('.modal'); 
+   var iconClose = document.querySelector('.modal-header i');
+   var cancel = document.querySelector('.cancel');  
+  
+   var open_modal= document.querySelectorAll('.status-btn-delete');
+   Array.from(open_modal).forEach(btnDelete => {
+      btnDelete.addEventListener('click', function(e) {
+         deleteId= e.target.getAttribute('data-id');
+         modal.classList.add('show');
+      })
+   })
+
+   iconClose.addEventListener('click', ()=>{
+      modal.classList.remove('show');
+   })
+
+   cancel.addEventListener('click', () =>{
+      modal.classList.remove('show');
+   })
+   
+   btnDeleteModal.onclick = function() {         
+      deleteForm.action = '/admin/staff/'+ deleteId + '?_method=DELETE';
+      deleteForm.submit();
+   }
+    //document.addEventListener('DOMContentLoaded', function() {
+     //   var deleteId;
+     //   var deleteForm = document.forms['delete-form'];
+     //   var btnDelete = document.getElementById('del');
+
+     //   $('#modal-delete').on('show.modal', function (event) {
+     //       var button = $(event.relatedTarget) // Button that triggered the modal
+     //       deleteId = button.data('id') ;
+     //   });
+
+      //  var btnDelete = document.getElementById('del');
+        
+      //  btnDelete.onclick = function() {         
+      //      deleteForm.action = '/staff/'+ deleteId + '?_method= DELETE';
+      //      deleteForm.submit();
+      //  }
+   // })
+</script>
+
+
+      

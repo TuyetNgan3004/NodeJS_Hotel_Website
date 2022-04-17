@@ -1,0 +1,78 @@
+<div class="main">
+         <div class="header">
+            <div class="menu-mobile">
+               <label for="nav-mobile-input">
+                  <i class="fa-solid fa-bars"></i>
+               </label>
+            </div>
+
+            <div class="user-avatar">
+               <div class="user-img-container">
+                  <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt=""
+                     class="user-img">
+               </div>
+               <div class="user-info">
+                  <p class="user-name">User Name</p>
+                  <p class="user-role">User Role</p>
+               </div>
+
+               <div class="user-function">
+                  <a href="" class="function-item">Log Out</a>
+               </div>
+            </div>
+         </div>
+
+         <div class="content">
+            <div class="grid">
+               <p class="page-title">Tạo nhân viên mới</p>
+               <div class="table-list-container">
+                  <form method="POST" action="/admin/staff/add/store">
+                     <div class="row">
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-number" class="form-label">Mã nhân viên</label>
+                           <input id="room-number" name="manv" type="text" class="form-input" placeholder="Nhập mã nhân viên">
+                        </div>
+
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-name" class="form-label">Tên nhân viên</label>
+                           <input id="room-name" name="s_name" type="text" class="form-input" placeholder="Nhập tên nhân viên">
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col l-6 m-6 c-6">
+                           <label for="room-price" class="form-label">Ngày sinh</label>
+                           <input id="room-price" name="s_datebirth" type="date" class="form-input" placeholder="dd/mm/yyyy">
+                        </div>
+
+                        <div class="col l-6 m-6 c-6">
+                           <label for="room-people" class="form-label">Số điện thoại</label>
+                           <input id="room-people" name="s_phone" type="text" class="form-input" placeholder="09XXXXXXX">
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col l-6 m-4 c-12">
+                           <label for="room-img" class="form-label">Tài khoản</label>
+                           <input id="room-img" name="s_account" type="text" class="form-input" placeholder="Nhập tài khoản ">
+                        </div>
+
+                        <div class="col l-4 m-4 c-12">
+                           <label for="room-type" class="form-label">Mật khẩu</label>
+                           <input id="room-type" name="s_password" type="text" class="form-input" placeholder="Nhập mật khẩu">
+                        </div>
+
+                        <div class="col l-2 m-4 c-12">
+                           <label for="room-people" class="form-label">Chức vụ</label>
+                           <input id="room-people" name="s_position" type="text"  class="form-input" placeholder="Nhập chức vụ">
+                        </div>
+                     </div>
+
+                     <div class="row no-gutters submit-btn-container">
+                        <button type="submit" class="status-btn submit-btn">Tạo nhân viên</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
