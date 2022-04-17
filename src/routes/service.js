@@ -5,4 +5,14 @@ const ServiceController = require('../app/controllers/ServiceController');
 
 router.get('/', ServiceController.showService)
 
+router.get('/create', ServiceController.create);
+
+router.post('/create', ServiceController.recieve);
+
+router.get('/list', ServiceController.store);
+
+router.get('/:id/edit', ServiceController.edit);
+
+router.put('/:id', ServiceController.update);
+
 module.exports = router;

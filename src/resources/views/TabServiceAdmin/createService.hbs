@@ -1,0 +1,76 @@
+     <div class="main">
+         <div class="header">
+            <div class="menu-mobile">
+               <label for="nav-mobile-input">
+                  <i class="fa-solid fa-bars"></i>
+               </label>
+            </div>
+
+            <div class="user-avatar">
+               <div class="user-img-container">
+                  <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt=""
+                     class="user-img">
+               </div>
+               <div class="user-info">
+                  <p class="user-name">User Name</p>
+                  <p class="user-role">User Role</p>
+               </div>
+
+               <div class="user-function">
+                  <a href="" class="function-item">Log Out</a>
+               </div>
+            </div>
+         </div>
+
+         <div class="content">
+            <div class="grid">
+               <p class="page-title">Tạo dịch vụ mới</p>
+               <div class="table-list-container">
+                 <form method="POST" action="/service/create" >
+                     <div class="row">
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-number" class="form-label">Mã dịch vụ</label>
+                           <input id="room-number" type="text" class="form-input" placeholder="SP101" name="MaDV">
+                        </div>
+
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-name" class="form-label">Loại dịch vụ</label>
+                           <input id="room-name" type="text" class="form-input" placeholder="Giặt ủi" name="LoaiDV">
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col l-6 m-6 c-12">
+                            <label for="room-name" class="form-label">Tên dịch vụ</label>
+                            <input id="room-name" type="text" class="form-input" placeholder="Giặt quần áo" name="TenDV">
+                         </div>
+
+                        <div class="col l-6 m-6 c-12">
+                           <label for="room-type" class="form-label">Gía dịch vụ</label>
+                           <input id="room-type" type="text" class="form-input" placeholder="40,000 VNĐ" name="GiaDV">
+                        </div>
+                     </div>
+
+                    
+
+                     <div class="row no-gutters">
+                        <div class="col l-12 m-12 c-12">
+                           <div class="col l-12 m-12 c-12">
+                              <label class="form-label">Miêu tả dịch vụ</label>
+                           </div>
+                           <div class="col l-12 m-12 c-12">
+                                {{!-- <input type="text" class="form-textarea" placeholder="40,000 VNĐ" name="MotaDV"> --}}
+                              <textarea id="" class="form-textarea"
+                                 placeholder="Nhập miêu tả tại đây..." name="MotaDV"></textarea>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="row no-gutters submit-btn-container">
+                        <button class="status-btn submit-btn">Lưu thông tin</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
