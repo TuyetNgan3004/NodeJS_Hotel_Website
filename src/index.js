@@ -16,6 +16,13 @@ var hbs = handlebars.create({
    extname: 'hbs'
 })
 
+hbs.handlebars.registerHelper('ifCond', function (v1, v2, options) {
+   if (v1 === v2) {
+       return options.fn(this);
+   }
+   return options.inverse(this);
+ });
+
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));

@@ -51,6 +51,7 @@ const quickSearchRoom = async (req, res, next) => {
     let attribute = req.params.attribute;
     let room = await Room.find();
     let result = room.filter((r) => {
+        
         return r.r_type.toLowerCase().indexOf(attribute.toLowerCase()) !== -1 ||
         r.r_people.toLowerCase().indexOf(attribute.toLowerCase()) !== -1
     })
