@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const roomAdminController = require('../app/controllers/RoomAdminController');
+const checkinController = require('../app/controllers/CheckInController');
 
-router.get('/checkIn', roomAdminController.showCheckIn)
+router.get('/checkIn', checkinController.showCheckIn)
 
 module.exports = router;

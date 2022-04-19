@@ -135,7 +135,7 @@
 }
 
 .bg-img1 {
-   background-image: url('https://alandamarbellahotel.com/wp-content/uploads/2020/07/Habitacion_Doble-Deluxe_Alanda_Marbella_Hotel_1920px_04.jpg');
+   background-image: url('../img/hotel_background.jpg');
    background-position: center;
    background-attachment: fixed;
    background-size: cover;

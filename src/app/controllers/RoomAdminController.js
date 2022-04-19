@@ -15,16 +15,9 @@ const showRoom =  (req, res, next) => {
 
 const showBooking =  (req, res, next) => {
     Customer.find()
-        .then(customers => {
+    .populate('roomID')
+        .then(customers => {          
             res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', customers: multipleToObject(customers) });
-        })
-        .catch(next);
-}
-
-const showCheckIn =  (req, res, next) => {
-    Room.find()
-        .then(rooms => {
-            res.render('TabCheckInAdmin/checkInAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) });
         })
         .catch(next);
 }
@@ -32,11 +25,15 @@ const showCheckIn =  (req, res, next) => {
 const quickSearchRoom = async (req, res, next) => {
     // lấy giá trị bấm bên categories
     let attribute = req.params.attribute;
-    let room = await Room.find();
-    let result = room.filter((r) => {
-        return r.r_status.toLowerCase().indexOf(attribute.toLowerCase()) !== -1
-    })
-    res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(result) });
+    var room;
+    console.log('---------------------',attribute);
+    if(attribute == 'controng') {
+        room = await Room.find({r_status: 'còn trống'});
+    }
+    else if(attribute == 'dangsudung'){
+        room = await Room.find({r_status: 'đang sử dụng'});
+    }
+    res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(room) });
 }
 
 const add =  (req, res, next) => {
@@ -55,5 +52,9 @@ const store =  (req, res, next) => {
         })     
 }
 
+const confirm =(req, res, next) => {
 
-module.exports = { showRoom, showBooking,  showCheckIn , quickSearchRoom, add, store};
+}
+
+module.exports = { showRoom, showBooking, quickSearchRoom};
+

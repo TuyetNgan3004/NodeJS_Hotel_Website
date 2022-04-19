@@ -43,9 +43,7 @@ function Total(){
         var roomPrice = document.getElementById('room-price').textContent.replaceAll(',','');
         var sum= parseInt(roomPrice)  
         sum = sum * total_Day;
-        var total = document.getElementById('total').value = Intl.NumberFormat().format(sum);
-       
-        
+        var total = document.getElementById('total').value = Intl.NumberFormat().format(sum);   
     }
 
     else if(number_dCheckin > number_dCheckout && m_checkin < m_checkout){
