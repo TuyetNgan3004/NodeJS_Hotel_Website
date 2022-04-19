@@ -46,25 +46,29 @@
                   <div class="table-container">
                      <table class="data-table">
                         <tr>
-                           <th scope="col">Mã đơn đặt</th>
+                           {{!-- <th scope="col">Mã đơn đặt</th> --}}
                            <th scope="col">Tên khách hàng</th>
                            <th scope="col">Số điện thoại</th>
                            <th scope="col">Phòng</th>
                            <th scope="col">Ngày nhận phòng</th>
                            <th scope="col">Ngày trả phòng</th>
-                           <th scope="col">Trạng thái</th>
+                           <th scope="col">Xác nhận</th>
+                           <th scope="col">Huỷ</th>
                         </tr>
 
                         {{#each customers}}
                         <tr>
-                           <td>{{this._id}}</td>
+                           {{!-- <td>{{this._id}}</td> --}}
                            <td>{{this.c_name}}</td>
                            <td>{{this.c_phone}}</td>
                            <td>{{this.roomID.r_name}} </td>
                            <td>{{this.c_checkin}}</td>
                            <td>{{this.c_checkout}}</td>
                            <td>
-                              <span class="status-btn">Confirm</span>
+                              <span class="status-btn">Xác nhận</span>
+                           </td>
+                           <td>
+                              <span class="status-btn">Huỷ</span>
                            </td>
                         </tr>
                         {{/each}}
