@@ -21,14 +21,6 @@ const showBooking =  (req, res, next) => {
         .catch(next);
 }
 
-const showCheckIn =  (req, res, next) => {
-    Room.find()
-        .then(rooms => {
-            res.render('TabCheckInAdmin/checkInAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) });
-        })
-        .catch(next);
-}
-
 const quickSearchRoom = async (req, res, next) => {
     // lấy giá trị bấm bên categories
     let attribute = req.params.attribute;
@@ -41,4 +33,4 @@ const quickSearchRoom = async (req, res, next) => {
 
 
 
-module.exports = { showRoom, showBooking,  showCheckIn , quickSearchRoom};
+module.exports = { showRoom, showBooking, quickSearchRoom};
