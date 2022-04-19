@@ -1,88 +1,93 @@
 <div class="main">
-         <div class="header">
-            <div class="menu-mobile">
-               <label for="nav-mobile-input">
-                  <i class="fa-solid fa-bars"></i>
-               </label>
-            </div>
+   <div class="header">
+      <div class="menu-mobile">
+         <label for="nav-mobile-input">
+            <i class="fa-solid fa-bars"></i>
+         </label>
+      </div>
 
-            <div class="user-avatar">
-               <div class="user-img-container">
-                  <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt=""
-                     class="user-img">
-               </div>
-               <div class="user-info">
-                  <p class="user-name">User Name</p>
-                  <p class="user-role">User Role</p>
-               </div>
-
-               <div class="user-function">
-                  <a href="" class="function-item">Log Out</a>
-               </div>
-            </div>
+      <div class="user-avatar">
+         <div class="user-img-container">
+            <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt="" class="user-img">
+         </div>
+         <div class="user-info">
+            <p class="user-name">User Name</p>
+            <p class="user-role">User Role</p>
          </div>
 
-         <div class="content">
-            <div class="grid">
-               <p class="page-title">Danh sách phòng</p>
-               <div class="table-list-container">
-                  <div class="row filter-row-mobile">
-                     <div class="col l-8 m-12 c-12">
-                        <div class="filter-container">
-                           <a href="/admin/room" class="filter-link"><span class="filter-box">Tất cả phòng</span></a>
-                           <a href="/admin/room/query/controng" class="filter-link"><span class="filter-box">Phòng trống</span></a>
-                           <a href="/admin/room/query/dangsudung" class="filter-link"><span class="filter-box">Phòng đang sử dụng</span></a>
-                        </div>
-                     </div>
+         <div class="user-function">
+            <a href="" class="function-item">Log Out</a>
+         </div>
+      </div>
+   </div>
 
-                     <div class="col l-4 m-12 c-12">
-                        <div class="search-bar">
-                           <i class="search-icon fas fa-search"></i>
-                           <input class="search-input" type="text" placeholder="seaching here">
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row">
-                     <div class="col l-12 m-12 c-12">
-                        <div class="create-btn-container">
-                           <a href="room/add">
-                              <span class="status-btn">
-                                 <i class="fas fa-plus"></i> Tạo mới
-                              </span>
-                           </a>
-                        </div>
-                     </div>
-                     {{#each rooms}}
-                     <div class="col l-3 m-6 c-12">
-                        <a href="" class="adm-room-link">
-                           <div class="adm-room-card">
-                              <div class="adm-room-img"
-                                 style="background-image: url(https://i.pinimg.com/564x/24/25/4d/24254de9533e46373d61f03440414706.jpg);">
-                                 <div class="adm-room-number">{{this.r_number}}</div>
-                                 <div class="adm-room-status">{{this.r_status}}</div>
-                              </div>
-                              <div class="adm-room-info">
-                                 <div class="adm-room-attr">
-                                    <span class="adm-room-type">{{this.r_name}}</span>
-                                    <span class="adm-room-price">{{this.r_price}}
-                                       <!-- <i class="fa-solid fa-dong-sign"></i> -->
-                                    </span>
-                                    
-
-                                 </div>
-                                 <div class="adm-room-value">
-                                    <p class="adm-room-people">{{this.r_people}} người</p>
-                                    <p class="adm-room-people">Giường: {{this.r_bed}}</p>
-                                    
-                                 </div>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                     {{/each}}
+   <div class="content">
+      <div class="grid">
+         <p class="page-title">Danh sách phòng</p>
+         <div class="table-list-container">
+            <div class="row filter-row-mobile">
+               <div class="col l-8 m-12 c-12">
+                  <div class="filter-container">
+                     <a href="/admin/room" class="filter-link"><span class="filter-box">Tất cả phòng</span></a>
+                     <a href="/admin/room/query/empty" class="filter-link"><span class="filter-box">Phòng
+                           trống</span></a>
+                     <a href="/admin/room/query/used" class="filter-link"><span class="filter-box">Phòng đang sử
+                           dụng</span></a>
                   </div>
                </div>
+
+               <div class="col l-4 m-12 c-12">
+                  <div class="search-bar">
+                     <i class="search-icon fas fa-search"></i>
+                     <input class="search-input" type="text" placeholder="seaching here">
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col l-12 m-12 c-12">
+                  <div class="create-btn-container">
+                     <span class="status-btn">
+                        <i class="fas fa-plus"></i> Tạo mới
+                     </span>
+                  </div>
+               </div>
+               {{#each rooms}}
+               <div class="col l-3 m-6 c-12">
+                  <a href="" class="adm-room-link">
+                     <div class="adm-room-card">
+                        <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">
+                           <div class="adm-room-number">{{this.r_number}}</div>
+                           {{#ifEquals r_status "còn trống"}}
+                           <div class="adm-room-status">Còn trống</div>
+                           {{/ifEquals}}
+
+                           {{#ifEquals r_status "đang sử dụng"}}
+                           <div class="adm-room-status adm-room-status-inuse">Đang sử dụng</div>
+                           {{/ifEquals}}
+                        </div>
+                        
+                        <div class="adm-room-info">
+                           <div class="adm-room-attr">
+                              <span class="adm-room-type">{{this.r_name}}</span>
+                              <span class="adm-room-price">{{this.r_price}}
+                                 <!-- <i class="fa-solid fa-dong-sign"></i> -->
+                              </span>
+
+
+                           </div>
+                           <div class="adm-room-value">
+                              <p class="adm-room-people">{{this.r_people}} người</p>
+                              <p class="adm-room-people">Giường: {{this.r_bed}}</p>
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               {{/each}}
             </div>
          </div>
       </div>
+   </div>
+</div>

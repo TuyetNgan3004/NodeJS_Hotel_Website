@@ -16,12 +16,10 @@ var hbs = handlebars.create({
    extname: 'hbs'
 })
 
-hbs.handlebars.registerHelper('ifCond', function (v1, v2, options) {
-   if (v1 === v2) {
-       return options.fn(this);
-   }
-   return options.inverse(this);
- });
+hbs.handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+   return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');

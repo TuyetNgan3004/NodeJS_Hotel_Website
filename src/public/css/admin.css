@@ -390,7 +390,7 @@
    font-size: 1.8rem;
    min-width: 70px;
    color: var(--white-color);
-   background-color: rgb(9, 131, 9);
+   background-color: rgba(9, 131, 9, 0.7);
 }
 
 .adm-room-status::before {
@@ -398,9 +398,17 @@
    position: absolute;
    top: 100%;
    left: 0;
-   border-top: 3px solid rgb(9, 131, 9);
+   border-top: 3px solid rgba(9, 131, 9, 0.7);
    border-left: 3px solid transparent;
    filter: brightness(60%);
+}
+
+.adm-room-status.adm-room-status-inuse {
+   background-color: rgba(209, 43, 43, 0.7);
+}
+
+.adm-room-status.adm-room-status-inuse.adm-room-status::before  {
+   border-top: 3px solid rgba(209, 43, 43, 0.7);
 }
 
 .adm-room-info {
@@ -410,8 +418,8 @@
    font-size: 1.6rem;
    padding: 10px;
    font-weight: 300;
-   
 }
+
 
 .adm-room-attr {
    display: flex;
@@ -419,6 +427,20 @@
    justify-content: space-between;
    border-bottom: 1px solid var(--white-color);
    padding-bottom: 6px;
+}
+
+.adm-room-card.adm-room-card-checkin .adm-room-attr {
+   flex-direction: column;
+}
+
+.adm-room-card.adm-room-card-checkin .adm-room-type,
+.adm-room-card.adm-room-card-checkin .adm-room-price {
+   font-size: 1.6rem;
+   margin-bottom: 4px;
+}
+
+.adm-room-card.adm-room-card-checkin .adm-room-info {
+   background-color: rgba(38, 50, 56, 0.7);
 }
 
 .adm-room-type {
