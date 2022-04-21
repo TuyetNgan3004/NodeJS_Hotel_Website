@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Staff = new Schema ({
+    s_id: { type: String, maxLength: 255 },
     s_name: { type: String, maxLength: 255 },
     s_datebirth: { type: String, maxLength: 255 },
     s_phone: { type: String, maxLength: 255 },

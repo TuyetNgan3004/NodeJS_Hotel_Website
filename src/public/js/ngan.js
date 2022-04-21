@@ -20,15 +20,10 @@
 // })
 
 //lấy dữ liệu ngày nhận và đặt phòng và tính tiền phòng
-
-
 var checkin = document.getElementById("checkin");
 var checkout = document.getElementById("checkout");
-
 checkin.onchange = function() {Total()}
-
 checkout.onchange = function() {Total()}
-
 function Total(){
     var d_checkin = checkin.value.slice(0,2);
     var d_checkout = checkout.value.slice(0,2);
@@ -45,7 +40,6 @@ function Total(){
         sum = sum * total_Day;
         var total = document.getElementById('total').value = Intl.NumberFormat().format(sum);   
     }
-
     else if(number_dCheckin > number_dCheckout && m_checkin < m_checkout){
         switch(number_mCheckin){
             case 1:
@@ -62,7 +56,6 @@ function Total(){
                 var total = document.getElementById('total').value = sum ;
             break;
         }  
-
         switch(number_mCheckin){
             case 4:
             case 6:
@@ -73,10 +66,8 @@ function Total(){
                 var sum = parseInt(roomPrice);
                 sum= sum* total_Day* 1000;
                 var total = document.getElementById('total').value = sum ;
-
             break;
         }  
-
         switch(number_mCheckin){
             case 2:
                 var total_Day = 28 - number_dCheckin + number_dCheckout;  
@@ -84,12 +75,9 @@ function Total(){
                 var sum = parseInt(roomPrice);
                 sum= sum* total_Day* 1000;
                 var total = document.getElementById('total').value = sum ;
-
             break;
         }
-
     }
-
 }
 
 

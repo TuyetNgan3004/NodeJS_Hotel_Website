@@ -2,11 +2,10 @@ const express = require('express');
 var handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-
 const app = express();
 const route = require('./routes');
 const path = require('path');
-const port = 3333;
+const port = 4444;
 
 const connection = require('./config/database/connection');
 
