@@ -8,7 +8,6 @@ const showBooking =  (req, res, next) => {
     Customer.find( { c_status: {$nin : 'Đã huỷ'} } )
     .populate('roomID')
         .then(customers => {  
-
             res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', 
             customers: multipleToObject(customers) });
         })
@@ -17,7 +16,7 @@ const showBooking =  (req, res, next) => {
 
 const confirm = async (req, res, next) => {
     Customer.findByIdAndUpdate(req.params.id, { c_status: 'Đã xác nhận' })
-        .then(customers => {
+        .then(() => {           
             res.redirect('/admin/bookingRoom')
         })
         .catch(next)
@@ -25,7 +24,7 @@ const confirm = async (req, res, next) => {
 
 const updateStatus = async (req, res, next) => {
     Customer.findByIdAndUpdate(req.params.id, { c_status: 'Đã huỷ' })
-        .then(customers => {
+        .then(() => {
             res.redirect('/admin/bookingRoom')
         })
         .catch(next)
@@ -37,11 +36,13 @@ const quickSearchBooking = async (req, res, next) => {
     console.log(req.params.attribute);
     if(req.params.attribute == 'confirm') {
         
-        customers = await Customer.find({c_status: 'chờ xác nhận'});
+        customers = await Customer.find({c_status: 'chờ xác nhận'})
+        .populate('roomID')
     }
     else if(req.params.attribute == 'confirmed'){
         
-        customers = await Customer.find({c_status: 'Đã xác nhận'});
+        customers = await Customer.find({c_status: 'Đã xác nhận'})
+        .populate('roomID')
     }
     res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', customers: multipleToObject(customers) });
 }
