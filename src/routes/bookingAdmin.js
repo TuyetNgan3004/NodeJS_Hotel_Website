@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const roomAdminController = require('../app/controllers/RoomAdminController');
+const bookingAdminController = require('../app/controllers/BookingAdminController');
 
-router.get('/bookingRoom/:id', roomAdminController.confirm);
-router.get('/bookingRoom', roomAdminController.showBooking)
+router.get('/bookingRoom/:attribute', bookingAdminController.quickSearchBooking)
+router.get('/bookingRoom/:id/updateStatus', bookingAdminController.updateStatus);
+router.get('/bookingRoom/:id', bookingAdminController.confirm);
+router.get('/bookingRoom', bookingAdminController.showBooking)
 
 module.exports = router;

@@ -18,8 +18,6 @@ class FeedbackController {
             .then(() => res.redirect("/feedback"))
             .catch(next);
     }
-
-    
     //[GET] /feedback/store 
     store(req, res, next) {
         Feedback.find({})

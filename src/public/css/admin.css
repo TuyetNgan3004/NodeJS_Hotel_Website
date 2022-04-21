@@ -318,6 +318,23 @@
    box-shadow: 1px 2px 4px #ccc;
 }
 
+.status-btn-disable {
+   display: inline-block;
+   text-align: center;
+   color: var(--white-color);
+   background-color: gray;
+   min-width: 90px;
+   font-size: 1.4rem;
+   padding: 8px 10px;
+   border-radius: 3px;
+   cursor: default;
+   user-select: none;
+   box-shadow: 1px 4px 4px #ccc;
+   border: none;
+   
+}
+
+
 .status-btn-delete {
    display: inline-block;
    text-align: center;
