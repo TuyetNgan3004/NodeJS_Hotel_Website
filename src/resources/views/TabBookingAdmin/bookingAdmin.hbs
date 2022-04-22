@@ -30,8 +30,8 @@
                      <div class="col l-8 m-12 c-12">
                         <div class="filter-container">
                            <a href="/admin/bookingRoom" class="filter-link"><span class="filter-box">Tất cả đơn</span></a>
-                           <a href="/admin/bookingRoom/confirm" class="filter-link"><span class="filter-box">Chưa xác nhận</span></a>
-                           <a href="/admin/bookingRoom/confirmed" class="filter-link"><span class="filter-box">Đã xác nhận</span></a>
+                           <a href="/admin/bookingRoom/query/confirm" class="filter-link"><span class="filter-box">Chưa xác nhận</span></a>
+                           <a href="/admin/bookingRoom/query/confirmed" class="filter-link"><span class="filter-box">Đã xác nhận</span></a>
                         </div>
                      </div>
 
@@ -66,11 +66,11 @@
                            <td>{{this.c_checkout}}</td>
                            <td>
                               {{#ifEquals c_status 'Đã xác nhận'}}
-                              <span class="status-btn-disable">Đã xác nhận</span>
+                              <span  class="status-btn-disable">Đã xác nhận</span>
 
                               {{else}}
                                  <a href="/admin/bookingRoom/{{this._id}}">
-                                    <span disabled=true class="status-btn">Xác nhận</span>
+                                    <span  class="status-btn">Xác nhận</span>
                                  </a>
 
                               {{/ifEquals}}
