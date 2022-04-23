@@ -25,6 +25,11 @@
             <div class="col l-5 m-12 c-12">
                <div class="feedback-rightside">
                   <h4>Gửi phản hồi</h4>
+                   {{#if message}}
+                     <div style="text-align: center" class="alert alert-{{message.type}}">
+                        <strong>{{message.intro}}</strong> {{message.message}}
+                     </div>
+                  {{/if}}
                  <form method="POST" action="/feedback" name="contact">
                               <div class="feedback__form-item">
                                  <label for="feedback_name">Tên</label>
