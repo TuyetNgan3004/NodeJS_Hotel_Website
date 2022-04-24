@@ -5,21 +5,14 @@ const { multipleToObject } = require('../../config/utility/mongoose');
 const { mongooseToObject } = require('../../config/utility/mongoose');
 
 //[GET] /admin/room/
-const showRoom = (req, res, next) => {
-    Room.find()
-        .then(rooms => {
-            res.render('TabRoomsAdmin/roomsAdmin', {
-                layout: 'mainAdmin.hbs',
-                rooms: multipleToObject(rooms)
-            });
-        })
-        .catch(next);
+const showRoom = async(req, res, next) => {
+    const rooms = await Room.find()
+    res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) })
 }
 
 //[GET] /admin/room/query/:attribute
 const quickSearchRoom = async(req, res, next) => {
     // lấy giá trị bấm bên categories
-    console.log(req.params.attribute);
     var room;
     if (req.params.attribute == 'controng') {
         room = await Room.find({ r_status: 'còn trống' });
