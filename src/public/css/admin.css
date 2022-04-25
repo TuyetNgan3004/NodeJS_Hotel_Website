@@ -503,5 +503,13 @@
 }
 
 .submit-btn-container {
-    justify-content: right;
+   justify-content: right;
 }
+
+.data-table .td-btn {
+   width: 30px;
+   padding-right: 0;
+   padding-left: 0;
+   text-align: center;
+} 
+

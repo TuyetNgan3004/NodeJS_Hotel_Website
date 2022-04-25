@@ -50,7 +50,8 @@ const quickSearchBooking = async(req, res, next) => {
         customers = await Customer.find({ c_status: 'Đã xác nhận' })
             .populate('roomID')
     }
-    res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', customers: multipleToObject(customers) });
+    console.log(customers)
+    // res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', customers: multipleToObject(customers) });
 }
 
 module.exports = { showBooking, confirm, updateStatus, quickSearchBooking };
