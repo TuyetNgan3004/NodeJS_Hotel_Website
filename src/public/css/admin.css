@@ -513,6 +513,13 @@
    justify-content: right;
 }
 
+.data-table .td-btn {
+   width: 30px;
+   padding-right: 0;
+   padding-left: 0;
+   text-align: center;
+} 
+
 
 
 
