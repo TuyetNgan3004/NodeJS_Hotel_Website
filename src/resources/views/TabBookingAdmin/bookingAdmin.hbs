@@ -52,8 +52,8 @@
                            <th scope="col">Phòng</th>
                            <th scope="col">Ngày nhận phòng</th>
                            <th scope="col">Ngày trả phòng</th>
-                           <th scope="col">Xác nhận</th>
-                           <th scope="col">Huỷ</th>
+                           <th scope="col"></th>
+                           <th scope="col"></th>
                         </tr>
 
                         {{#each customers}}
@@ -64,7 +64,7 @@
                            <td>{{this.roomID.r_name}} </td>
                            <td>{{this.c_checkin}}</td>
                            <td>{{this.c_checkout}}</td>
-                           <td>
+                           <td class="td-btn">
                               {{#ifEquals c_status 'Đã xác nhận'}}
                               <span class="status-btn-disable">Đã xác nhận</span>
 
@@ -75,7 +75,7 @@
 
                               {{/ifEquals}}
                            </td>
-                           <td>                             
+                           <td class="td-btn">                             
                               <span id="deleteId" class="status-btn-delete"  data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Huỷ</span>                            
                            </td>
                         </tr>
