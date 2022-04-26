@@ -24,52 +24,52 @@
 
          <div class="content">
             <div class="grid">
-               <p class="page-title">Tạo phòng mới</p>
+               <p class="page-title">Chỉnh sửa thông tin phòng</p>
                <div class="table-list-container">
-                  <form method="POST" action="/admin/room/add/store">
+                  <form method="POST" action="/admin/room/{{rooms._id}}?_method=PUT">
                      <div class="row">
                         <div class="col l-6 m-6 c-12">
                            <label for="room-number" class="form-label">Số phòng</label>
-                           <input name="r_number" id="room-number" type="text" class="form-input" placeholder="SP101">
+                           <input name="r_number" id="room-number" value="{{rooms.r_number}}" type="text" class="form-input" placeholder="SP101">
                         </div>
 
                         <div class="col l-6 m-6 c-12">
                            <label for="room-name" class="form-label">Tên phòng</label>
-                           <input name="r_name" id="room-name" type="text" class="form-input" placeholder="Single - Standard">
+                           <input name="r_name" id="room-name" type="text" value="{{rooms.r_name}}" class="form-input" placeholder="Single - Standard">
                         </div>
                      </div>
 
                      <div class="row">
                         <div class="col l-3 m-3 c-12">
                            <label for="room-img" class="form-label">Hình ảnh</label>
-                           <input name="r_img" id="room-img" type="text" class="form-input" placeholder="link url">
+                           <input name="r_img" id="room-img" type="text" value="{{rooms.r_img.thumbnail}}" class="form-input" placeholder="link url">
                         </div>
 
                         <div class="col l-3 m-3 c-12">
                            <label for="room-type" class="form-label">Loại phòng</label>
-                           <input name="r_type" id="room-type" type="text" class="form-input" placeholder="Standard">
+                           <input name="r_type" id="room-type" type="text" value="{{rooms.r_type}}" class="form-input" placeholder="Standard">
                         </div>
 
                         <div class="col l-3 m-3 c-12">
                            <label for="room-people" class="form-label">Số người tối đa</label>
-                           <input name="r_people" id="room-people" type="number" min="0" class="form-input" placeholder="4">
+                           <input name="r_people" id="room-people" type="text" value="{{rooms.r_people}}"  min="0" class="form-input" placeholder="4">
                         </div>
 
                         <div class="col l-3 m-3 c-12">
                            <label for="room-people" class="form-label">Trạng thái phòng</label>
-                           <input name="r_status" id="room-people" type="text" class="form-input" placeholder="còn trống">
+                           <input name="r_status" id="room-people" type="text" value="{{rooms.r_status}}" class="form-input" placeholder="4">
                         </div>
                      </div>
 
                      <div class="row">
                         <div class="col l-6 m-6 c-6">
                            <label for="room-price" class="form-label">Loại giường</label>
-                           <input name="r_bed" id="room-price" type="text" class="form-input" placeholder="King">
+                           <input name="r_bed" id="room-price" type="text" value="{{rooms.r_bed}}" class="form-input" placeholder="King">
                         </div>
 
                         <div class="col l-6 m-6 c-6">
                            <label for="room-people" class="form-label">Giá phòng</label>
-                           <input name="r_price" id="room-people" type="number"  class="form-input" placeholder="1,000,000">
+                           <input name="r_price" id="room-people" type="text" value="{{rooms.r_price}}" class="form-input" placeholder="1,000,000">
                         </div>
                      </div>
 
@@ -80,7 +80,7 @@
                            </div>
                            <div class="col l-12 m-12 c-12">
                               <textarea name="r_desc" id="" class="form-textarea"
-                                 placeholder="Nhập miêu tả tại đây..."></textarea>
+                                 placeholder="Nhập miêu tả tại đây...">{{rooms.r_desc}}</textarea>
                            </div>
                         </div>
                      </div>
