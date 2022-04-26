@@ -59,7 +59,5 @@ const store =  (req, res, next) => {
         })     
 }
 
-
-
 module.exports = { showRoom, quickSearchRoom, add, edit, update, store };
 

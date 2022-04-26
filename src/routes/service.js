@@ -15,4 +15,6 @@ router.get('/:id/edit', ServiceController.edit);
 
 router.put('/:id', ServiceController.update);
 
+router.delete('/:id', ServiceController.deleteModal);
+
 module.exports = router;
