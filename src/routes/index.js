@@ -10,6 +10,7 @@ const checkInAdminRouter = require('./checkInAdmin');
 const staffAdminRouter = require('./staffAdmin');
 
 
+
 function route(app) {
   app.use('/', homeRouter);
   app.use('/room', roomRouter );

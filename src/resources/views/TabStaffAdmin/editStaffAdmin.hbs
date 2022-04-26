@@ -24,52 +24,52 @@
 
          <div class="content">
             <div class="grid">
-               <p class="page-title">Tạo nhân viên mới</p>
+               <p class="page-title">Chỉnh sửa nhân viên</p>
                <div class="table-list-container">
-                  <form method="POST" action="/admin/staff/add/store">
+                  <form method="POST" action="/admin/staff/{{staffs._id}}?_method=PUT">
                      <div class="row">
                         <div class="col l-6 m-6 c-12">
                            <label for="room-number" class="form-label">Mã nhân viên</label>
-                           <input id="room-number" name="s_id" type="text" class="form-input" placeholder="Nhập mã nhân viên">
+                           <input id="room-number" value="{{staffs.s_id}}" name="manv" type="text" class="form-input" placeholder="Nhập mã nhân viên">
                         </div>
 
                         <div class="col l-6 m-6 c-12">
                            <label for="room-name" class="form-label">Tên nhân viên</label>
-                           <input id="room-name" name="s_name" type="text" class="form-input" placeholder="Nhập tên nhân viên">
+                           <input id="room-name" value="{{staffs.s_name}}" name="s_name" type="text" class="form-input" placeholder="Nhập tên nhân viên">
                         </div>
                      </div>
 
                      <div class="row">
                         <div class="col l-6 m-6 c-6">
                            <label for="room-price" class="form-label">Ngày sinh</label>
-                           <input id="room-price" name="s_datebirth" type="date" class="form-input" placeholder="dd/mm/yyyy">
+                           <input id="room-price" value="{{staffs.s_datebirth}}" name="s_datebirth" type="date" class="form-input" placeholder="dd/mm/yyyy">
                         </div>
 
                         <div class="col l-6 m-6 c-6">
                            <label for="room-people" class="form-label">Số điện thoại</label>
-                           <input id="room-people" name="s_phone" type="text" class="form-input" placeholder="09XXXXXXX">
+                           <input id="room-people" value="{{staffs.s_phone}}" name="s_phone" type="text" class="form-input" placeholder="09XXXXXXX">
                         </div>
                      </div>
 
                      <div class="row">
                         <div class="col l-6 m-4 c-12">
                            <label for="room-img" class="form-label">Tài khoản</label>
-                           <input id="room-img" name="s_account" type="text" class="form-input" placeholder="Nhập tài khoản ">
+                           <input id="room-img" value="{{staffs.s_account}}" name="s_account" type="text" class="form-input" placeholder="Nhập tài khoản ">
                         </div>
 
                         <div class="col l-4 m-4 c-12">
                            <label for="room-type" class="form-label">Mật khẩu</label>
-                           <input id="room-type" name="s_password" type="text" class="form-input" placeholder="Nhập mật khẩu">
+                           <input id="room-type" value="{{staffs.s_password}}" name="s_password" type="text" class="form-input" placeholder="Nhập mật khẩu">
                         </div>
 
                         <div class="col l-2 m-4 c-12">
                            <label for="room-people" class="form-label">Chức vụ</label>
-                           <input id="room-people" name="s_position" type="text"  class="form-input" placeholder="Nhập chức vụ">
+                           <input id="room-people" value="{{staffs.s_position}}" name="s_position" type="text"  class="form-input" placeholder="Nhập chức vụ">
                         </div>
                      </div>
 
                      <div class="row no-gutters submit-btn-container">
-                        <button type="submit" class="status-btn submit-btn">Tạo nhân viên</button>
+                        <button type="submit" class="status-btn submit-btn">Lưu chỉnh sửa</button>
                      </div>
                   </form>
                </div>

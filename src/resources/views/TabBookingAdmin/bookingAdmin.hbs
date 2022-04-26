@@ -29,9 +29,9 @@
                   <div class="row filter-row-mobile">
                      <div class="col l-8 m-12 c-12">
                         <div class="filter-container">
-                           <a href="" class="filter-link"><span class="filter-box">Tất cả đơn</span></a>
-                           <a href="" class="filter-link"><span class="filter-box">Chưa xác nhận</span></a>
-                           <a href="" class="filter-link"><span class="filter-box">Đã xác nhận</span></a>
+                           <a href="/admin/bookingRoom" class="filter-link"><span class="filter-box">Tất cả đơn</span></a>
+                           <a href="/admin/bookingRoom/query/confirm" class="filter-link"><span class="filter-box">Chưa xác nhận</span></a>
+                           <a href="/admin/bookingRoom/query/confirmed" class="filter-link"><span class="filter-box">Đã xác nhận</span></a>
                         </div>
                      </div>
 
@@ -65,14 +65,21 @@
                            <td>{{this.c_checkin}}</td>
                            <td>{{this.c_checkout}}</td>
                            <td>
-                              <span class="status-btn">Xác nhận</span>
+                              {{#ifEquals c_status 'Đã xác nhận'}}
+                              <span  class="status-btn-disable">Đã xác nhận</span>
+
+                              {{else}}
+                                 <a href="/admin/bookingRoom/{{this._id}}">
+                                    <span  class="status-btn">Xác nhận</span>
+                                 </a>
+
+                              {{/ifEquals}}
                            </td>
-                           <td>
-                              <span class="status-btn">Huỷ</span>
+                           <td>                             
+                              <span id="deleteId" class="status-btn-delete"  data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Huỷ</span>                            
                            </td>
                         </tr>
                         {{/each}}
-                        
 
                      </table>
                   </div>
@@ -80,3 +87,71 @@
             </div>
          </div>
       </div>
+
+
+<div id="modal-delete" class="modal ">
+   <div class="modalContent">
+      <div class="modal-header">
+         <p>Huỷ đơn đặt phòng ?</p>   
+         <i class="fa-solid fa-xmark"></i>     
+      </div>
+      <div class="modal-content">
+         <p>Bạn có chắc chắn muốn huỷ đơn đặt phòng ?</p>
+      </div>
+      <div class="modal-footer">
+         <button id="del" class="del" >Huỷ</button>
+         <button id="cancel" class="cancel" >Thoát</button>
+      </div>
+   </div>
+</div> 
+
+<form name="delete-form" method="GET"></form>
+
+<script>
+   var deleteId;
+   var deleteForm = document.forms['delete-form'];
+   var btnDeleteModal = document.getElementById('del');
+
+   var modal = document.querySelector('.modal'); 
+   var iconClose = document.querySelector('.modal-header i');
+   var cancel = document.querySelector('.cancel');  
+  
+   var open_modal= document.querySelectorAll('.status-btn-delete');
+   Array.from(open_modal).forEach(btnDelete => {
+      btnDelete.addEventListener('click', function(e) {
+         deleteId= e.target.getAttribute('data-id');
+         console.log(deleteId);
+         modal.classList.add('show');
+      })
+   })
+
+   iconClose.addEventListener('click', ()=>{
+      modal.classList.remove('show');
+   })
+
+   cancel.addEventListener('click', () =>{
+      modal.classList.remove('show');
+   })
+   
+   btnDeleteModal.onclick = function() {         
+      deleteForm.action = '/admin/bookingRoom/'+ deleteId +'/updateStatus' ;
+      deleteForm.submit();
+   }
+    //document.addEventListener('DOMContentLoaded', function() {
+     //   var deleteId;
+     //   var deleteForm = document.forms['delete-form'];
+     //   var btnDelete = document.getElementById('del');
+
+     //   $('#modal-delete').on('show.modal', function (event) {
+     //       var button = $(event.relatedTarget) // Button that triggered the modal
+     //       deleteId = button.data('id') ;
+     //   });
+
+      //  var btnDelete = document.getElementById('del');
+        
+      //  btnDelete.onclick = function() {         
+      //      deleteForm.action = '/staff/'+ deleteId + '?_method= DELETE';
+      //      deleteForm.submit();
+      //  }
+   // })
+</script>

@@ -29,9 +29,9 @@
                <div class="col l-8 m-12 c-12">
                   <div class="filter-container">
                      <a href="/admin/room" class="filter-link"><span class="filter-box">Tất cả phòng</span></a>
-                     <a href="/admin/room/query/empty" class="filter-link"><span class="filter-box">Phòng
+                     <a href="/admin/room/query/controng" class="filter-link"><span class="filter-box">Phòng
                            trống</span></a>
-                     <a href="/admin/room/query/used" class="filter-link"><span class="filter-box">Phòng đang sử
+                     <a href="/admin/room/query/dangsudung" class="filter-link"><span class="filter-box">Phòng đang sử
                            dụng</span></a>
                   </div>
                </div>
@@ -47,14 +47,16 @@
             <div class="row">
                <div class="col l-12 m-12 c-12">
                   <div class="create-btn-container">
-                     <span class="status-btn">
-                        <i class="fas fa-plus"></i> Tạo mới
-                     </span>
+                     <a href="/admin/room/add">
+                        <span class="status-btn">
+                           <i class="fas fa-plus"></i> Tạo phòng mới
+                        </span>
+                     </a>
                   </div>
                </div>
                {{#each rooms}}
                <div class="col l-3 m-6 c-12">
-                  <a href="" class="adm-room-link">
+                  <a href="/admin/room/{{_id}}/edit" class="adm-room-link">
                      <div class="adm-room-card">
                         <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">
                            <div class="adm-room-number">{{this.r_number}}</div>

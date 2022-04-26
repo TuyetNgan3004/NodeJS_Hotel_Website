@@ -31,9 +31,7 @@ for (var i = 0; i < accordions.length; i++) {
 
 
 // Chỉnh format ngày/ tháng/ năm và chỉ được chọn ngày hiện tại trở đi
-
 config1 = {
-   // enableTime: true, (GIỜ)
    dateFormat: "d-m-Y",
    minDate: "today",
 }

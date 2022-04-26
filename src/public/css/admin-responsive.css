@@ -1,6 +1,8 @@
 /* PC */
 @media (min-width: 64em) {
-  
+   .adm-room-attr {
+      flex-direction: column;
+   }
 
 }  
 
@@ -22,6 +24,7 @@
    .header {
       justify-content: space-between;
    }
+   
 }
 
 /* Tablet */

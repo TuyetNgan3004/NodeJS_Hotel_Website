@@ -70,7 +70,7 @@
                         </tr>
                         {{#each staffs}}
                         <tr>
-                           <td>{{this._id}}</td>
+                           <td>{{this.s_id}}</td>
                            <td>{{this.s_name}}</td>
                            <td>{{this.s_datebirth}}</td>
                            <td>{{this.s_phone}}</td>
@@ -78,7 +78,9 @@
                            <td>{{this.s_password}}</td>
                            <td>{{this.s_position}}</td>                          
                            <td>
-                              <span class="status-btn">Chỉnh sửa</span>
+                              <a href="/admin/staff/{{this._id}}/edit">
+                                 <span class="status-btn">Chỉnh sửa</span>
+                              </a>
                            </td>
                            <td>
                             <span id="deleteId" class="status-btn-delete" data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Xoá</span>
@@ -118,11 +120,9 @@
    var deleteId;
    var deleteForm = document.forms['delete-form'];
    var btnDeleteModal = document.getElementById('del');
-
    var modal = document.querySelector('.modal'); 
    var iconClose = document.querySelector('.modal-header i');
-   var cancel = document.querySelector('.cancel');  
-  
+   var cancel = document.querySelector('.cancel');   
    var open_modal= document.querySelectorAll('.status-btn-delete');
    Array.from(open_modal).forEach(btnDelete => {
       btnDelete.addEventListener('click', function(e) {
@@ -130,19 +130,17 @@
          modal.classList.add('show');
       })
    })
-
    iconClose.addEventListener('click', ()=>{
       modal.classList.remove('show');
    })
-
    cancel.addEventListener('click', () =>{
       modal.classList.remove('show');
    })
-   
    btnDeleteModal.onclick = function() {         
       deleteForm.action = '/admin/staff/'+ deleteId + '?_method=DELETE';
       deleteForm.submit();
    }
+
     //document.addEventListener('DOMContentLoaded', function() {
      //   var deleteId;
      //   var deleteForm = document.forms['delete-form'];
@@ -160,7 +158,8 @@
       //      deleteForm.submit();
       //  }
    // })
-</script>
+   </script>
+
 
 
       

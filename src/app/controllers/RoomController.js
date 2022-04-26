@@ -11,16 +11,15 @@ const showRoomList =  (req, res, next) => {
         })
         .catch(next);
 }
-
 const showRoomDetail =  (req, res, next) => {
     //GET roomList/:id
     Room.findOne({ _id: req.params.id })
         .then(rooms => {
-            res.render('TabRoomsClient/showRoomDetail', { layout: 'mainClient.hbs', rooms: mongooseToObject(rooms) });
+            res.render('TabRoomsClient/showRoomDetail', { layout: 'mainClient.hbs', 
+            rooms: mongooseToObject(rooms) });
         })
         .catch(next);
 }
-
 const showBookingRoom = (req, res, next) => {
     Room.findOne({ _id: req.params.id })
         .then(rooms => {
@@ -41,7 +40,8 @@ const store = (req, res, next) => {
             .exec(function (err, r) {
                 if (err) return console.log(err);
                 // console.log(r);
-                res.render('TabRoomsClient/showBookingSuccess',{ layout: 'mainClient.hbs', customers: mongooseToObject(r) });
+                res.render('TabRoomsClient/showBookingSuccess',{ layout: 'mainClient.hbs', 
+                customers: mongooseToObject(r) });
             })
     });
 }
@@ -50,12 +50,11 @@ const quickSearchRoom = async (req, res, next) => {
     // lấy giá trị bấm bên categories
     let attribute = req.params.attribute;
     let room = await Room.find();
-    let result = room.filter((r) => {
-        
+    let result = room.filter((r) => {       
         return r.r_type.toLowerCase().indexOf(attribute.toLowerCase()) !== -1 ||
         r.r_people.toLowerCase().indexOf(attribute.toLowerCase()) !== -1
     })
     res.render('TabRoomsClient/rooms', { layout: 'mainClient.hbs', rooms: multipleToObject(result) });
 }
-
 module.exports = { showRoomList, showRoomDetail, showBookingRoom, store, quickSearchRoom };
+

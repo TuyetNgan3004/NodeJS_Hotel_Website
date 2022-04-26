@@ -9,7 +9,6 @@ class PromotionController {
       create(req, res, next) {
          res.render("TabPromotion/createPromotion",{ layout: 'mainAdmin.hbs' });
      }
- 
      //[POST] /promotion/
      recieve(req, res, next) {
          console.log(req.body);
@@ -19,8 +18,6 @@ class PromotionController {
              .then(() => res.redirect("/promotion/list"))
              .catch(next);
      }
- 
-     
      //[GET] /promotion/store 
      store(req, res, next) {
          Promotion.find({})
@@ -29,7 +26,6 @@ class PromotionController {
              }))
              .catch(next);
      }
-
      // [GET] /promotion/:id/edit
     edit(req, res, next) {
         Promotion.findById(req.params.id)
