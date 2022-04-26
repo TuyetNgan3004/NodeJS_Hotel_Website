@@ -30,46 +30,46 @@
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Tên khách hàng</label>
-                     <input id="room-img" type="text" class="form-input" placeholder="Nhập tên khách hàng">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.c_name}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-type" class="form-label">Số điện thoại</label>
-                     <input id="room-type" type="text" class="form-input" placeholder="Nhập số điện thoại">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.c_phone}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-people" class="form-label">Email</label>
-                     <input id="room-people" type="text" class="form-input" placeholder="Nhập Email">
+                     <input id="room-people" type="text" class="form-input" value="{{cusBooked.c_email}}">
                   </div>
                </div>
 
                <div class="row">
                   <div class="col l-6 m-6 c-12">
                      <label for="room-img" class="form-label">Ngày nhận phòng</label>
-                     <input id="room-img" type="datetime-local" class="form-input" placeholder="Nhập ngày nhận phòng">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.c_checkin}}">
                   </div>
 
                   <div class="col l-6 m-6 c-12">
                      <label for="room-type" class="form-label">Ngày trả phòng</label>
-                     <input id="room-type" type="datetime-local" class="form-input" placeholder="Nhập ngày trả phòng">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.c_checkout}}">
                   </div>
                </div>
 
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Số phòng</label>
-                     <input id="room-img" type="text" class="form-input" placeholder="Nhập số phòng">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.roomID.r_number}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-type" class="form-label">Tên phòng</label>
-                     <input id="room-type" type="text" class="form-input" placeholder="Nhập tên phòng">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.roomID.r_name}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-people" class="form-label">Giá phòng</label>
-                     <input id="room-people" type="text" class="form-input" placeholder="Nhập giá phòng">
+                     <input id="room-people" type="text" class="form-input" value="{{cusBooked.roomID.r_price}}">
                   </div>
                </div>
 
@@ -147,7 +147,7 @@
                               <td>{{this.c_checkin}}</td>
                               <td>{{this.c_checkout}}</td>
                               <td>
-                                 <a class="status-btn" href="/admin/checkIn/{{this._id}}/checkInBooking">Checkin</a>
+                                 <a class="status-btn" href="">Checkin</a>
                               </td>
                            </tr>
                            {{/each}}
