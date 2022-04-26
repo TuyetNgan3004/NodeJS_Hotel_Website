@@ -10,4 +10,8 @@ router.post('/', feedbackController.recieve);
 
 router.get('/list', feedbackController.store);
 
+router.delete('/:id', feedbackController.deleteModal);
+
+// router.get ('/query/:attribute', feedbackController.quickSearchRoom);
+
 module.exports = router;

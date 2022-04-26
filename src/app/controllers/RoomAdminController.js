@@ -56,5 +56,5 @@ const confirm =(req, res, next) => {
 
 }
 
-module.exports = { showRoom, showBooking, quickSearchRoom};
+module.exports = { showRoom, showBooking, quickSearchRoom, add, store, confirm};
 
