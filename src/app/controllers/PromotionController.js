@@ -41,6 +41,12 @@ class PromotionController {
             .catch(next);
     }
 
+    deleteModal(req, res, next) {
+        Promotion.deleteOne({_id: req.params.id })
+        .then(() => res.redirect('back'))
+        .catch(next)
+    }
+
 }
  
  module.exports = new PromotionController;

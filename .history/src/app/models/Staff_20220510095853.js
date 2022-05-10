@@ -15,4 +15,4 @@ const Staff = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Staff', Staff);
+module.exports = mongoose.model('Staffs', Staff);

@@ -10,9 +10,10 @@ class LoginController {
     login(req, res, next) {
         const { s_email, s_password } = req.body;
         // console.log(s_email);
-        Staff.findOne({ s_account: s_email })
+        Staff.findOne({ s_email: s_email })
             .then(staff => {
                 if (!staff) {
+                    console.log(s_email);
                     req.session.message = {
                         type: 'danger',
                         intro: 'Email không tồn tại',
