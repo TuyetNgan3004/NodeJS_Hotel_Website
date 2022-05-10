@@ -27,4 +27,12 @@ const showCheckInBooking = async(req, res, next) => {
     });
 }
 
-module.exports = { showCheckIn, showCheckInBooking };
+const showCheckInList = async(req, res, next) => {
+    const roomsCheckIn = await Customer.find({c_status: 'Đang checkin'}).populate('roomID')
+    res.render('TabCheckInAdmin/checkInList', {
+        layout: 'mainAdmin.hbs',
+        customers: multipleToObject(roomsCheckIn)
+    });
+}
+
+module.exports = { showCheckIn, showCheckInBooking, showCheckInList};

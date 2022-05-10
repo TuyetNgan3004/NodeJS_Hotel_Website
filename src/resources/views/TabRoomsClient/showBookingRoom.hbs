@@ -1,105 +1,109 @@
-  <!-- Start main -->
-      <main class="main-section">
-         <!-- Start Slider -->
-         <div class="slider-area slider-height2">
-            <div class="slider-slogan-container">
-               <div class="slider-slogan">
-                  <span class="slider-slogan-text">
-                     Chi tiết đặt phòng
-                  </span>
-               </div>
-            </div>
-         </div>
-
-      <!-- Start Content -->
-      <div class="content-section">
-         <div class="content-container">
-            <div class="grid wide">
-                <div class="booking-room-head">
-                    <div class="booking-room-pic">
-                        <img src="https://i.pinimg.com/564x/af/15/29/af15290f3e346b822ef3e4cc55a8cf72.jpg" alt="">
-                    </div>
-                    <div class="booking-room-description">
-                       <p class="room-detail-description-name">Số phòng: {{rooms.r_number}}</p>
-                        <p class="room-detail-description-name">Tên phòng: {{rooms.r_name}}</p>
-                        <p id="room-price" class="room-detail-description-price">{{rooms.r_price}}</p>
-                        <p class="room-detail-description-content">{{rooms.r_desc}}</p>
-                        <p class="room-detail-description-note">Số người ở: {{rooms.r_people}} người</p>
-                        <p class="room-detail-description-note">Giường: {{rooms.r_bed}} </p>
-                        <p class="room-detail-description-note">Tiện ích: {{rooms.r_utilities}}</p>
-                    </div>
-                </div>
-    
-                <hr>
-                <div class="booking-room-title">
-                    <h3 class="title-item">Thông tin đặt phòng</h3>
-                </div>                 
-                  <form class="form small-form" method="POST" action="showBookingRoom/store">
-                  <input hidden name="roomID" value="{{rooms._id}}" type="text"> 
-                  <div class="row">
-                     <div class="form-group col l-12 m-12 c-12">
-                        <label for="username" class="form-label">Tên khách hàng</label>
-                        <input id="username"  name="c_name" type="text" class="form-input booking-input" placeholder="Học và tên">
-                        <span class="form-msg">Vui lòng nhập trường này</span>
-                     </div>
-                  </div>          
-
-                     <div class="row">
-                     <div class="form-group col l-12 m-12 c-12">
-                        <label for="username" class="form-label">Số điện thoại</label>
-                        <input id="username" name="c_phone" type="text" class="form-input booking-input" placeholder="09XX XXX XXX">
-                        <span class="form-msg">Vui lòng nhập trường này</span>
-                     </div>
-
-                     </div>
-                     <div class="row">
-                     <div class="form-group col l-12 m-12 c-12">
-                        <label for="username" class="form-label">Email</label>
-                        <input id="username" name="c_email" type="text" class="form-input booking-input" placeholder="abc@gmail.com">
-                        <span class="form-msg">Vui lòng nhập trường này</span>
-                     </div>
-                     </div>
-
-                     <div class="row">
-                        <div class="form-group col l-6 m-12 c-12 ">
-                           <label for="username" class="form-label">Ngày nhận phòng</label>
-                              <input id="checkin" name="c_checkin" type="date" class="form-input booking-input" placeholder="Chọn ngày nhận phòng">                                              
-                           <span class="form-msg">Vui lòng nhập trường này</span>
-                        </div>
-                        <div class="form-group col l-6 m-12 c-12 ">
-                           <label for="username" class="form-label">Ngày trả phòng</label>
-                           <input id="checkout"  name="c_checkout" type="date" class="form-input booking-input" placeholder="Chọn ngày trả phòng">
-                           
-                           <span class="form-msg">Vui lòng nhập trường này</span>
-                        </div>
-
-                        
-                     </div>
-                     
-                     <hr>
-
-                     {{!-- <div class="form-group">
-                        <label for="username" class="form-label">Mã khuyến mãi</label>
-                        <input id="username" type="text" class="form-input" placeholder="Mã khuyến mãi">
-                        <span class="form-msg">Vui lòng nhập trường này</span>
-                     </div> --}}
-                     <div class="total-money">
-                        <p id="title-total">Tổng tiền</p>
-                        {{!-- <p id="total" >{{rooms.r_price}}</p> --}}
-                        <input id="total" name="c_total" type="text" class="form-input" value="{{rooms.r_price}}">
-                         {{!-- <p id="total" name="c_total"></p> --}}
-                     </div>                     
-                     <div class="login-btn">
-                        <button class="btn-reverse btn--size-md btn--size-full">ĐẶT PHÒNG</button>
-                     </div>
-                  </form>             
-            </div>
+<!-- Start main -->
+<main class="main-section">
+   <!-- Start Slider -->
+   <div class="slider-area slider-height2">
+      <div class="slider-slogan-container">
+         <div class="slider-slogan">
+            <span class="slider-slogan-text">
+               Chi tiết đặt phòng
+            </span>
          </div>
       </div>
+   </div>
 
-      <!-- End Content -->
+   <!-- Start Content -->
+   <div class="content-section">
+      <div class="content-container">
+         <div class="grid wide">
+            <div class="booking-room-head">
+               <div class="booking-room-pic">
+                  <img src="https://i.pinimg.com/564x/af/15/29/af15290f3e346b822ef3e4cc55a8cf72.jpg" alt="">
+               </div>
+               <div class="booking-room-description">
+                  <p class="room-detail-description-name">Số phòng: {{rooms.r_number}}</p>
+                  <p class="room-detail-description-name">Tên phòng: {{rooms.r_name}}</p>
+                  <p id="room-price" class="room-detail-description-price">{{rooms.r_price}}</p>
+                  <p class="room-detail-description-content">{{rooms.r_desc}}</p>
+                  <p class="room-detail-description-note">Số người ở: {{rooms.r_people}} người</p>
+                  <p class="room-detail-description-note">Giường: {{rooms.r_bed}} </p>
+                  <p class="room-detail-description-note">Tiện ích: {{rooms.r_utilities}}</p>
+               </div>
+            </div>
 
-      </main>
-      <!-- End main -->
-      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-      
+            <hr>
+            <div class="booking-room-title">
+               <h3 class="title-item">Thông tin đặt phòng</h3>
+            </div>
+            <form class="form small-form" method="POST" action="showBookingRoom/store">
+               <input hidden name="roomID" value="{{rooms._id}}" type="text">
+               <div class="row">
+                  <div class="form-group col l-12 m-12 c-12">
+                     <label for="username" class="form-label">Tên khách hàng</label>
+                     <input id="username" name="c_name" type="text" class="form-input booking-input"
+                        placeholder="Học và tên">
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="form-group col l-12 m-12 c-12">
+                     <label for="username" class="form-label">Số điện thoại</label>
+                     <input id="username" name="c_phone" type="text" class="form-input booking-input"
+                        placeholder="09XX XXX XXX">
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+
+               </div>
+               <div class="row">
+                  <div class="form-group col l-12 m-12 c-12">
+                     <label for="username" class="form-label">Email</label>
+                     <input id="username" name="c_email" type="text" class="form-input booking-input"
+                        placeholder="abc@gmail.com">
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="form-group col l-6 m-12 c-12 ">
+                     <label for="username" class="form-label">Ngày nhận phòng</label>
+                     <input id="checkin" name="c_checkin" type="date" class="form-input booking-input"
+                        placeholder="Chọn ngày nhận phòng">
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+                  <div class="form-group col l-6 m-12 c-12 ">
+                     <label for="username" class="form-label">Ngày trả phòng</label>
+                     <input id="checkout" name="c_checkout" type="date" class="form-input booking-input"
+                        placeholder="Chọn ngày trả phòng">
+
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+
+
+               </div>
+
+               <hr>
+
+               {{!-- <div class="form-group">
+                  <label for="username" class="form-label">Mã khuyến mãi</label>
+                  <input id="username" type="text" class="form-input" placeholder="Mã khuyến mãi">
+                  <span class="form-msg">Vui lòng nhập trường này</span>
+               </div> --}}
+               <div class="total-money">
+                  <p id="title-total">Tổng tiền</p>
+                  {{!-- <p id="total">{{rooms.r_price}}</p> --}}
+                  <input id="total" name="c_total" type="text" class="form-input" value="{{rooms.r_price}}">
+                  {{!-- <p id="total" name="c_total"></p> --}}
+               </div>
+               <div class="login-btn">
+                  <button class="btn-reverse btn--size-md btn--size-full">ĐẶT PHÒNG</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+   <!-- End Content -->
+
+</main>
+<!-- End main -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

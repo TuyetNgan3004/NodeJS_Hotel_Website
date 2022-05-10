@@ -13,6 +13,7 @@ class LoginController {
         Staff.findOne({ s_account: s_email })
             .then(staff => {
                 if (!staff) {
+                    console.log(s_email);
                     req.session.message = {
                         type: 'danger',
                         intro: 'Email không tồn tại',

@@ -9,8 +9,8 @@ class LoginController {
     //[POST] /
     login(req, res, next) {
         const { s_email, s_password } = req.body;
-        // console.log(s_email);
-        Staff.findOne({ s_account: s_email })
+        console.log(s_email)
+        Staff.findOne({ s_email: s_email })
             .then(staff => {
                 if (!staff) {
                     req.session.message = {
