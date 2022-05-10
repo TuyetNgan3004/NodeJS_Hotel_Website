@@ -22,7 +22,10 @@
                     <div class="booking-room-description">
                        <p class="room-detail-description-name">Số phòng: {{rooms.r_number}}</p>
                         <p class="room-detail-description-name">Tên phòng: {{rooms.r_name}}</p>
-                        <p id="room-price" class="room-detail-description-price">{{rooms.r_price}}</p>
+                        <div class="price-room">
+                           <p id="room-price" class="room-detail-description-price">{{rooms.r_price}}</p>
+                           <i class="fa-solid fa-dong-sign room-detail-description-price"></i> 
+                        </div>
                         <p class="room-detail-description-content">{{rooms.r_desc}}</p>
                         <p class="room-detail-description-note">Số người ở: {{rooms.r_people}} người</p>
                         <p class="room-detail-description-note">Giường: {{rooms.r_bed}} </p>
