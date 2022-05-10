@@ -106,7 +106,7 @@
 }
 
 .booking-detail-description p{
-   padding: 5px 0;
+   padding: 10px 13px;
 }
  
 .booking-detail-description-name{
@@ -356,4 +356,13 @@
 .cancel:hover {
    transform: translateY(1px);
    background-color: var(--second-color);
+}
+
+.price-room {
+   /* position: relative; */
+   display: flex;
+}
+
+.price-room i{
+   padding: 12px 16px 12px 0;
 }

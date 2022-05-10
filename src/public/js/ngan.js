@@ -40,7 +40,7 @@ function Total(){
         sum = sum * total_Day;
         var total = document.getElementById('total').value = Intl.NumberFormat().format(sum);   
     }
-    else if(number_dCheckin > number_dCheckout && m_checkin < m_checkout){
+    else if(number_dCheckin > number_dCheckout && number_mCheckin < number_mCheckout){
         switch(number_mCheckin){
             case 1:
             case 3:
@@ -50,10 +50,10 @@ function Total(){
             case 10:
             case 12:
                 var total_Day = 31 - number_dCheckin + number_dCheckout;  
-                var roomPrice = document.getElementById('room-price').textContent;
+                var roomPrice = document.getElementById('room-price').textContent.replaceAll(',','');
                 var sum = parseInt(roomPrice);
-                sum= sum* total_Day* 1000;
-                var total = document.getElementById('total').value = sum ;
+                sum= sum* total_Day;
+                var total = document.getElementById('total').value =  Intl.NumberFormat().format(sum);   
             break;
         }  
         switch(number_mCheckin){
@@ -62,19 +62,19 @@ function Total(){
             case 9:
             case 11:
                 var total_Day = 30 - number_dCheckin + number_dCheckout;  
-                var roomPrice = document.getElementById('room-price').textContent;
+                var roomPrice = document.getElementById('room-price').textContent.replaceAll(',','');
                 var sum = parseInt(roomPrice);
-                sum= sum* total_Day* 1000;
-                var total = document.getElementById('total').value = sum ;
+                sum= sum* total_Day;
+                var total = document.getElementById('total').value =  Intl.NumberFormat().format(sum);   
             break;
         }  
         switch(number_mCheckin){
             case 2:
                 var total_Day = 28 - number_dCheckin + number_dCheckout;  
-                var roomPrice = document.getElementById('room-price').textContent;
+                var roomPrice = document.getElementById('room-price').textContent.replaceAll(',','');
                 var sum = parseInt(roomPrice);
-                sum= sum* total_Day* 1000;
-                var total = document.getElementById('total').value = sum ;
+                sum= sum* total_Day;
+                var total = document.getElementById('total').value =  Intl.NumberFormat().format(sum);   
             break;
         }
     }

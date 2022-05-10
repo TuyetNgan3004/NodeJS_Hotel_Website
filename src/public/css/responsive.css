@@ -28,7 +28,7 @@
    }
    
    .room-detail-description-name {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
    }
    .room-detail-description-price {
       font-size: 2.4rem;
@@ -175,6 +175,16 @@
    .feedback-rightside {
       margin-top: 20px;
    }
+
+   /* .price-room {
+      position: relative;
+      }
+   
+      .price-room i{
+         position: absolute;
+         top: 13px;
+         left: 141px;
+      } */
 }
 
 /* Tablet */
@@ -288,6 +298,15 @@
       font-size: 2.2rem;
   }
 
+  /* .price-room {
+   position: relative;
+   }
+
+   .price-room i{
+      position: absolute;
+      top: 13px;
+      left: 95px;
+   } */
    .container-form-input-pay {
       flex-direction: column;
    }
@@ -399,6 +418,15 @@
       font-size: 1.2rem;
    }
 
+   /* .price-room {
+      position: relative;
+   }
+   
+   .price-room i{
+      position: absolute;
+      top: 13px;
+      left: 88px;
+   } */
 }
 
 }
