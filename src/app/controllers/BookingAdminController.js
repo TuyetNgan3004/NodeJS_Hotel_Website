@@ -40,7 +40,6 @@ const updateStatus = async(req, res, next) => {
 const quickSearchBooking = async(req, res, next) => {
     // lấy giá trị bấm bên categories
     var customers;
-    console.log(req.params.attribute);
     if (req.params.attribute == 'confirm') {
 
         customers = await Customer.find({ c_status: 'chờ xác nhận' })
@@ -50,7 +49,6 @@ const quickSearchBooking = async(req, res, next) => {
         customers = await Customer.find({ c_status: 'Đã xác nhận' })
             .populate('roomID')
     }
-    console.log(customers)
     // res.render('TabBookingAdmin/bookingAdmin', { layout: 'mainAdmin.hbs', customers: multipleToObject(customers) });
 }
 

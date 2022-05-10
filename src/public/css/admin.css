@@ -305,6 +305,7 @@
     cursor: pointer;
     box-shadow: 1px 4px 4px #ccc;
     border: none;
+    text-decoration: none;
 }
 
 .status-btn:hover {
@@ -408,17 +409,17 @@
     position: absolute;
     top: 100%;
     left: 0;
-    border-top: 3px solid rgba(9, 131, 9, 0.7);
+    border-top: 3px solid rgba(9, 131, 9, 0.9);
     border-left: 3px solid transparent;
     filter: brightness(60%);
 }
 
 .adm-room-status.adm-room-status-inuse {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(209, 43, 43, 0.7);
 }
 
 .adm-room-status.adm-room-status-inuse.adm-room-status::before {
-    border-top: 3px solid rgba(209, 43, 43, 0.7);
+    border-top: 3px solid rgba(209, 43, 43, 0.9);
 }
 
 .adm-room-info {
