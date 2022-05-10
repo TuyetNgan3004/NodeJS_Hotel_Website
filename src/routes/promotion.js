@@ -13,4 +13,6 @@ router.get('/:id/edit', PromotionController.edit);
 
 router.put('/:id', PromotionController.update);
 
+router.delete('/:id', PromotionController.deleteModal);
+
 module.exports = router;

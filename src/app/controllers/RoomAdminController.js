@@ -34,12 +34,27 @@ const add = (req, res, next) => {
         .catch(next);
 }
 
-//[GET] /admin/add/store
-const store = (req, res, next) => {
+
+const edit =(req, res, next) => {
+    Room.findById(req.params.id)
+        .then(rooms => res.render('TabRoomsAdmin/editRoomAdmin',{ layout: 'mainAdmin.hbs',
+        rooms: mongooseToObject(rooms)
+        }))
+        .catch(next);
+}
+
+const update = (req, res, next) => {
+    Room.updateOne({ _id: req.params.id }, req.body)
+        .then(() => res.redirect('/admin/room'))
+        .catch(next);
+}
+
+const store =  (req, res, next) => {
     const room = new Room(req.body);
     room.save()
         .then(res.redirect('/admin/room'))
         .catch(error => {})
 }
 
-module.exports = { showRoom, quickSearchRoom, add, store };
+module.exports = { showRoom, quickSearchRoom, add, edit, update, store };
+
