@@ -26,7 +26,7 @@
          <p class="page-title">Phiếu checkin</p>
          <div class="table-list-container">
 
-            <form action="">
+            <form method="POST" action="/checkInAdmin/:id/checkInBooking/taophieu">
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Tên khách hàng</label>
@@ -86,7 +86,7 @@
                            </div> -->
 
                <div class="row no-gutters submit-btn-container">
-                  <button class="status-btn submit-btn">Tạo phiếu checkin</button>
+                  <button class="status-btn submit-btn" href="/chceckInAdmin/{{cusBooked._id}}/checkInBooking/taophieu">Tạo phiếu checkin</button>
                </div>
             </form>
 
@@ -106,28 +106,6 @@
                      </div>
 
                      <div class="table-container table-checkin-management">
-                        <table class="data-table">
-                           <tr>
-                              <th scope="col">Số phòng</th>
-                              <th scope="col">Tên phòng</th>
-                              <th scope="col">Tên khách hàng</th>
-                              <th scope="col">Số điện thoại</th>
-                              <th scope="col">Ngày nhận phòng</th>
-                              <th scope="col">Ngày trả phòng</th>
-                              <th scope="col">Checkin</th>
-                           </tr>
-                           <tr>
-                              <td>SP001</td>
-                              <td>Standard-Single</td>
-                              <td>Lê Văn Tùng</td>
-                              <td>0989183976</td>
-                              <td>15/04/2022</td>
-                              <td>17/04/2022</td>
-                              <td>
-                                 <span class="status-btn">Checkin</span>
-                              </td>
-                           </tr>
-                        </table>
                         <table class="data-table">
                            <tr>
                               <th scope="col">Số phòng</th>

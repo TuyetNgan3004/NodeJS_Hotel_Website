@@ -38,7 +38,7 @@
                      <div class="col l-4 m-12 c-12">
                         <div class="search-bar">
                            <i class="search-icon fas fa-search"></i>
-                           <input class="search-input" type="text" placeholder="seaching here">
+                           <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
                         </div>
                      </div>
                   </div>
@@ -57,7 +57,8 @@
                         </tr>
 
                         {{#each customers}}
-                        <tr>
+                        <tbody id="myTable">
+                            <tr>
                            {{!-- <td>{{this._id}}</td> --}}
                            <td>{{this.c_name}}</td>
                            <td>{{this.c_phone}}</td>
@@ -79,6 +80,7 @@
                               <span id="deleteId" class="status-btn-delete"  data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Huỷ</span>                            
                            </td>
                         </tr>
+                        </tbody>
                         {{/each}}
 
                      </table>
