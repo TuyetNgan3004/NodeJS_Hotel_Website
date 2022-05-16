@@ -39,7 +39,7 @@
                <div class="col l-4 m-12 c-12">
                   <div class="search-bar">
                      <i class="search-icon fas fa-search"></i>
-                     <input class="search-input" type="text" placeholder="seaching here">
+                     <input id="myInput" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
                   </div>
                </div>
             </div>
@@ -54,8 +54,9 @@
                      </a>
                   </div>
                </div>
+               
                {{#each rooms}}
-               <div class="col l-3 m-6 c-12">
+               <div class="js-myroom col l-3 m-6 c-12">
                   <a href="/admin/room/{{_id}}/edit" class="adm-room-link">
                      <div class="adm-room-card">
                         <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">

@@ -38,10 +38,10 @@
                      
 
                      <div class="col l-4 m-12 c-12">
-                        <div class="search-bar">
-                           <i class="search-icon fas fa-search"></i>
-                           <input class="search-input" type="text" placeholder="seaching here">
-                        </div>
+                           <div class="search-bar">
+                        <i class="search-icon fas fa-search"></i>
+                        <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                     </div>
                      </div>
                      
                      
@@ -69,7 +69,8 @@
                            <th scope="col">Xoá</th>
                         </tr>
                         {{#each staffs}}
-                        <tr>
+                        <tbody id="myTable">
+                           <tr>
                            <td>{{this.s_id}}</td>
                            <td>{{this.s_name}}</td>
                            <td>{{this.s_datebirth}}</td>
@@ -86,6 +87,8 @@
                             <span id="deleteId" class="status-btn-delete" data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Xoá</span>
                            </td>
                         </tr>
+                        </tbody>
+                        
                         {{else}}
                         <tr>
                            <td>Không có nhân viên</td>

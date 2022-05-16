@@ -23,7 +23,6 @@
    margin: auto;
    list-style: none;
 }
-
 .service__list-item img{
    display: block;
    width: 100%;
@@ -63,10 +62,15 @@ figure{
  .item-img {
     width: 100%;
  }
-
  .service__item-image{
    width: 100%;
-   padding-top: 100%;
+   height: 100%;
+   /* padding-top: 100%; */
+   /* background-repeat: no-repeat; */
+ }
+ .service__item-image-img{
+   width: 100%;
+   height: 100%;
  }
 
  .service__item-details-reverse{
@@ -190,4 +194,3 @@ label{
     text-align: center;
 }
  /* END FEEDBACK CONTENT */
-

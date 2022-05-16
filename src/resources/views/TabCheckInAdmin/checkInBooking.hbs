@@ -26,7 +26,7 @@
          <p class="page-title">Phiếu checkin</p>
          <div class="table-list-container">
 
-            <form action="">
+            <form method="POST" action="/checkInAdmin/:id/checkInBooking/taophieu">
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Tên khách hàng</label>
@@ -86,7 +86,7 @@
                            </div> -->
 
                <div class="row no-gutters submit-btn-container">
-                  <button class="status-btn submit-btn">Tạo phiếu checkin</button>
+                  <button class="status-btn submit-btn" href="/chceckInAdmin/{{cusBooked._id}}/checkInBooking/taophieu">Tạo phiếu checkin</button>
                </div>
             </form>
 
