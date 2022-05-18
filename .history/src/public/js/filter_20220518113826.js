@@ -1,7 +1,18 @@
+// Filter
+// $(document).ready(function(){
+//   $("#myInputAdmin").on("keyup", function() {
+//     var value = $(this).val().toLowerCase();
+//     $("#myTable tr").filter(function() {
+//       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+//     });
+//   });
+// });
+
 // Filter rooms by searchbar 
 const searchingWord = document.querySelector('#myInput').addEventListener("keyup", function () {
   const keyword = document.querySelector('#myInput');
   const value = keyword.value.toLowerCase();
+  console.log(value);
 
   const rooms = document.querySelectorAll('.js-myroom').forEach(room => {
 

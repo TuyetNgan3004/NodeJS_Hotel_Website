@@ -26,7 +26,7 @@
          <p class="page-title">Phiếu checkin</p>
          <div class="table-list-container">
 
-            <form method="POST" action="">
+            <form method="POST" action="/checkInAdmin/:id/checkInBooking/taophieu">
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Tên khách hàng</label>
@@ -72,9 +72,21 @@
                      <input id="room-people" type="text" class="form-input" value="{{cusBooked.roomID.r_price}}">
                   </div>
                </div>
-               
+
+               <!-- <div class="row no-gutters">
+                              <div class="col l-12 m-12 c-12">
+                                 <div class="col l-12 m-12 c-12">
+                                    <label class="form-label">Miêu tả phòng</label>
+                                 </div>
+                                 <div class="col l-12 m-12 c-12">
+                                    <textarea name="" id="" class="form-textarea"
+                                       placeholder="Nhập miêu tả tại đây..."></textarea>
+                                 </div>
+                              </div>
+                           </div> -->
+
                <div class="row no-gutters submit-btn-container">
-                  <a href="/admin/checkIn/{{cusBooked._id}}/checkInBooking/taophieu" class="status-btn submit-btn">Tạo phiếu checkin</a>
+                  <button class="status-btn submit-btn" href="/chceckInAdmin/{{cusBooked._id}}/checkInBooking/taophieu">Tạo phiếu checkin</button>
                </div>
             </form>
 
@@ -89,7 +101,7 @@
                      <div class="col l-4 m-12 c-12 l-o-8">
                         <div class="search-bar">
                            <i class="search-icon fas fa-search"></i>
-                           <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                           <input class="search-input" type="text" placeholder="seaching here">
                         </div>
                      </div>
 
@@ -105,8 +117,7 @@
                               <th scope="col">Checkin</th>
                            </tr>
                            {{#each roomBooked}}
-                           <tbody id="myTable">
-                              <tr>
+                           <tr>
                               <td>{{this.roomID.r_number}}</td>
                               <td>{{this.roomID.r_name}}</td>
                               <td>{{this.c_name}}</td>
@@ -114,11 +125,9 @@
                               <td>{{this.c_checkin}}</td>
                               <td>{{this.c_checkout}}</td>
                               <td>
-                                 <a class="status-btn" href="/checkInAdmin/{{this._id}}/checkInBooking">Checkin</a>
+                                 <a class="status-btn" href="">Checkin</a>
                               </td>
                            </tr>
-                           </tbody>
-                           
                            {{/each}}
                         </table>
                      </div>
@@ -131,14 +140,13 @@
                   <div class="row">
                      <div class="col l-4 m-12 c-12 l-o-8">
                         <div class="search-bar">
-                          <i class="search-icon fas fa-search"></i>
-                           <input id="myInput" class="search-bar-input" type="text" name="input-search"
-                              placeholder="Nhập tìm kiếm...">
+                           <i class="search-icon fas fa-search"></i>
+                           <input class="search-input" type="text" placeholder="seaching here">
                         </div>
                      </div>
 
                      {{#each rooms}}
-                     <div class="js-myroom col l-4 m-6 c-12">
+                     <div class="col l-4 m-6 c-12">
                         <a href="" class="adm-room-link">
                            <div class="adm-room-card adm-room-card-checkin">
                               {{!-- <div class="adm-room-img"
@@ -153,6 +161,7 @@
                                     <span class="adm-room-price">{{this.r_price}}
                                        <!-- <i class="fa-solid fa-dong-sign"></i> -->
                                     </span>
+                                    
 
                                  </div>
                                  <div class="adm-room-value">

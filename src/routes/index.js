@@ -24,7 +24,6 @@ function route(app) {
   app.use('/admin', bookingAdminRouter);
   app.use('/admin', checkInAdminRouter);
   app.use('/admin', staffAdminRouter);
-
   app.use('/admin', billAdminRouter);
 }
 module.exports = route;

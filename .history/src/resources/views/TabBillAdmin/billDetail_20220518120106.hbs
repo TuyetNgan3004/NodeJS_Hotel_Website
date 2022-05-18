@@ -26,16 +26,17 @@
          <p class="page-title">Chi tiết hoá đơn</p>
          <div class="table-list-container">
             <div class="row filter-row-mobile">
-
-               <div class="col l-8 m-6 c-12">
+               <div class="col l-6 m-6 c-12">
                   <div class="row">
-                     <div class="form-label col l-4">Số hoá đơn</div>
-                     <div class="form-label col l-4">Ngày tạo</div>
-                     <div class="form-label col l-4">Tình trạng hoá đơn</div>
-                     <div class="form-label col l-4">{{bill._id}}</div>
-                     <div id="createAt" class="form-label col l-4">{{bill.createdAt}}</div>
-                     <div class="form-label col l-4">{{bill.b_status}}</div>
-                     
+                     <div class="form-label col l-6">Số hoá đơn:</div>
+                     <div class="form-label col l-6">Tình trạng hoá đơn:</div>
+                     <div class="form-label col l-6">{{bill._id}}</div>
+                     <div class="form-label col l-6">{{bill.b_status}}</div>
+
+
+
+                     <div class="form-label col">Ngày tạo:</div>
+                     <div id="createAt" class="form-label col">{{bill.createdAt}}</div>
 
                      <div class="form-label col">Tên khách hàng:</div>
                      <div class="form-label col">{{customer.c_name}}</div>
@@ -48,7 +49,6 @@
 
                      <div class="form-label col">Ngày trả phòng:</div>
                      <div id="dcheckout" class="form-label col">{{customer.c_checkout}}</div>
-
                   </div>
                </div>
             </div>
@@ -69,7 +69,6 @@
                      <td id="room-price">{{room.r_price}}</td>
                   </tr>
                </table>
-
                <br>
                <table class="data-table">
                   <tr>
@@ -89,7 +88,6 @@
                   </tr>
                </table>
             </div>
-
             <div class="col l-12 m-12 c-12">
                <div class="create-btn-container">
                   <a href="#">
@@ -106,7 +104,6 @@
                   </div>
                   <div class="row">
                      <input disabled id="total-bill" class="form-input input-bill" type="text">
-
                   </div>
                </div>
             </div>
@@ -213,5 +210,6 @@
       }
    }
 
-</script>
 
+
+</script>

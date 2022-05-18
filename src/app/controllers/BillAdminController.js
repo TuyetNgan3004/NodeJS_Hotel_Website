@@ -21,8 +21,6 @@ const showDetail = async (req, res, next) => {
     
     const bill = await Bill.findOne( {customerID: customer._id });
     
-    // Bill.find({ createdAt: {"dateToString" : {format: "%Y-%m-%d", date: "$date" }} })
-    
     Bill.findOne({ _id: req.params.id })
         .then(bills => {
             
@@ -36,3 +34,4 @@ const showDetail = async (req, res, next) => {
 }
 
 module.exports = { showBill, showDetail };
+
