@@ -38,16 +38,24 @@ const showCheckInList = async (req, res, next) => {
     });
 }
 
-// const add = (req, res, next) => {
-//     Customer.find()
-//         .then(customers => {
-//             res.render('TabCheckInAdmin/checkInAdmin', {
-//                 layout: 'mainAdmin.hbs',
-//                 customers: multipleToObject(customers)
-//             });
-//         })
-//         .catch(next);
-// }
+
+//[POST] /checkIn/:id/checkInBooking/taophieu
+const taophieu = async (req, res, next) => {
+    const customer = await Customer.findOne({_id: req.params.id});
+    await Customer.updateOne(
+        {_id: req.params.id}, 
+        {$set: { c_status: 'Đang checkin' }});
+    
+    await Room.updateOne(
+        {_id: customer.roomID},
+        {$set: {r_status: 'đang sử dụng'}}
+    );
+
+    // const bill = new Bill(req.body);
+    // bill.customerID = customer._id;
+    // bill.save()
+    res.redirect('/admin/checkIn')
+}
 
 const store = async (req, res, next) => {
     const customer = await Customer(req.body);
@@ -112,4 +120,5 @@ const showDetail = async (req, res, next) => {
 
 }
 
-module.exports = { showCheckIn, showCheckInBooking, showCheckInList, store, edit, update, showDetail };
+module.exports = { showCheckIn, showCheckInBooking, showCheckInList, store, edit, update, showDetail, taophieu };
+

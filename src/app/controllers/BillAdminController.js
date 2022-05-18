@@ -21,7 +21,6 @@ const showDetail = async (req, res, next) => {
     
     const bill = await Bill.findOne( {customerID: customer._id });
     
-    
     Bill.findOne({ _id: req.params.id })
         .then(bills => {
             
