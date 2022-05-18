@@ -1,7 +1,28 @@
 /* phần Ngân */
 
+/* trang chi tiet hoa don */
+.row-info {
+   justify-content: space-between;
+}
 
+.row-info > .col {
+   font-size: 16px;
+   font-weight: 400;
+}
 
+.pull-left {
+   justify-content: start !important;
+}
+
+.input-bill {
+   margin-bottom: 0;
+   margin-left: 10px;
+  
+}
+
+.btn-bill {
+   min-width: 120px;
+}
 /* Trang danh sách phòng */
 
 /* leftside */
