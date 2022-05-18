@@ -8,6 +8,7 @@ const roomAdminRouter = require('./roomsAdmin');
 const bookingAdminRouter = require('./bookingAdmin');
 const checkInAdminRouter = require('./checkInAdmin');
 const staffAdminRouter = require('./staffAdmin');
+const billAdminRouter = require('./billAdmin');
 
 
 
@@ -23,5 +24,6 @@ function route(app) {
   app.use('/admin', bookingAdminRouter);
   app.use('/admin', checkInAdminRouter);
   app.use('/admin', staffAdminRouter);
+  app.use('/admin', billAdminRouter);
 }
 module.exports = route;
