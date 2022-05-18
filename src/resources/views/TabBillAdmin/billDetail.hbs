@@ -1,0 +1,136 @@
+<div class="main">
+   <div class="header">
+      <div class="menu-mobile">
+         <label for="nav-mobile-input">
+            <i class="fa-solid fa-bars"></i>
+         </label>
+      </div>
+
+      <div class="user-avatar">
+         <div class="user-img-container">
+            <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt="" class="user-img">
+         </div>
+         <div class="user-info">
+            <p class="user-name">User Name</p>
+            <p class="user-role">User Role</p>
+         </div>
+
+         <div class="user-function">
+            <a href="" class="function-item">Log Out</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="content">
+      <div class="grid">
+         <p class="page-title">Chi tiết hoá đơn</p>
+         <div class="table-list-container">
+            <div class="row filter-row-mobile">
+               <div class="col l-6 m-6 c-12">
+                  <div class="row row-info">
+                     <div class="col">Số hoá đơn:</div>
+                     <div class="col">{{bill._id}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Tình trạng hoá đơn:</div>
+                     <div class="col">{{bill.b_status}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Ngày tạo:</div>
+                     <div id="createAt" class="col">{{bill.createdAt}}</div>
+                  </div>
+                  <br>
+                  <div class="row row-info">
+                     <div class="col">Tên khách hàng:</div>
+                     <div class="col">{{customer.c_name}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Số điện thoại khách hàng:</div>
+                     <div class="col">{{customer.c_phone}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Ngày nhận phòng:</div>
+                     <div class="col">{{customer.c_checkin}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Ngày trả phòng:</div>
+                     <div class="col">{{customer.c_checkout}}</div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="table-container">
+               <table class="data-table">
+                  <tr>
+                     {{!-- <th scope="col">Mã đơn đặt</th> --}}
+                     <th scope="col">Số phòng</th>
+                     <th scope="col">Loại phòng</th>
+                     <th scope="col">Tên phòng</th>
+                     <th scope="col">Giá phòng</th>
+                  </tr>
+                  <tr>
+                     <td>123</td>
+                     <td>123</td>
+                     <td>123</td>
+                     <td>123</td>
+                  </tr>
+               </table>
+
+               <div class="col l-12 m-12 c-12">
+                  <div class="create-btn-container">
+                     <a href="#">
+                        <span class="status-btn">
+                           <i class="fas fa-plus"></i> Thêm dịch vụ
+                        </span>
+                     </a>
+                  </div>
+               </div>
+               <br>
+               <table class="data-table">
+                  <tr>
+                     {{!-- <th scope="col">Mã đơn đặt</th> --}}
+                     <th scope="col">Loại dịch vụ</th>
+                     <th scope="col">Tên dịch vụ</th>
+                     <th scope="col">Giá dịch vụ</th>
+                     <th scope="col">Số lượng</th>
+                     <th scope="col">Thành tiền</th>
+                  </tr>
+                  <tr>
+                     <td>123</td>
+                     <td>123</td>
+                     <td>123</td>
+                     <td>123</td>
+                     <td>123</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="row filter-row-mobile">
+               <div class="col l-4 m-4 c-6">
+                  <div class="row row-info">
+                     <div class="col">Tổng tiền</div>
+                  </div>
+                  <div class="row row-info">
+                     <input disabled class="form-input input-bill" type="text" value="200000">
+                  </div>
+               </div>
+            </div>
+            <div class="col l-12 m-12 c-12">
+               <div class="create-btn-container pull-left">
+                  <a href="#">
+                     <span class="status-btn btn-bill">
+                        Cập nhật
+                     </span>
+                  </a>
+               </div>
+               <div class="create-btn-container pull-left">
+                  <a href="#">
+                     <span class="status-btn btn-bill">
+                        Xuất hoá đơn
+                     </span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
