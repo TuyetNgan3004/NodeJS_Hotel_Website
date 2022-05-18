@@ -1,12 +1,12 @@
 // Filter
-// $(document).ready(function(){
-//   $("#myInputAdmin").on("keyup", function() {
-//     var value = $(this).val().toLowerCase();
-//     $("#myTable tr").filter(function() {
-//       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-//     });
-//   });
-// });
+$(document).ready(function(){
+  $("#myInputAdmin").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 
 // Filter rooms by searchbar 
 const searchingWord = document.querySelector('#myInput').addEventListener("keyup", function () {
@@ -14,7 +14,7 @@ const searchingWord = document.querySelector('#myInput').addEventListener("keyup
   const value = keyword.value.toLowerCase();
 
   const rooms = document.querySelectorAll('.js-myroom').forEach(room => {
-
+    console.log(room)
      var items = room.querySelector('*').innerText;
      var itemsRemoveComma = items.replaceAll(',', '');
      if (value == '') {

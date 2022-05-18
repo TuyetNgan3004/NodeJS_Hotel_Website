@@ -26,27 +26,35 @@
          <p class="page-title">Chi tiết hoá đơn</p>
          <div class="table-list-container">
             <div class="row filter-row-mobile">
-               <div class="col l-8 m-6 c-12">
-                  <div class="row">
-                     <div class="form-label col l-4">Số hoá đơn</div>
-                     <div class="form-label col l-4">Ngày tạo</div>
-                     <div class="form-label col l-4">Tình trạng hoá đơn</div>
-                     <div class="form-label col l-4">{{bill._id}}</div>
-                     <div id="createAt" class="form-label col l-4">{{bill.createdAt}}</div>
-                     <div class="form-label col l-4">{{bill.b_status}}</div>
-                     
-
-                     <div class="form-label col">Tên khách hàng:</div>
-                     <div class="form-label col">{{customer.c_name}}</div>
-
-                     <div class="form-label col">Số điện thoại khách hàng:</div>
-                     <div class="form-label col">{{customer.c_phone}}</div>
-
-                     <div class="form-label col">Ngày nhận phòng:</div>
-                     <div id="dcheckin" class="form-label col">{{customer.c_checkin}}</div>
-
-                     <div class="form-label col">Ngày trả phòng:</div>
-                     <div id="dcheckout" class="form-label col">{{customer.c_checkout}}</div>
+               <div class="col l-6 m-6 c-12">
+                  <div class="row row-info">
+                     <div class="col-4">Số hoá đơn:</div>
+                     <div class="col">{{bill._id}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Tình trạng hoá đơn:</div>
+                     <div class="col">{{bill.b_status}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Ngày tạo:</div>
+                     <div id="createAt" class="col">{{bill.createdAt}}</div>
+                  </div>
+                  <br>
+                  <div class="row row-info">
+                     <div class="col">Tên khách hàng:</div>
+                     <div class="col">{{customer.c_name}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Số điện thoại khách hàng:</div>
+                     <div class="col">{{customer.c_phone}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Ngày nhận phòng:</div>
+                     <div id="dcheckin" class="col">{{customer.c_checkin}}</div>
+                  </div>
+                  <div class="row row-info">
+                     <div class="col">Ngày trả phòng:</div>
+                     <div id="dcheckout" class="col">{{customer.c_checkout}}</div>
                   </div>
                </div>
             </div>
@@ -87,20 +95,20 @@
                </table>
             </div>
             <div class="col l-12 m-12 c-12">
-               <div class="create-btn-container">
-                  <a href="#">
-                     <span class="status-btn">
-                        <i class="fas fa-plus"></i> Thêm dịch vụ
-                     </span>
-                  </a>
+                  <div class="create-btn-container">
+                     <a href="#">
+                        <span class="status-btn">
+                           <i class="fas fa-plus"></i> Thêm dịch vụ
+                        </span>
+                     </a>
+                  </div>
                </div>
-            </div>
             <div class="row filter-row-mobile">
                <div class="col l-4 m-4 c-6">
-                  <div class="row">
+                  <div class="row row-info">
                      <div class="col">Tổng tiền</div>
                   </div>
-                  <div class="row">
+                  <div class="row row-info">
                      <input disabled id="total-bill" class="form-input input-bill" type="text">
                   </div>
                </div>

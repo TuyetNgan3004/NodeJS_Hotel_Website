@@ -12,6 +12,7 @@
 const searchingWord = document.querySelector('#myInput').addEventListener("keyup", function () {
   const keyword = document.querySelector('#myInput');
   const value = keyword.value.toLowerCase();
+  console.log(value);
 
   const rooms = document.querySelectorAll('.js-myroom').forEach(room => {
 

@@ -26,53 +26,50 @@
          <p class="page-title">Phiếu checkin</p>
          <div class="table-list-container">
 
-            <form action="/admin/checkIn/add/store?_method=PUT" method="POST">
+            <form method="POST" action="/checkInAdmin/:id/checkInBooking/taophieu">
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Tên khách hàng</label>
-                     <input id="room-img" name="c_name" type="text" class="form-input"
-                        placeholder="Nhập tên khách hàng">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.c_name}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-type" class="form-label">Số điện thoại</label>
-                     <input id="room-type" name="c_phone" type="text" class="form-input"
-                        placeholder="Nhập số điện thoại">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.c_phone}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-people" class="form-label">Email</label>
-                     <input id="room-people" name="c_email" type="text" class="form-input" placeholder="Nhập Email">
+                     <input id="room-people" type="text" class="form-input" value="{{cusBooked.c_email}}">
                   </div>
                </div>
 
                <div class="row">
                   <div class="col l-6 m-6 c-12">
                      <label for="room-img" class="form-label">Ngày nhận phòng</label>
-                     <input id="room-img" name="c_checkin" type="datetime-local" class="form-input"
-                        placeholder="Nhập ngày nhận phòng">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.c_checkin}}">
                   </div>
 
                   <div class="col l-6 m-6 c-12">
                      <label for="room-type" class="form-label">Ngày trả phòng</label>
-                     <input id="room-type" name="c_checkout" type="datetime-local" class="form-input"
-                        placeholder="Nhập ngày trả phòng">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.c_checkout}}">
                   </div>
                </div>
+
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Số phòng</label>
-                     <input id="room-img" name="r_number" type="text" class="form-input" placeholder="Nhập số phòng">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.roomID.r_number}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-type" class="form-label">Tên phòng</label>
-                     <input id="room-type" name="r_name" type="text" class="form-input" placeholder="Nhập tên phòng">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.roomID.r_name}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-people" class="form-label">Giá phòng</label>
-                     <input id="room-people" name="r_price" type="text" class="form-input" placeholder="Nhập giá phòng">
+                     <input id="room-people" type="text" class="form-input" value="{{cusBooked.roomID.r_price}}">
                   </div>
                </div>
 
@@ -89,7 +86,7 @@
                            </div> -->
 
                <div class="row no-gutters submit-btn-container">
-                  <button class="status-btn submit-btn">Tạo phiếu checkin</button>
+                  <button class="status-btn submit-btn" href="/chceckInAdmin/{{cusBooked._id}}/checkInBooking/taophieu">Tạo phiếu checkin</button>
                </div>
             </form>
 
@@ -128,7 +125,7 @@
                               <td>{{this.c_checkin}}</td>
                               <td>{{this.c_checkout}}</td>
                               <td>
-                                 <a class="status-btn" href="/admin/checkIn/{{this._id}}/checkInBooking">Checkin</a>
+                                 <a class="status-btn" href="">Checkin</a>
                               </td>
                            </tr>
                            {{/each}}
@@ -152,24 +149,24 @@
                      <div class="col l-4 m-6 c-12">
                         <a href="" class="adm-room-link">
                            <div class="adm-room-card adm-room-card-checkin">
-                              {{!-- <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">
+                              {{!-- <div class="adm-room-img"
+                                 style="background-image: url({{this.r_img.thumbnail}});">
                                  <div class="adm-room-number">{{this.r_number}}</div>
                                  <div class="adm-room-status">{{this.r_status}}</div>
                               </div> --}}
                               <div class="adm-room-info">
                                  <div class="adm-room-attr">
-                                    <span class="adm-room-type">{{this.r_number}}</span>
                                     <span class="adm-room-type">{{this.r_name}}</span>
                                     <span class="adm-room-price">{{this.r_price}}
                                        <!-- <i class="fa-solid fa-dong-sign"></i> -->
                                     </span>
-
+                                    
 
                                  </div>
                                  <div class="adm-room-value">
                                     <p class="adm-room-people">{{this.r_people}} người</p>
                                     <p class="adm-room-people">Giường: {{this.r_bed}}</p>
-
+                                    
                                  </div>
                               </div>
                            </div>

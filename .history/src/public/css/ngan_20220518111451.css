@@ -1,16 +1,16 @@
 /* phần Ngân */
 
 /* trang chi tiet hoa don */
-/* .row-info {
+.row-info {
    justify-content: space-between;
 }
 
 .row-info > .col {
    font-size: 16px;
    font-weight: 400;
-} */
+}
 
-/* .pull-left {
+.pull-left {
    justify-content: start !important;
 }
 
@@ -22,7 +22,7 @@
 
 .btn-bill {
    min-width: 120px;
-} */
+}
 /* Trang danh sách phòng */
 
 /* leftside */
