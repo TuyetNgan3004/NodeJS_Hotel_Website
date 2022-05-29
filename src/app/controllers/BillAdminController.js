@@ -21,13 +21,13 @@ const showDetail = async (req, res, next) => {
     const bill = await Bill.findOne({ customerID: customer._id });
     const room = await Room.findOne({_id: customer.roomID});
     
-    
     res.render('TabBillAdmin/billDetail', {
         layout: 'mainAdmin.hbs',
         bill: mongooseToObject(bill),
         customer: mongooseToObject(customer),
         room: mongooseToObject(room)
     });
+
 }
 
 

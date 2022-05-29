@@ -92,7 +92,7 @@
                      <div class="col l-4 m-12 c-12 l-o-8">
                         <div class="search-bar">
                            <i class="search-icon fas fa-search"></i>
-                           <input class="search-input" type="text" placeholder="seaching here">
+                           <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
                         </div>
                      </div>
 
@@ -108,7 +108,8 @@
                               <th scope="col">Checkin</th>
                            </tr>
                            {{#each roomBooked}}
-                           <tr>
+                           <tbody id="myTable">
+                              <tr>
                               <td>{{this.roomID.r_number}}</td>
                               <td>{{this.roomID.r_name}}</td>
                               <td>{{this.c_name}}</td>
@@ -119,6 +120,7 @@
                                  <a class="status-btn" href="/admin/checkIn/{{this._id}}/checkInBooking">Checkin</a>
                               </td>
                            </tr>
+                           </tbody>
                            {{/each}}
                         </table>
                      </div>
@@ -130,14 +132,15 @@
                   {{!-- row row-staff filter-row-mobile filter-row-mobile-noreverse row-margin --}}
                   <div class="row">
                      <div class="col l-4 m-12 c-12 l-o-8">
-                        <div class="search-bar">
-                           <i class="search-icon fas fa-search"></i>
-                           <input class="search-input" type="text" placeholder="seaching here">
+                       <div class="search-bar">
+                          <i class="search-icon fas fa-search"></i>
+                           <input id="myInput" class="search-bar-input" type="text" name="input-search"
+                              placeholder="Nhập tìm kiếm...">
                         </div>
                      </div>
 
                      {{#each rooms}}
-                     <div class="col l-4 m-6 c-12">
+                     <div class="js-myroom col l-4 m-6 c-12">
                         <a href="" class="adm-room-link">
                            <div class="adm-room-card adm-room-card-checkin">
                               {{!-- <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">

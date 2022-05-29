@@ -24,6 +24,7 @@
    <div class="content">
       <div class="grid">
          <p class="page-title">Chi tiết hoá đơn</p>
+
          <form method="POST" action="./{{bill._id}}/update?_method=PUT">
             <div class="table-list-container">
                <div class="row filter-row-mobile">
@@ -82,7 +83,6 @@
                      </div>
                   </div>
                </div>
-
                <div class="table-container">
                   <span class="service-title">Chi tiết phòng</span>
                   <table class="data-table">
@@ -191,3 +191,4 @@
    dateCre.innerHTML = convert(test);
 </script>
 <script src="/js/bill.js"></script>
+
