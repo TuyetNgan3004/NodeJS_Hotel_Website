@@ -1,0 +1,159 @@
+<div class="main">
+         <div class="header">
+            <div class="menu-mobile">
+               <label for="nav-mobile-input">
+                  <i class="fa-solid fa-bars"></i>
+               </label>
+            </div>
+
+            <div class="user-avatar">
+               <div class="user-img-container">
+                  <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt=""
+                     class="user-img">
+               </div>
+               <div class="user-info">
+                  <p class="user-name">User Name</p>
+                  <p class="user-role">User Role</p>
+               </div>
+
+               <div class="user-function">
+                  <a href="" class="function-item">Log Out</a>
+               </div>
+            </div>
+         </div>
+
+         <div class="content">
+            <div class="grid">
+               <p class="page-title">Danh sách đặt phòng</p>
+               <div class="table-list-container">
+                  <div class="row filter-row-mobile">
+                     <div class="col l-8 m-12 c-12">
+                        <div class="filter-container">
+                           <a href="/admin/bookingRoom" class="filter-link"><span class="filter-box">Tất cả đơn</span></a>
+                           <a href="/admin/bookingRoom/query/confirm" class="filter-link"><span class="filter-box">Chưa xác nhận</span></a>
+                           <a href="/admin/bookingRoom/query/confirmed" class="filter-link"><span class="filter-box">Đã xác nhận</span></a>
+                        </div>
+                     </div>
+
+                     <div class="col l-4 m-12 c-12">
+                        <div class="search-bar">
+                           <i class="search-icon fas fa-search"></i>
+                           <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="table-container">
+                     <table class="data-table">
+                        <tr>
+                           {{!-- <th scope="col">Mã đơn đặt</th> --}}
+                           <th scope="col">Tên khách hàng</th>
+                           <th scope="col">Số điện thoại</th>
+                           <th scope="col">Phòng</th>
+                           <th scope="col">Ngày nhận phòng</th>
+                           <th scope="col">Ngày trả phòng</th>
+                           <th scope="col"></th>
+                           <th scope="col"></th>
+                        </tr>
+
+                        {{#each customers}}
+                        <tbody id="myTable">
+                            <tr>
+                           {{!-- <td>{{this._id}}</td> --}}
+                           <td>{{this.c_name}}</td>
+                           <td>{{this.c_phone}}</td>
+                           <td>{{this.roomID.r_name}} </td>
+                           <td>{{checkinDate}}</td>
+                           <td>{{checkinDate}}</td>
+                           <td class="td-btn">
+                              {{#ifEquals c_status 'Đã xác nhận'}}
+                              <span  class="status-btn-disable">Đã xác nhận</span>
+
+                              {{else}}
+                                 <a href="/admin/bookingRoom/{{this._id}}">
+                                    <span  class="status-btn">Xác nhận</span>
+                                 </a>
+
+                              {{/ifEquals}}
+                           </td>
+                           <td class="td-btn">                             
+                              <span id="deleteId" class="status-btn-delete"  data-toggle="modal" data-id="{{this._id}}" data-target="#modal-delete">Huỷ</span>                            
+                           </td>
+                        </tr>
+                        </tbody>
+                        {{/each}}
+
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+<div id="modal-delete" class="modal ">
+   <div class="modalContent">
+      <div class="modal-header">
+         <p>Huỷ đơn đặt phòng ?</p>   
+         <i class="fa-solid fa-xmark"></i>     
+      </div>
+      <div class="modal-content">
+         <p>Bạn có chắc chắn muốn huỷ đơn đặt phòng ?</p>
+      </div>
+      <div class="modal-footer">
+         <button id="del" class="del" >Huỷ</button>
+         <button id="cancel" class="cancel" >Thoát</button>
+      </div>
+   </div>
+</div> 
+
+<form name="delete-form" method="GET"></form>
+
+<script>
+   var deleteId;
+   var deleteForm = document.forms['delete-form'];
+   var btnDeleteModal = document.getElementById('del');
+
+   var modal = document.querySelector('.modal'); 
+   var iconClose = document.querySelector('.modal-header i');
+   var cancel = document.querySelector('.cancel');  
+  
+   var open_modal= document.querySelectorAll('.status-btn-delete');
+   Array.from(open_modal).forEach(btnDelete => {
+      btnDelete.addEventListener('click', function(e) {
+         deleteId= e.target.getAttribute('data-id');
+         console.log(deleteId);
+         modal.classList.add('show');
+      })
+   })
+
+   iconClose.addEventListener('click', ()=>{
+      modal.classList.remove('show');
+   })
+
+   cancel.addEventListener('click', () =>{
+      modal.classList.remove('show');
+   })
+   
+   btnDeleteModal.onclick = function() {         
+      deleteForm.action = '/admin/bookingRoom/'+ deleteId +'/updateStatus' ;
+      deleteForm.submit();
+   }
+    //document.addEventListener('DOMContentLoaded', function() {
+     //   var deleteId;
+     //   var deleteForm = document.forms['delete-form'];
+     //   var btnDelete = document.getElementById('del');
+
+     //   $('#modal-delete').on('show.modal', function (event) {
+     //       var button = $(event.relatedTarget) // Button that triggered the modal
+     //       deleteId = button.data('id') ;
+     //   });
+
+      //  var btnDelete = document.getElementById('del');
+        
+      //  btnDelete.onclick = function() {         
+      //      deleteForm.action = '/staff/'+ deleteId + '?_method= DELETE';
+      //      deleteForm.submit();
+      //  }
+   // })
+</script>

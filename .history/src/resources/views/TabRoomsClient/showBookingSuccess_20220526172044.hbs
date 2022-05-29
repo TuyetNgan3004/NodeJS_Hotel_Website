@@ -1,0 +1,106 @@
+<!-- Start main -->
+<main class="main-section">
+   <!-- Start Slider -->
+   <div class="slider-area slider-height2">
+      <div class="slider-slogan-container">
+         <div class="slider-slogan">
+            <span class="slider-slogan-text">
+               Đặt phòng thành công
+            </span>
+         </div>
+      </div>
+   </div>
+
+   <!-- Start Content -->
+   <div class="content-section">
+      <div class="content-container">
+         <div class="grid">Xuất
+            <div class="booking-room-title">
+               <i class="fa-solid fa-circle-check icon-booking-success"></i>
+               <h3 class="title-item">Thông tin đặt phòng thành công</h3>
+            </div>
+            <form class="form small-form" method="POST" action="showBookingRoom/showBookingSuccess">
+
+               <div class="form-group">
+                  <label for="username" class="form-label">Tên phòng</label>
+                  <input id="username" type="text" class="form-input form-input-success"
+                     value="{{customers.roomID.r_name}}" readonly='true'>
+                  <span class="form-msg">Vui lòng nhập trường này</span>
+               </div>
+               <div class="row">
+                  <div class="form-group col l-6 m-12 c-12 padding-right-10">
+                     <label for="username" class="form-label">Số phòng</label>
+                     <input id="username" type="text" class="form-input form-input-success"
+                        value="{{customers.roomID.r_number}}" readonly='true'>
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+                  <div class="form-group col l-6 m-12 c-12 padding-left-10">
+                     <label for="username" class="form-label">Loại phòng</label>
+                     <input id="username" type="text" class="form-input form-input-success"
+                        value="{{customers.roomID.r_type}}" readonly='true'>
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="form-group col l-6 m-12 c-12 padding-right-10">
+                     <label for="username" class="form-label">Số người ở</label>
+                     <input id="username" type="text" class="form-input form-input-success"
+                        value="{{customers.roomID.r_people}} người " readonly='true'>
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+                  <div class="form-group col l-6 m-12 c-12 padding-left-10">
+                     <label for="username" class="form-label">Giường</label>
+                     <input id="username" type="text" class="form-input form-input-success"
+                        value="{{customers.roomID.r_bed}}" readonly='true'>
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="username" class="form-label">Tên khách hàng</label>
+                  <input id="username" name="c_name" type="text" class="form-input form-input-success"
+                     value="{{customers.c_name}}" readonly='true'>
+                  <span class="form-msg">Vui lòng nhập trường này</span>
+               </div>
+
+               <div class="form-group">
+                  <label for="username" class="form-label">Số điện thoại</label>
+                  <input id="username" name="c_phone" type="text" class="form-input form-input-success"
+                     value="{{customers.c_phone}}" readonly='true'>
+                  <span class="form-msg">Vui lòng nhập trường này</span>
+               </div>
+
+               <div class="form-group">
+                  <label for="username" class="form-label">Email</label>
+                  <input id="username" name="c_email" type="text" class="form-input form-input-success"
+                     value="{{customers.c_email}}" readonly='true'>
+                  <span class="form-msg">Vui lòng nhập trường này</span>
+               </div>
+
+               <div class="row ">
+                  <div class="form-group col l-6 m-12 c-12 padding-right-10">
+                     <label for="username" class="form-label">Ngày nhận phòng</label>
+                     <input id="username" name="c_checkin" type="text" class="form-input form-input-success"
+                        value="{{checkinDate}}" readonly='true'>
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+                  <div class="form-group col l-6 m-12 c-12 padding-left-10">
+                     <label for="username" class="form-label">Ngày trả phòng asdasd</label>
+                     <input id="username" name="c_checkout" type="text" class="form-input form-input-success"
+                        value="{{checkoutDate}}" readonly='true'>
+                     <span class="form-msg">Vui lòng nhập trường này</span>
+                  </div>
+               </div>
+               <hr>
+               <div class="total-money">
+                  <p>Tổng thanh toán</p>
+                  <p name="c_total">{{customers.c_total}} </p>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+   <!-- End Content -->
+
+</main>
+<!-- End main -->
