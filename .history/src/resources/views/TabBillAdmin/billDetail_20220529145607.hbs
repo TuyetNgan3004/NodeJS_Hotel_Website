@@ -1,0 +1,225 @@
+<div class="main">
+   <div class="header">
+      <div class="menu-mobile">
+         <label for="nav-mobile-input">
+            <i class="fa-solid fa-bars"></i>
+         </label>
+      </div>
+
+      <div class="user-avatar">
+         <div class="user-img-container">
+            <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt="" class="user-img">
+         </div>
+         <div class="user-info">
+            <p class="user-name">User Name</p>
+            <p class="user-role">User Role</p>
+         </div>
+
+         <div class="user-function">
+            <a href="" class="function-item">Log Out</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="content">
+      <div class="grid">
+         <p class="page-title">Chi tiết hoá đơn</p>
+         <form method="POST" action="./{{bill._id}}/update?_method=PUT">
+            <div class="table-list-container">
+               <div class="row filter-row-mobile">
+                  <div class="col l-4 m-12 c-12">
+                     <div class="row">
+                        <div class="form-label col l-2 m-6 c-6">Số hoá đơn</div>
+                        <div class="form-label col l-6 m-6 c-6">{{bill._id}}</div>
+                        <div class="form-label col l-2 m-6 c-6">Ngày tạo</div>
+                        <div id="createAt" class="form-label col l-6 m-6 c-6">{{bill.createdAt}}</div>
+                        <div class="form-label col l-2 m-6 c-6">Tình trạng hoá đơn</div>
+                        <div class="form-label col l-6 m-6 c-6">{{bill.b_status}}</div>
+                        
+                        <div id="line" class="col l-12 m-12 c-12"></div>
+
+                        <div class="form-label col l-2 m-6">Tên khách hàng:</div>
+                        <div class="form-label col l-6 l-6">{{customer.c_name}}</div>
+
+                        <div class="form-label col l-2 m-6">Số điện thoại:</div>
+                        <div class="form-label col l-6 l-6">{{customer.c_phone}}</div>
+
+                        <div class="form-label col l-2 m-6">Ngày nhận phòng:</div>
+                        <div id="dcheckin" class="form-label col l-6 l-6">{{customer.c_checkin}}</div>
+
+                        <div class="form-label col l-2 m-6">Ngày trả phòng:</div>
+                        <div id="dcheckout" class="form-label col l-6 l-6">{{customer.c_checkout}}</div>
+                     </div>
+                  </div>
+
+                  <div class="col l-8 m-12">
+                     <div class="create-btn-container">
+                        <span class="status-btn show-service-btn">
+                           <i class="fas fa-plus"></i> Thêm dịch vụ
+                        </span>
+                     </div>
+
+                     <div class="col l-8 l-o-4 service-list">
+                        <span class="service-title">Dịch vụ</span>
+                        <table class="data-table">
+                           <tbody>
+                              {{#each services}}
+                              <tr class="service-item">
+                                 <td class="sv-name">{{this.TenDV}}</td>
+                                 <td class="sv-type">{{this.LoaiDV}}</td>
+                                 <td class="sv-price">{{this.GiaDV}}</td>
+                                 {{!-- <td style="min-width: 0;" class="svList-qty"><input class="qty-input"
+                                       type="number" min="1" value="1" name="" id=""></td> --}}
+                                 <td style="min-width: 0;">
+                                    <div class="status-btn-circle servie-add">
+                                       <i class="fas fa-plus"></i>
+                                    </div>
+                                 </td>
+                              </tr>
+                              {{/each}}
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="table-container">
+                  <span class="service-title">Chi tiết phòng</span>
+                  <table class="data-table">
+                     <tr>
+                        <th scope="col">Số phòng</th>
+                        <th scope="col">Loại phòng</th>
+                        <th scope="col">Tên phòng</th>
+                        <th scope="col">Đơn giá</th>
+                        <th scope="col">Số ngày ở</th>
+                        <th scope="col">Thành tiền</th>
+                     </tr>
+                     <tr>
+                        <td>{{room.r_number}}</td>
+                        <td>{{room.r_type}}</td>
+                        <td>{{room.r_name}}</td>
+                        <td id="room-price">{{room.r_price}}</td>
+                        <td>{{dayRent}}</td>
+                        <td id="room-total">{{total}}</td>
+                     </tr>
+                  </table>
+                  <br>
+                  <table class="data-table">
+                     <span class="service-title">Chi tiết dịch vụ</span>
+                     <thead>
+                        <tr>
+                           <th scope="col">Tên dịch vụ</th>
+                           <th scope="col">Loại dịch vụ</th>
+                           <th scope="col">Đơn giá</th>
+                           <th scope="col">Số lượng</th>
+                           <th scope="col">Thành tiền</th>
+                           <th style="min-width: 0;" scope="col"></th>
+                        </tr>
+                     </thead>
+                     <tbody id="service-container">
+                     </tbody>
+                  </table>
+               </div>
+
+               <div class="row">
+                  <div class="col l-4 m-6 c-12">
+                     <div class="form-label col l-12">Tổng tiền</div>
+                     <input disabled id="total-bill" class="form-input col l-12" type="text">
+                     <a class="bill-btn" href="#">
+                        <span class="status-btn status-btn-block">
+                           Xuất hoá đơn
+                        </span>
+                     </a>
+                     <button class="bill-btn" style="border: none;" type="submit">
+                        <span class="status-btn status-btn-block">
+                           Cập nhật
+                        </span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<script>
+   //format ngày tạo phiếu hoá đơn
+   var dateCre = document.getElementById('createAt');
+   var test = dateCre.textContent;
+
+   function convert(str) {
+      var date = new Date(str),
+         mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+         day = ("0" + date.getDate()).slice(-2);
+      return [day, mnth, date.getFullYear()].join("-");
+   }
+   dateCre.innerHTML = convert(test);
+
+
+   //tính tiền phòng
+   var checkin = document.getElementById('dcheckin').textContent;
+   var checkout = document.getElementById('dcheckout').textContent;
+
+   var d_checkin = checkin.slice(0, 2);
+   var d_checkout = checkout.slice(0, 2);
+   var m_checkin = checkin.slice(3, 5);
+   var m_checkout = checkout.slice(3, 5);
+
+   var n_dcheckin = parseInt(d_checkin);
+   var n_dcheckout = parseInt(d_checkout);
+   var n_mcheckin = parseInt(m_checkin);
+   var n_mcheckout = parseInt(m_checkout);
+
+   if (n_dcheckin < n_dcheckout && n_mcheckin == n_mcheckout) {
+      var total_Day = n_dcheckout - n_dcheckin;
+      //console.log(total_Day)
+      var roomPrice = document.getElementById('room-price').textContent.replaceAll(',', '');
+
+      var sum = parseInt(roomPrice)
+      sum = sum * total_Day;
+      //console.log(sum);
+      //total = Intl.NumberFormat().format(sum);
+      document.getElementById('total-bill').value = Intl.NumberFormat().format(sum);
+
+
+   }
+   else if (n_dcheckin > n_dcheckout && n_mcheckin < number_mCheckout) {
+      switch (n_mcheckin) {
+         case 1:
+         case 3:
+         case 5:
+         case 7:
+         case 8:
+         case 10:
+         case 12:
+            var total_Day = 31 - n_dcheckin + n_dcheckout;
+            var roomPrice = document.getElementById('room-price').textContent.replaceAll(',', '');
+            var sum = parseInt(roomPrice);
+            sum = sum * total_Day;
+            document.getElementById('total-bill').value = Intl.NumberFormat().format(sum);
+            break;
+      }
+      switch (n_mcheckin) {
+         case 4:
+         case 6:
+         case 9:
+         case 11:
+            var total_Day = 30 - n_dcheckin + n_dcheckout;
+            var roomPrice = document.getElementById('room-price').textContent.replaceAll(',', '');
+            var sum = parseInt(roomPrice);
+            sum = sum * total_Day;
+            document.getElementById('total-bill').value = Intl.NumberFormat().format(sum);
+            break;
+      }
+      switch (n_mcheckin) {
+         case 2:
+            var total_Day = 28 - n_dcheckin + n_dcheckout;
+            var roomPrice = document.getElementById('room-price').textContent.replaceAll(',', '');
+            var sum = parseInt(roomPrice);
+            sum = sum * total_Day;
+            document.getElementById('total-bill').value = Intl.NumberFormat().format(sum);
+            break;
+      }
+   }
+</script>
+<script src="/js/bill.js"></script>

@@ -49,13 +49,13 @@
                <div class="row">
                   <div class="col l-6 m-6 c-12">
                      <label for="room-img" class="form-label">Ngày nhận phòng</label>
-                     <input id="room-img" name="c_checkin" type="datetime-local" class="form-input"
+                     <input id="room-img" name="c_checkin" data-toggle="startDate" type="datetime-local" class="form-input"
                         placeholder="Nhập ngày nhận phòng">
                   </div>
 
                   <div class="col l-6 m-6 c-12">
                      <label for="room-type" class="form-label">Ngày trả phòng</label>
-                     <input id="room-type" name="c_checkout" type="datetime-local" class="form-input"
+                     <input id="room-type" data-toggle="endDate" name="c_checkout" type="datetime-local" class="form-input"
                         placeholder="Nhập ngày trả phòng">
                   </div>
                </div>
@@ -75,18 +75,6 @@
                      <input id="room-people" name="r_price" type="text" class="form-input" placeholder="Nhập giá phòng">
                   </div>
                </div>
-
-               <!-- <div class="row no-gutters">
-                              <div class="col l-12 m-12 c-12">
-                                 <div class="col l-12 m-12 c-12">
-                                    <label class="form-label">Miêu tả phòng</label>
-                                 </div>
-                                 <div class="col l-12 m-12 c-12">
-                                    <textarea name="" id="" class="form-textarea"
-                                       placeholder="Nhập miêu tả tại đây..."></textarea>
-                                 </div>
-                              </div>
-                           </div> -->
 
                <div class="row no-gutters submit-btn-container">
                   <button class="status-btn submit-btn">Tạo phiếu checkin</button>
@@ -186,3 +174,4 @@
       </div>
    </div>
 </div>
+

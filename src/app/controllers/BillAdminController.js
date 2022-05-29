@@ -17,21 +17,19 @@ const showBill = async (req, res, next) => {
 }
 
 const showDetail = async (req, res, next) => {
-    const customer = await Customer(req.body);
+    const customer = await Customer.findOne({ _id: req.params.id });
+    const bill = await Bill.findOne({ customerID: customer._id });
+    const room = await Room.findOne({_id: customer.roomID});
     
-    const bill = await Bill.findOne( {customerID: customer._id });
-    
-    Bill.findOne({ _id: req.params.id })
-        .then(bills => {
-            
-            res.render('TabBillAdmin/billDetail', {
-                layout: 'mainAdmin.hbs',
-                bills: mongooseToObject(bills),
-               
-            });
-        })
-        .catch(next);
+    res.render('TabBillAdmin/billDetail', {
+        layout: 'mainAdmin.hbs',
+        bill: mongooseToObject(bill),
+        customer: mongooseToObject(customer),
+        room: mongooseToObject(room)
+    });
+
 }
+
 
 module.exports = { showBill, showDetail };
 

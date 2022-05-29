@@ -18,6 +18,7 @@ router.put('/checkIn/:id/update', checkinController.update);
 router.get('/checkIn/:id/edit', checkinController.edit);
 
 router.get('/checkIn/bill/:id', checkinController.showDetail);
+router.put('/checkIn/bill/:id/update', checkinController.updateBill);
 
 module.exports = router;
 

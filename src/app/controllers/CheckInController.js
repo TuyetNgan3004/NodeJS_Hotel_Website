@@ -2,19 +2,23 @@
 const Room = require('../models/Room');
 const Customer = require('../models/Customer');
 const Bill = require('../models/Bill');
+const Service = require('../models/Service');
 const { multipleToObject } = require('../../config/utility/mongoose');
 const { mongooseToObject } = require('../../config/utility/mongoose');
 const { db } = require('../models/Customer');
 
 const showCheckIn = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
-    const confirmedBookings = await Customer.find({ r_status: 'chờ checkin' });
-    const roomBooked = await Customer.find().populate('roomID')
+    const roomBooked = await Customer.find({ c_status: 'Đã xác nhận' }).populate('roomID')
+    var result = multipleToObject(roomBooked);
+        for(var i in result) {
+            result[i].c_checkin = result[i].c_checkin.toLocaleDateString('en-GB');
+            result[i].c_checkout = result[i].c_checkout.toLocaleDateString('en-GB');
+        }
     res.render('TabCheckInAdmin/checkInAdmin', {
         layout: 'mainAdmin.hbs',
         rooms: multipleToObject(emptyRooms),
-        bookings: multipleToObject(confirmedBookings),
-        roomBooked: multipleToObject(roomBooked)
+        roomBooked: result
     });
 }
 
@@ -32,55 +36,45 @@ const showCheckInBooking = async (req, res, next) => {
 
 const showCheckInList = async (req, res, next) => {
     const roomsCheckIn = await Customer.find({ c_status: 'Đang checkin' }).populate('roomID')
+    var result = multipleToObject(roomsCheckIn);
+    for(var i in result) {
+        result[i].c_checkin = result[i].c_checkin.toLocaleDateString('en-GB');
+        result[i].c_checkout = result[i].c_checkout.toLocaleDateString('en-GB');
+    }
     res.render('TabCheckInAdmin/checkInList', {
         layout: 'mainAdmin.hbs',
-        customers: multipleToObject(roomsCheckIn)
+        customers: result
     });
 }
 
-
-//[POST] /checkIn/:id/checkInBooking/taophieu
-const taophieu = async (req, res, next) => {
-    const customer = await Customer.findOne({_id: req.params.id});
-    await Customer.updateOne(
-        {_id: req.params.id}, 
-        {$set: { c_status: 'Đang checkin' }});
-    
-    await Room.updateOne(
-        {_id: customer.roomID},
-        {$set: {r_status: 'đang sử dụng'}}
-    );
-
-    // const bill = new Bill(req.body);
-    // bill.customerID = customer._id;
-    // bill.save()
-    res.redirect('/admin/checkIn')
-}
-
 const store = async (req, res, next) => {
-    const customer = await Customer(req.body);
+    var customer = new Customer({
+        c_name: req.body.c_name,
+        c_phone: req.body.c_phone,
+        c_email: req.body.c_email,
+        c_checkin: new Date(req.body.c_checkin),
+        c_checkout: new Date(req.body.c_checkout),
+        c_total: req.body.c_total,
+        roomID: req.body.roomID,
+    });
+
     const room = await Room.findOne({ r_number: req.body.r_number })
     customer.c_status = 'Đang checkin';
     customer.roomID = room._id;
 
-    const room1 = await Room.findOneAndUpdate(
+    await Room.findOneAndUpdate(
         { _id: customer.roomID },
         { r_status: 'đang sử dụng' },
         { new: true }
     );
 
     const bill = new Bill(req.body);
-
-    const userID = customer.id;
-
-    bill.customerID = userID;
-
+    bill.customerID = customer.id;
     bill.save()
 
     customer.save()
         .then(() => res.redirect('/admin/checkIn'))
         .catch(next);
-
 }
 
 const edit = async (req, res, next) => {
@@ -108,17 +102,63 @@ const update = async (req, res, next) => {
 const showDetail = async (req, res, next) => {
     const customer = await Customer.findOne({ _id: req.params.id });
     const bill = await Bill.findOne({ customerID: customer._id });
-    const room = await Room.findOne({_id: customer.roomID})
-    // const dateCre = Bill.find( {"dateToString" : {format: "%Y-%m-%d", date: "$timestamps" }});
-    
+    const room = await Room.findOne({_id: customer.roomID});
+    const services = await Service.find();
+    var result = mongooseToObject(customer);
+        result.c_checkin = result.c_checkin.toLocaleDateString('en-GB');
+        result.c_checkout = result.c_checkout.toLocaleDateString('en-GB');
+    var day_ms = (customer.c_checkout - customer.c_checkin);
+    var dayrent = day_ms / 86400000;
+    var total = parseFloat(room.r_price.replace(/,/g,'')) * dayrent;
     res.render('TabBillAdmin/billDetail', {
         layout: 'mainAdmin.hbs',
         bill: mongooseToObject(bill),
-        customer: mongooseToObject(customer),
-        room: mongooseToObject(room)
+        customer: result,
+        dayRent: dayrent,
+        total: total,
+        room: mongooseToObject(room),
+        services: multipleToObject(services)
     });
-
 }
 
-module.exports = { showCheckIn, showCheckInBooking, showCheckInList, store, edit, update, showDetail, taophieu };
+const updateBill = async(req, res, next) => {
+    const {sv_name, sv_type, sv_price, sv_qty, sv_total, bill_total} = req.body;
+    const {id} = req.params;
+    if(typeof sv_name === 'object') {
+        var services = [];
+        for(let i in sv_name) {
+            var service = {
+                name: sv_name[i],
+                type: sv_type[i],
+                price: sv_price[i],
+                qty: sv_qty[i],
+                total: sv_total[i]
+            };
+            services.push(service);
+        }
+        await Bill.updateOne(
+            {_id: id},
+            {$set: {b_service: services, b_total: bill_total}}
+        )
+        
+    }
+    else {
+        var services = [];
+        var service = {
+            name: sv_name,
+            type: sv_type,
+            price: sv_price,
+            qty: sv_qty,
+            total: sv_total
+        };
+        services.push(service);
+        await Bill.updateOne(
+            {_id: id},
+            {$set: {b_service: services, b_total: bill_total}}
+        )
+    }
+    res.redirect('back')
+}
+
+module.exports = { showCheckIn, showCheckInBooking, showCheckInList, store, edit, update, showDetail, updateBill };
 
