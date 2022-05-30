@@ -126,6 +126,7 @@ const showDetail = async (req, res, next) => {
     var result = mongooseToObject(customer);
         result.c_checkin = result.c_checkin.toLocaleDateString('en-GB');
         result.c_checkout = result.c_checkout.toLocaleDateString('en-GB');
+    console.log(result.c_total)
     var day_ms = (customer.c_checkout - customer.c_checkin);
     var dayrent = day_ms / 86400000;
     var total = parseFloat(room.r_price.replace(/,/g,'')) * dayrent;

@@ -154,7 +154,7 @@
                      {{#ifEquals bill.b_total '0'}}
                      <div class="form-label col l-12">Tổng tiền</div>
                      <input readonly id="total-bill" name="bill_total" class="form-input col l-12" type="text"
-                        value="0">
+                        value="{{customer.c_total}}">
                      {{else}}
                      <div class="form-label col l-12">Tổng tiền</div>
                      <input readonly id="total-bill" name="bill_total" class="form-input col l-12" type="text"
@@ -179,16 +179,7 @@
 </div>
 <script>
    //format ngày tạo phiếu hoá đơn
-   var dateCre = document.getElementById('createAt');
-   var test = dateCre.textContent;
-
-   function convert(str) {
-      var date = new Date(str),
-         mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-         day = ("0" + date.getDate()).slice(-2);
-      return [day, mnth, date.getFullYear()].join("-");
-   }
-   dateCre.innerHTML = convert(test);
+   
 </script>
 <script src="/js/bill.js"></script>
 

@@ -43,7 +43,7 @@
                         <div class="form-label col l-6 l-6">{{customer.c_name}}</div>
 
                         <div class="form-label col l-2 m-6">Số điện thoại:</div>
-                        <div class="form-label col l-6 l-6">{{customer.c_phone}}</div>
+                        <div class="form-label col l-6 l-6">{{customer.c_total}}</div>
 
                         <div class="form-label col l-2 m-6">Ngày nhận phòng:</div>
                         <div id="dcheckin" class="form-label col l-6 l-6">{{customer.c_checkin}}</div>
@@ -154,7 +154,7 @@
                      {{#ifEquals bill.b_total '0'}}
                      <div class="form-label col l-12">Tổng tiền</div>
                      <input readonly id="total-bill" name="bill_total" class="form-input col l-12" type="text"
-                        value="0">
+                        value="{{customer.c_total}}">
                      {{else}}
                      <div class="form-label col l-12">Tổng tiền</div>
                      <input readonly id="total-bill" name="bill_total" class="form-input col l-12" type="text"

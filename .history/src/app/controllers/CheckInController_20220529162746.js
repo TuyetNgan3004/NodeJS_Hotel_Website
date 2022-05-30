@@ -179,5 +179,5 @@ const updateBill = async(req, res, next) => {
     res.redirect('back')
 }
 
-module.exports = { showCheckIn, showCheckInBooking, showCheckInList, taophieu, store, edit, update, showDetail, updateBill };
+module.exports = { showCheckIn, showCheckInBooking, showCheckInList, store, edit, update, showDetail, updateBill };
 
