@@ -9,9 +9,7 @@ router.get('/checkIn', checkinController.showCheckIn);
 
 //checkin online
 router.get('/checkIn/:id/checkInBooking/taophieu', checkinController.taophieu);
-
-// checkin offline
-router.put('/checkIn/add/store', checkinController.store);
+router.put('/checkIn/add/storeOnline', checkinController.storeOnline);
 
 // checkin detail edit
 router.put('/checkIn/:id/update', checkinController.update);

@@ -57,7 +57,7 @@ const taophieu = async (req, res, next) => {
     res.redirect('/admin/checkIn')
 }
 
-const store = async (req, res, next) => {
+const storeOnline = async (req, res, next) => {
     const customer = await Customer(req.body);
     const room = await Room.findOne({ r_number: req.body.r_number })
     customer.c_status = 'Đang checkin';
@@ -120,5 +120,5 @@ const showDetail = async (req, res, next) => {
 
 }
 
-module.exports = { showCheckIn, showCheckInBooking, showCheckInList, store, edit, update, showDetail, taophieu };
+module.exports = { showCheckIn, showCheckInBooking, showCheckInList, edit, update, showDetail, taophieu, storeOnline };
 
