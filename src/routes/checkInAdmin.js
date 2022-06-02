@@ -11,11 +11,17 @@ router.get('/checkIn', checkinController.showCheckIn);
 router.get('/checkIn/:id/checkInBooking/taophieu', checkinController.taophieu);
 router.put('/checkIn/add/storeOnline', checkinController.storeOnline);
 
+
+// checkin offline
+router.put('/checkIn/add/store', checkinController.store);
+
 // checkin detail edit
 router.put('/checkIn/:id/update', checkinController.update);
 router.get('/checkIn/:id/edit', checkinController.edit);
 
 router.get('/checkIn/bill/:id', checkinController.showDetail);
+router.put('/checkIn/bill/:id/update', checkinController.updateBill);
+router.get('/checkIn/bill/:id/checkout', checkinController.checkoutBill);
 
 module.exports = router;
 

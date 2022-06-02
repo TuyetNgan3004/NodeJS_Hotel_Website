@@ -1,0 +1,189 @@
+<div class="main">
+   <div class="header">
+      <div class="menu-mobile">
+         <label for="nav-mobile-input">
+            <i class="fa-solid fa-bars"></i>
+         </label>
+      </div>
+
+      <div class="user-avatar">
+         <div class="user-img-container">
+            <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt="" class="user-img">
+         </div>
+         <div class="user-info">
+            <p class="user-name">User Name</p>
+            <p class="user-role">User Role</p>
+         </div>
+
+         <div class="user-function">
+            <a href="" class="function-item">Log Out</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="content">
+      <div class="grid">
+         <p class="page-title">Phiếu checkin</p>
+         <div class="table-list-container">
+            <form action="/admin/checkIn/add/store?_method=PUT" method="POST">
+               <div class="row">
+                  <div class="col l-4 m-4 c-12">
+                     <label for="room-img" class="form-label">Tên khách hàng</label>
+                     <input id="room-img" name="c_name" type="text" class="form-input"
+                        placeholder="Nhập tên khách hàng">
+                  </div>
+
+                  <div class="col l-4 m-4 c-12">
+                     <label for="room-type" class="form-label">Số điện thoại</label>
+                     <input id="room-type" name="c_phone" type="text" class="form-input"
+                        placeholder="Nhập số điện thoại">
+                  </div>
+
+                  <div class="col l-4 m-4 c-12">
+                     <label for="room-people" class="form-label">Email</label>
+                     <input id="room-people" name="c_email" type="text" class="form-input" placeholder="Nhập Email">
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col l-6 m-6 c-12">
+                     <label for="room-img" class="form-label">Ngày nhận phòng</label>
+                     <input id="room-img" name="c_checkin" data-toggle="startDate" type="datetime-local" class="form-input"
+                        placeholder="Nhập ngày nhận phòng">
+                  </div>
+
+                  <div class="col l-6 m-6 c-12">
+                     <label for="room-type" class="form-label">Ngày trả phòng</label>
+                     <input id="room-type" data-toggle="endDate" name="c_checkout" type="datetime-local" class="form-input"
+                        placeholder="Nhập ngày trả phòng">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col l-4 m-4 c-12">
+                     <label for="room-id-input" class="form-label">Số phòng</label>
+                     <input id="room-id-input" name="r_number" type="text" class="form-input" placeholder="Nhập số phòng">
+                  </div>
+
+                  <div class="col l-4 m-4 c-12">
+                     <label for="room-name-input" class="form-label">Tên phòng</label>
+                     <input id="room-name-input" name="r_name" type="text" class="form-input" placeholder="Nhập tên phòng">
+                  </div>
+
+                  <div class="col l-4 m-4 c-12">
+                     <label for="room-price-input" class="form-label">Giá phòng</label>
+                     <input id="room-price-input" name="r_price" type="text" class="form-input" placeholder="Nhập giá phòng">
+                  </div>
+               </div>
+
+               <div class="row no-gutters submit-btn-container">
+                  <button class="status-btn submit-btn">Tạo phiếu checkin</button>
+               </div>
+            </form>
+            <br>
+            <hr>
+
+            <div class="row row-table-checkin">
+               <div class="col l-6 m-12 c-12 table-checkin">
+                  <p class="page-title">Danh sách chờ checkin</p>
+                  {{!-- row row-staff filter-row-mobile filter-row-mobile-noreverse row-margin --}}
+                  <div class="">
+                     <div class="col l-4 m-12 c-12 l-o-8">
+                        <div class="search-bar">
+                           <i class="search-icon fas fa-search"></i>
+                           <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                        </div>
+                     </div>
+
+                     <div class="table-container table-checkin-management">
+                        <table class="data-table">
+                           <tr>
+                              <th scope="col">Số phòng</th>
+                              <th scope="col">Tên phòng</th>
+                              <th scope="col">Tên khách hàng</th>
+                              <th scope="col">Số điện thoại</th>
+                              <th scope="col">Ngày nhận phòng</th>
+                              <th scope="col">Ngày trả phòng</th>
+                              <th scope="col">Checkin</th>
+                           </tr>
+                           {{#each roomBooked}}
+                           <tbody id="myTable">
+                              <tr>
+                              <td>{{this.roomID.r_number}}</td>
+                              <td>{{this.roomID.r_name}}</td>
+                              <td>{{this.c_name}}</td>
+                              <td>{{this.c_phone}}</td>
+                              <td>{{this.c_checkin}}</td>
+                              <td>{{this.c_checkout}}</td>
+                              <td>
+                                 <a class="status-btn" href="/admin/checkIn/{{this._id}}/checkInBooking">Checkin</a>
+                              </td>
+                           </tr>
+                           </tbody>
+                           {{/each}}
+                        </table>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col l-6 m-12 c-12 table-room">
+                  <p class="page-title">Danh sách phòng trống</p>
+                  {{!-- row row-staff filter-row-mobile filter-row-mobile-noreverse row-margin --}}
+                  <div class="row">
+                     <div class="col l-4 m-12 c-12 l-o-8">
+                       <div class="search-bar">
+                          <i class="search-icon fas fa-search"></i>
+                           <input id="myInput" class="search-bar-input" type="text" name="input-search"
+                              placeholder="Nhập tìm kiếm...">
+                        </div>
+                     </div>
+
+                     {{#each rooms}}
+                     <div class="js-myroom col l-4 m-6 c-12">
+                        <div class="adm-room-link">
+                           <div class="adm-room-card adm-room-card-checkin">
+                              {{!-- <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">
+                                 <div class="adm-room-number">{{this.r_number}}</div>
+                                 <div class="adm-room-status">{{this.r_status}}</div>
+                              </div> --}}
+                              <div class="adm-room-info">
+                                 <div class="adm-room-attr">
+                                    <span id="room-id" class="adm-room-type">{{this.r_number}}</span>
+                                    <span id="room-name" class="adm-room-type">{{this.r_name}}</span>
+                                    <span id="room-price" class="adm-room-price">{{this.r_price}}
+                                       <!-- <i class="fa-solid fa-dong-sign"></i> -->
+                                    </span>
+                                 </div>
+                                 <div class="adm-room-value">
+                                    <p class="adm-room-people">{{this.r_people}} người</p>
+                                    <p class="adm-room-people">Giường: {{this.r_bed}}</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     {{/each}}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script>
+   var roomID_input = document.querySelector('#room-id-input');
+   var roomName_input = document.querySelector('#room-name-input');
+   var roomPrice_input = document.querySelector('#room-price-input');
+   
+   var rooms = document.querySelectorAll('.adm-room-link').forEach(room => {
+      var roomID = room.querySelector('#room-id').innerText;
+      var roomName = room.querySelector('#room-name').innerText;
+      var roomPrice = room.querySelector('#room-price').innerText;
+
+      room.addEventListener('click', function(){
+
+      })
+   });
+   
+</script>
+

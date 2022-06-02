@@ -255,11 +255,6 @@
    overflow: hidden;
 }
 
-/* .room-img-container:hover .room-img {
-   transform: scale(110%) 3s;
-   animation: scaleOut ease-out 0.4s forwards;
-} */
-
 .room-img {
    width: 100%;
 }
@@ -474,10 +469,20 @@
    font-size: 1.4rem;
 }
 
-
 /* Room searching class */
 .room-filter-none {
    display: none !important;
+}
+
+/* BILL */
+.qty-input {
+   max-width: 40px;
+   border: 1px solid var(--second-color);
+   /* border-top: 1px solid var(--second-color); */
+   outline: none;
+   font-size: 1.6rem;
+   text-align: center;
+   padding: 4px;
 }
 
 
