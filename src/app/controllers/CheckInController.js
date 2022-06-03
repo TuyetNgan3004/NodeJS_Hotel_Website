@@ -99,6 +99,7 @@ const store = async (req, res, next) => {
         c_total: req.body.c_total,
         roomID: req.body.roomID,
     });
+}
 
 const edit = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
