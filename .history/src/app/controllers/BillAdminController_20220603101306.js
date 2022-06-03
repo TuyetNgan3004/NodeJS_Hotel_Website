@@ -14,17 +14,17 @@ const showBill = async (req, res, next) => {
 
 }
 
-// const showBillOnline = async (req, res, next) => {
-//     Customer.find({ c_status: { "$in": ["Đang checkin"] } })
-//         .populate('roomID')
-//         .then(customers => {
-//             res.render('TabBillAdmin/billList', {
-//                 layout: 'mainAdmin.hbs',
-//                 customers: multipleToObject(customers)
-//             });
-//         })
-//         .catch(next);
-// }
+const showBillOnline = async (req, res, next) => {
+    Customer.find({ c_status: { "$in": ["Đang checkin"] } })
+        .populate('roomID')
+        .then(customers => {
+            res.render('TabBillAdmin/billList', {
+                layout: 'mainAdmin.hbs',
+                customers: multipleToObject(customers)
+            });
+        })
+        .catch(next);
+}
 
 const showDetail = async (req, res, next) => {
     const bill = await Bill.findOne({ _id: req.params.id });
@@ -46,22 +46,22 @@ const showDetail = async (req, res, next) => {
         room: mongooseToObject(room),
     });
 }
-// const showDetailOnline = async (req, res, next) => {
-//     const customer = await Customer(req.body);
+const showDetailOnline = async (req, res, next) => {
+    const customer = await Customer(req.body);
     
-//     const bill = await Bill.findOne( {customerID: customer._id });
+    const bill = await Bill.findOne( {customerID: customer._id });
     
-//     Bill.findOne({ _id: req.params.id })
-//         .then(bills => {
+    Bill.findOne({ _id: req.params.id })
+        .then(bills => {
             
-//             res.render('TabBillAdmin/billDetail', {
-//                 layout: 'mainAdmin.hbs',
-//                 bills: mongooseToObject(bills),
+            res.render('TabBillAdmin/billDetail', {
+                layout: 'mainAdmin.hbs',
+                bills: mongooseToObject(bills),
                
-//             });
-//         })
-//         .catch(next);
-// }
+            });
+        })
+        .catch(next);
+}
 
-module.exports = { showBill, showDetail };
+module.exports = { showBill, showDetail, showBillOnline, showDetailOnline };
 

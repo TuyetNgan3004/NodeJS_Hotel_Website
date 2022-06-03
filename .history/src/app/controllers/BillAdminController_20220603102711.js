@@ -63,5 +63,5 @@ const showDetail = async (req, res, next) => {
 //         .catch(next);
 // }
 
-module.exports = { showBill, showDetail };
+module.exports = { showBill, showDetail, showBillOnline, showDetailOnline };
 

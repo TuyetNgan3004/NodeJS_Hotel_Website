@@ -68,7 +68,7 @@
                         class="form-input booking-input" placeholder="Chọn ngày nhận phòng">
                      <span class="form-msg">Vui lòng nhập trường này</span>
                   </div>
-                  <div class="form-group col l-6 m-12 c-12">
+                  <div class="form-group col l-6 m-12 c-12 ">
                      <label for="username" class="form-label">Ngày trả phòng</label>
                      <input id="checkout" name="c_checkout" type="datetime-local" data-toggle="endDate"
                         class="form-input booking-input" placeholder="Chọn ngày trả phòng">
@@ -77,11 +77,10 @@
                </div>
 
                <hr>
+
                <div class="row">
-                  <div class="form-group col l-12 m-12 c-12 ">
-                     <label id="form-label">Tổng tiền</label>
-                     <input id="total" name="c_total" type="text" class="form-input" value="{{rooms.r_price}}">
-                  </div>
+                  <div id="col l-6">Tổng tiền</div>
+                  <input id="total" name="c_total" type="text" class="form-input col l-6" value="{{rooms.r_price}}">
                </div>
 
                <div class="login-btn">

@@ -5,7 +5,5 @@ const billAdminController = require('../app/controllers/BillAdminController');
 
 router.get('/bill/:id', billAdminController.showDetail);
 router.get('/bill', billAdminController.showBill);
-// router.get('/bill', billAdminController.showBillOnline);
-// router.get('/bill/:id', billAdminController.showDetailOnline);
-
+router.get('/bill', billAdminController.showBillOnline);
 module.exports = router;
