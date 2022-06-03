@@ -25,10 +25,10 @@ const showCheckIn = async (req, res, next) => {
 const showCheckInBooking = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
     const roomBooked = await Customer.find({c_status: 'Đã xác nhận'}).populate('roomID')
-    var cusList = multipleToObject(roomBooked);
-    for(var i in cusList) {
-        cusList[i].c_checkin = cusList[i].c_checkin.toLocaleDateString('en-GB');
-        cusList[i].c_checkout = cusList[i].c_checkout.toLocaleDateString('en-GB');
+    var customerList = multipleToObject(roomBooked);
+    for(var i in customerList) {
+        customerList[i].c_checkin = result.c_checkin.toLocaleDateString('en-GB');
+        customerList[i].c_checkout = result.c_checkout.toLocaleDateString('en-GB');
     }
     const cusBooked = await Customer.findById(req.params.id).populate('roomID');
     var result = mongooseToObject(cusBooked);
@@ -38,7 +38,7 @@ const showCheckInBooking = async (req, res, next) => {
     res.render('TabCheckInAdmin/checkInBooking', {
         layout: 'mainAdmin.hbs',
         rooms: multipleToObject(emptyRooms),
-        roomBooked: cusList,
+        roomBooked: customerList,
         cusBooked: result
     });
 }
@@ -104,6 +104,7 @@ const store = async (req, res, next) => {
         .then(() => res.redirect('/admin/checkIn'))
         .catch(next);
 }
+    
 
 const edit = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
