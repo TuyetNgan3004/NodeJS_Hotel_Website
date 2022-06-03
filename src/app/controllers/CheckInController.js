@@ -104,7 +104,6 @@ const store = async (req, res, next) => {
         .then(() => res.redirect('/admin/checkIn'))
         .catch(next);
 }
-    
 
 const edit = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
