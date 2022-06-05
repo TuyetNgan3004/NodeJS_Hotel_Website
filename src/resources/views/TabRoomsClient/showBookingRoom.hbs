@@ -62,16 +62,19 @@
                </div>
 
                <div class="row">
+                  {{#each bookedDates}}
+                  <input hidden class="bookedCheckIn" type="text" value="{{this.checkinDate}}">
+                  <input hidden class="bookedCheckOut" type="text" value="{{this.checkoutDate}}">
+                  {{/each}}
                   <div class="form-group col l-6 m-12 c-12 ">
                      <label for="username" class="form-label">Ngày nhận phòng</label>
                      <input id="checkin" name="c_checkin" type="datetime-local" data-toggle="startDate"
-                        class="form-input booking-input" placeholder="Chọn ngày nhận phòng">
+                        data-unavailable="booked" class="form-input booking-input" placeholder="Chọn ngày nhận phòng">
                      <span class="form-msg">Vui lòng nhập trường này</span>
                   </div>
                   <div class="form-group col l-6 m-12 c-12">
                      <label for="username" class="form-label">Ngày trả phòng</label>
-                     <input id="checkout" name="c_checkout" type="datetime-local" data-toggle="endDate"
-                        class="form-input booking-input" placeholder="Chọn ngày trả phòng">
+                     <input id="checkout" name="c_checkout" type="datetime-local" data-toggle="endDate" data-unavailable="booked" class="form-input booking-input" placeholder="Chọn ngày trả phòng">
                      <span class="form-msg">Vui lòng nhập trường này</span>
                   </div>
                </div>
@@ -80,8 +83,9 @@
                <div class="row">
                   <div class="form-group col l-12 m-12 c-12 ">
                      <label id="form-label">Tổng tiền</label>
-                     <input id="total" name="c_total" type="text" class="form-input" value="{{rooms.r_price}}">
+                     <input readonly id="total" name="c_total" type="text" class="form-input" value="{{rooms.r_price}}">
                   </div>
+
                </div>
 
                <div class="login-btn">
@@ -97,3 +101,39 @@
 </main>
 <!-- End main -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+   var bookedCheckInDates = document.querySelectorAll('.bookedCheckIn');
+   var bookedCheckOutDates = document.querySelectorAll('.bookedCheckOut');
+   var disableDates = [];
+   for (var i in bookedCheckInDates) {
+      if (bookedCheckInDates.hasOwnProperty(i)) {
+         var date = { from: bookedCheckInDates[i].value, to: bookedCheckOutDates[i].value };
+         disableDates.push(date);
+      }
+   }
+console.log(disableDates);
+var checkoutDate = document.querySelector('[data-toggle="endDate"][data-unavailable="booked"]').flatpickr(
+   {
+      altInput: true,
+      altFormat: "d-m-Y",
+      minDate: new Date().fp_incr(0),
+      dateFormat: "Y-m-d",
+      disable: disableDates,
+   }
+);
+
+var checkIn = document.querySelector('[data-toggle="startDate"][data-unavailable="booked"]').flatpickr(
+   {
+      altInput: true,
+      altFormat: "d-m-Y",
+      dateFormat: "Y-m-d",
+      disable: disableDates,
+      minDate: new Date().fp_incr(0),
+      onChange: function(dateObj, dateStr) {  
+         checkoutDate.set('minDate', new Date(dateStr).fp_incr(1));
+         // flatpickr(checkoutDate, {dateFormat: "d-m-Y", minDate: new Date(dateStr).fp_incr(1)});
+     }
+   }
+ );
+
+</script>

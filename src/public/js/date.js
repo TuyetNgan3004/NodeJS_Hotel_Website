@@ -5,6 +5,7 @@ var checkoutDate = document.querySelector('[data-toggle="endDate"]').flatpickr(
       minDate: new Date().fp_incr(0),
    }
  );
+ 
 
 var checkinDate = document.querySelector('[data-toggle="startDate"]').flatpickr(
    {
@@ -17,3 +18,4 @@ var checkinDate = document.querySelector('[data-toggle="startDate"]').flatpickr(
      }
    }
  );
+

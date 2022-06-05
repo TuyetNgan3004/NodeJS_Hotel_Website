@@ -22,20 +22,25 @@
                <div class="col l-3 m-12 c-12">
                   <div class="content-title"> Tìm kiếm nhanh</div>
 
-
-                  <div class="date-checkin">
-                     <div class="input-with-icon-container">
-                        <input class="search-bar-input " type="datetime-local" name="" data-toggle="startDate" placeholder="Ngày nhận phòng">
-                        <i class="check-in-icon fa-solid fa-calendar"></i>
+                  <form method="POST" action="room/available">
+                     <div class="date-checkin">
+                        <div class="input-with-icon-container">
+                           <input required class="search-bar-input" type="datetime-local" name="checkinDate" data-toggle="startDate"
+                              placeholder="Ngày nhận phòng">
+                           <i class="check-in-icon fa-solid fa-calendar"></i>
+                        </div>
                      </div>
-                  </div>
 
-                  <div class="date-checkin">
-                     <div class="input-with-icon-container">
-                        <input class="search-bar-input " type="datetime-local" data-toggle="endDate" name="" placeholder="Ngày trả phòng">
-                        <i class="check-in-icon fa-solid fa-calendar"></i>
+                     <div class="date-checkin">
+                        <div class="input-with-icon-container">
+                           <input required class="search-bar-input" type="datetime-local" data-toggle="endDate" name="checkoutDate" placeholder="Ngày trả phòng">
+                           <i class="check-in-icon fa-solid fa-calendar"></i>
+                        </div>
                      </div>
-                  </div>
+                     <div class="btn-booking-detail">
+                        <button style="width: 100%;" type="submit" class="btn btn-reverse btn--size-s">Lọc phòng</button>
+                     </div>
+                  </form>
 
                   <div class="room-categories">
                      <div class="room-categories-item">
@@ -43,12 +48,12 @@
                         <i class="check-in-icon fa-solid fa-circle-chevron-down"></i>
                      </div>
 
-                     
+
                      <div class="room-categories-detail">
-                        <a  href="/room/query/standard">Phòng Standard</a>
-                        <a  href="/room/query/superior">Phòng Superior</a>
-                        <a  href="/room/query/deluxe">Phòng Deluxe</a>
-                        <a  href="/room/query/suite">Phòng Suite</a>
+                        <a href="/room/query/standard">Phòng Standard</a>
+                        <a href="/room/query/superior">Phòng Superior</a>
+                        <a href="/room/query/deluxe">Phòng Deluxe</a>
+                        <a href="/room/query/suite">Phòng Suite</a>
                      </div>
 
                      <div class="room-categories-item">
@@ -95,7 +100,8 @@
                      <div class="js-myroom col l-4 m-6 c-12">
                         <a href="/room/{{this._id}}" class="room-link">
                            <div class="room-card">
-                              <div class="room-img-container" style="background-image: url({{this.r_img.thumbnail}});"></div>
+                              <div class="room-img-container" style="background-image: url({{this.r_img.thumbnail}});">
+                              </div>
 
                               <div class="room-info">
                                  <span class="room-type">{{this.r_name}}</span>
@@ -126,3 +132,4 @@
 {{!-- Script chọn ngày giờ--}}
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="/js/filter.js"></script>
+<script src="/js/date.js"></script>

@@ -3,13 +3,14 @@ const router = express.Router();
 
 const roomController = require ('../app/controllers/RoomController');
 
-router.get ('/', roomController.showRoomList);
-// router.get ('/:id', roomController.showRoomDetail);
-
-// router.get ('/:people', roomController.people);
+// ROOM LIST
 router.get ('/query/:attribute', roomController.quickSearchRoom);
-router.get ('/:id', roomController.showRoomDetail);
-router.get ('/:id/showBookingRoom', roomController.showBookingRoom);
+router.post ('/available', roomController.roomAvailable);
+router.get ('/', roomController.showRoomList);
+
+// ROOM DETAILS AND BOOKING
 router.post ('/:id/showBookingRoom/store', roomController.store);
+router.get ('/:id/showBookingRoom', roomController.showBookingRoom);
+router.get ('/:id', roomController.showRoomDetail);
 
 module.exports = router;
