@@ -16,6 +16,8 @@ const quickSearchRoom = async(req, res, next) => {
     var room;
     if (req.params.attribute == 'controng') {
         room = await Room.find({ r_status: 'còn trống' });
+    } else if (req.params.attribute == 'dadat') {
+        room = await Room.find({ r_status: 'đã đặt' });
     } else if (req.params.attribute == 'dangsudung') {
         room = await Room.find({ r_status: 'đang sử dụng' });
     }
