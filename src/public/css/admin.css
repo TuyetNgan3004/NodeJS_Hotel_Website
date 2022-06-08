@@ -181,6 +181,50 @@
     color: var(--second-color);
 }
 
+.page-title-statistic {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin: 30px 0 20px 0;
+    color: var(--second-color);
+}
+
+.statistic-content {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin: 0 4px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.statistic-day {
+    display: block;
+}
+
+
+.statistic-month {
+    display: none;
+}
+
+
+.select-month {
+    width: 100px;
+    height: 30px;
+    margin: 30px 8px 20px 8px;
+    outline: none;
+}
+
+.statistic-filter-month {
+    margin: 30px 0 20px 0;
+}
+
+/* ben trai doanh thu */
+.statistic-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Ngân thêm trang quản lí checkin */
 
@@ -437,6 +481,14 @@
     filter: brightness(60%);
 }
 
+.adm-room-status.adm-room-status-booked {
+    background-color: rgba(198, 201, 16, 0.7);
+}
+
+.adm-room-status.adm-room-status-booked.adm-room-status::before {
+    border-top: 3px solid rgba(198, 201, 16, 0.7);
+}
+
 .adm-room-status.adm-room-status-inuse {
     background-color: rgba(209, 43, 43, 0.7);
 }
@@ -527,15 +579,15 @@
 }
 
 .submit-btn-container {
-   justify-content: right;
+    justify-content: right;
 }
 
 .data-table .td-btn {
-   width: 30px;
-   padding-right: 0;
-   padding-left: 0;
-   text-align: center;
-} 
+    width: 30px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+}
 
 .bill-btn {
     margin-right: 10px;
@@ -558,6 +610,7 @@
     margin-bottom: 14px;
     font-size: 2.2rem;
 }
+
 /* .service-items {
     list-style: none;
 }
@@ -578,5 +631,3 @@
 .quantity-input {
     width: 100px;
 } */
-
-

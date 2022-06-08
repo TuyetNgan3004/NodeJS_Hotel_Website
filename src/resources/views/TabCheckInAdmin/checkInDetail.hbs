@@ -51,33 +51,33 @@
                     <div class="row">
                         <div class="col l-6 m-6 c-12">
                             <label for="room-img" class="form-label">Ngày nhận phòng</label>
-                            <input id="room-img" name="c_checkin" type="text" class="form-input"
-                                value="{{customers.c_checkin}}">
+                            <input disabled id="room-checkin" name="c_checkin" type="text" class="form-input"
+                                data-date="{{customers.c_checkin}}" value="">
                         </div>
 
                         <div class="col l-6 m-6 c-12">
                             <label for="room-type" class="form-label">Ngày trả phòng</label>
-                            <input id="room-type" name="c_checkout" type="text" class="form-input"
-                                value="{{customers.c_checkout}}">
+                            <input id="room-checkout" name="c_checkout" type="datetime-local" class="form-input"
+                                data-date="{{customers.c_checkout}}" value="">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col l-4 m-4 c-12">
                             <label for="room-img" class="form-label">Số phòng</label>
                             <input disabled id="room-img" name="r_number" type="text" class="form-input"
-                                value="{{customer1.roomID.r_number}}">
+                                value="{{customers.roomID.r_number}}">
                         </div>
 
                         <div class="col l-4 m-4 c-12">
                             <label for="room-type" class="form-label">Tên phòng</label>
                             <input disabled id="room-type" name="r_name" type="text" class="form-input"
-                                value="{{customer1.roomID.r_name}}">
+                                value="{{customers.roomID.r_name}}">
                         </div>
 
                         <div class="col l-4 m-4 c-12">
                             <label for="room-people" class="form-label">Giá phòng</label>
                             <input disabled id="room-people" name="r_price" type="text" class="form-input"
-                                value="{{customer1.roomID.r_price}}">
+                                value="{{customers.roomID.r_price}}">
                         </div>
                     </div>
 
@@ -101,50 +101,37 @@
                 <br>
                 <hr>
 
-                <div class="row row-table-checkin">
-                    <div class="col l-12 m-12 c-12 table-room">
-                  <p class="page-title">Danh sách phòng trống</p>
-                  {{!-- row row-staff filter-row-mobile filter-row-mobile-noreverse row-margin --}}
-                  <div class="row">
-                     <div class="col l-4 m-12 c-12 l-o-8">
-                        <div class="search-bar">
-                           <i class="search-icon fas fa-search"></i>
-                           <input class="search-input" type="text" placeholder="seaching here">
-                        </div>
-                     </div>
 
-                     {{#each rooms}}
-                     <div class="col l-4 m-6 c-12">
-                        <a href="" class="adm-room-link">
-                           <div class="adm-room-card adm-room-card-checkin">
-                              {{!-- <div class="adm-room-img" style="background-image: url({{this.r_img.thumbnail}});">
-                                 <div class="adm-room-number">{{this.r_number}}</div>
-                                 <div class="adm-room-status">{{this.r_status}}</div>
-                              </div> --}}
-                              <div class="adm-room-info">
-                                 <div class="adm-room-attr">
-                                    <span class="adm-room-type">{{this.r_name}}</span>
-                                    <span class="adm-room-price">{{this.r_price}}
-                                       <!-- <i class="fa-solid fa-dong-sign"></i> -->
-                                    </span>
-
-
-                                 </div>
-                                 <div class="adm-room-value">
-                                    <p class="adm-room-people">{{this.r_people}} người</p>
-                                    <p class="adm-room-people">Giường: {{this.r_bed}}</p>
-
-                                 </div>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                     {{/each}}
-                  </div>
-               </div>
-                </div>
 
             </div>
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    var dateCO = document.getElementById('room-checkout');
+    var dateCI = document.getElementById('room-checkin');
+
+
+    var date_co = dateCO.getAttribute('data-date');
+    console.log(date_co)
+    var date_ci = dateCI.getAttribute('data-date');
+    console.log(date_ci)
+    var checkoutDate = document.querySelector('#room-checkout').flatpickr(
+        {
+            altInput: true,
+            altFormat: "d-m-Y",
+            dateFormat: "Y-m-d",
+            defaultDate: [date_co],
+            minDate: new Date().fp_incr(0)
+        }
+    );
+    var checkinDate = document.querySelector('#room-checkin').flatpickr({
+        altInput: true,
+        altFormat: "d-m-Y",
+        dateFormat: "Y-m-d",
+        defaultDate: [date_ci]
+    })
+
+
+</script>

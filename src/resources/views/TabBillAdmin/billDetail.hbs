@@ -28,8 +28,8 @@
          <form method="POST" action="./{{bill._id}}/update?_method=PUT">
             <div class="table-list-container">
                <div class="row filter-row-mobile">
-                  <div class="col l-4 m-12 c-12">
-                     <div class="row">
+                  <div class="col l-6 m-12 c-12">
+                     <div class="row">                      
                         <div class="form-label col l-6 m-6 c-6">Số hoá đơn</div>
                         <div class="form-label col l-6 m-6 c-6">{{bill._id}}</div>
                         <div class="form-label col l-6 m-6 c-6">Ngày tạo</div>
@@ -53,7 +53,7 @@
                      </div>
                   </div>
 
-                  <div class="col l-8 m-12">
+                  <div class="col l-6 m-12">
                   {{#ifEquals bill.b_status 'Đã thanh toán'}}
                   {{else}}
                      <div class="create-btn-container">
@@ -168,7 +168,7 @@
                   {{else}}
                      <a class="bill-btn" href="/admin/checkIn/bill/{{bill._id}}/checkout">
                         <span class="status-btn status-btn-block">
-                           Xuất hoá đơn
+                           Thanh toán
                         </span>
                      </a>
                      <button class="bill-btn" style="border: none;" type="submit">

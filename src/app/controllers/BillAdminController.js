@@ -6,13 +6,14 @@ const { multipleToObject } = require('../../config/utility/mongoose');
 const { mongooseToObject } = require('../../config/utility/mongoose');
 
 const showBill = async (req, res, next) => {
-    var bill = await Bill.find({b_status: 'Đã thanh toán'}).populate('customerID');
+    var bill = await Bill.find({ b_status: 'Đã thanh toán' }).populate('customerID');
     res.render('TabBillAdmin/billList', {
         layout: 'mainAdmin.hbs',
         bills: multipleToObject(bill)
     });
 
 }
+
 
 // const showBillOnline = async (req, res, next) => {
 //     Customer.find({ c_status: { "$in": ["Đang checkin"] } })
@@ -29,14 +30,14 @@ const showBill = async (req, res, next) => {
 const showDetail = async (req, res, next) => {
     const bill = await Bill.findOne({ _id: req.params.id });
     const customer = await Customer.findOne({ _id: bill.customerID });
-    const room = await Room.findOne({_id: customer.roomID});
+    const room = await Room.findOne({ _id: customer.roomID });
 
     var result = mongooseToObject(customer);
     result.c_checkin = result.c_checkin.toLocaleDateString('en-GB');
     result.c_checkout = result.c_checkout.toLocaleDateString('en-GB');
     var day_ms = (customer.c_checkout - customer.c_checkin);
     var dayrent = day_ms / 86400000;
-    var total = parseFloat(room.r_price.replace(/,/g,'')) * dayrent;
+    var total = parseFloat(room.r_price.replace(/,/g, '')) * dayrent;
     res.render('TabBillAdmin/billDetail', {
         layout: 'mainAdmin.hbs',
         bill: mongooseToObject(bill),
@@ -48,16 +49,16 @@ const showDetail = async (req, res, next) => {
 }
 // const showDetailOnline = async (req, res, next) => {
 //     const customer = await Customer(req.body);
-    
+
 //     const bill = await Bill.findOne( {customerID: customer._id });
-    
+
 //     Bill.findOne({ _id: req.params.id })
 //         .then(bills => {
-            
+
 //             res.render('TabBillAdmin/billDetail', {
 //                 layout: 'mainAdmin.hbs',
 //                 bills: mongooseToObject(bills),
-               
+
 //             });
 //         })
 //         .catch(next);
