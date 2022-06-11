@@ -222,7 +222,7 @@
 /* ben trai doanh thu */
 .statistic-value {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
