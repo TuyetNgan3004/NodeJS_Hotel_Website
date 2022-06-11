@@ -5,5 +5,6 @@ const statisticAdminController = require('../app/controllers/StatisticAdminContr
 
 router.post('/statistic/filterMonth', statisticAdminController.filterMonth);
 router.get('/statistic', statisticAdminController.statisticDay);
+router.post ('/filter', statisticAdminController.filter);
 
 module.exports = router;

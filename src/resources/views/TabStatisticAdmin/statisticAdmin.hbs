@@ -42,18 +42,40 @@
 
                     </div>
                 </div>
-
+              
                 <div class="row filter-row-mobile">
                     <div class="col l-6 m-12 c-12">
+                          {{#if total}}
                         <div class="row statistic">
                             {{#if total}}
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng doanh thu</p>
                                 <div class="statistic-value">
                                     <p class="statistic-content">{{total}}</p>
+
                                     <i class="fa-solid fa-dong-sign statistic-content"></i>
                                 </div>
                             </div>
+                            
+                            <div class="col l-12 m-12 c-12">
+                                <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
+                                <div class="statistic-value">
+                                    <p class="statistic-content">{{countOrder}}</p>
+                                    <p class="statistic-content">đơn</p>
+                                </div>
+                            </div>
+
+                        </div>
+                         {{else}}
+                         <div class="row statistic">
+                            <div class="col l-12 m-12 c-12">
+                                <p class="page-title-statistic">Tổng doanh thu</p>
+                                <div class="statistic-value">
+                                    <p class="statistic-content">0</p>
+                                    <i class="fa-solid fa-dong-sign statistic-content"></i>
+                                </div>
+                            </div>
+                            
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
                                 <div class="statistic-value">
@@ -78,17 +100,18 @@
                             </div>
                             {{/if}}
                         </div>
+                          {{/if}}
                     </div>
                     <div class="col l-6 m-12 c-12 statistic-day">
-                        <form action="" method="">
+                        <form action="./filter" method="POST">
                             <div class="row">
                                 <div class=" col l-6 m-6 c-6">
                                     <p class="page-title-statistic ">Từ ngày</p>
-                                    <input type="date" class="form-input booking-input">
+                                    <input id="startDate" type="date" class="form-input booking-input" name="startDate" >
                                 </div>
                                 <div class=" col l-6 m-6 c-6">
                                     <p class="page-title-statistic ">Đến ngày</p>
-                                    <input type="date" class="form-input booking-input">
+                                    <input id="endDate" type="date" class="form-input booking-input" name="endDate" >
                                 </div>
                             </div>
                             <div class="row no-gutters submit-btn-container">
@@ -124,3 +147,17 @@
         </div>
     </div>
 </div>
+
+{{!-- <script>
+    function formatDate(date) {
+    var date = new Date(date);
+    let dd = date.getDate();
+    let mm = date.getMonth() + 1;
+    let yyyy = date.getFullYear();
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+    date = `${dd}/${mm}/${yyyy}`;
+    return date;
+  }
+</script> --}}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
