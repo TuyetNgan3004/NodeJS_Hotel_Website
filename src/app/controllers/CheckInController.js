@@ -8,7 +8,7 @@ const { mongooseToObject } = require('../../config/utility/mongoose');
 const { db } = require('../models/Customer');
 
 const showCheckIn = async (req, res, next) => {
-    const emptyRooms = await Room.find({ r_status: 'còn trống' });
+    const emptyRooms = await Room.find({ r_status: 'còn trống'});
     const roomBooked = await Customer.find({ c_status: 'Đã xác nhận' }).populate('roomID')
     var result = multipleToObject(roomBooked);
     for (var i in result) {
@@ -55,8 +55,6 @@ const showCheckInList = async (req, res, next) => {
         customers: result
     });
 }
-
-
 //[POST] /checkIn/:id/checkInBooking/taophieu
 const taophieu = async (req, res, next) => {
     const customer = await Customer.findOne({ _id: req.params.id });
@@ -74,7 +72,6 @@ const taophieu = async (req, res, next) => {
     bill.save()
     res.redirect('/admin/checkIn')
 }
-
 const store = async (req, res, next) => {
     var customer = new Customer({
         c_name: req.body.c_name,
@@ -104,7 +101,6 @@ const store = async (req, res, next) => {
         .then(() => res.redirect('/admin/checkIn'))
         .catch(next);
 }
-
 const edit = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
     const customer = await Customer.findById(req.params.id).populate('roomID');
@@ -120,13 +116,11 @@ const edit = async (req, res, next) => {
         rooms: multipleToObject(emptyRooms)
     })
 }
-
 const update = async (req, res, next) => {
     Customer.updateOne({ _id: req.params.id }, req.body)
         .then(() => res.redirect('/admin/checkIn/list'))
         .catch(next);
 }
-
 const showDetail = async (req, res, next) => {
     const customer = await Customer.findOne({ _id: req.params.id });
     const bill = await Bill.findOne({ customerID: customer._id });
@@ -162,9 +156,7 @@ const updateBill = async (req, res, next) => {
                 qty: sv_qty[i],
                 total: sv_total[i]
             };
-            console.log(sv_total);
             services.push(service);
-            console.log(services)
         }
         await Bill.updateOne(
             { _id: id },
@@ -181,15 +173,12 @@ const updateBill = async (req, res, next) => {
             qty: sv_qty,
             total: sv_total
         };
-        console.log(sv_total);
         services.push(service);
-        console.log(services)
         await Bill.updateOne(
             { _id: id },
             { $set: { b_service: services, b_total: bill_total } }
         )
     }
-
     res.redirect('back')
 }
 
@@ -199,10 +188,11 @@ const checkoutBill = async (req, res, next) => {
     await Customer.updateOne({ _id: bill.customerID }, { $set: { c_status: 'Đã thanh toán' } });
     var customer = await Customer.findOne({ _id: bill.customerID });
     await Room.updateOne({ _id: customer.roomID }, { $set: { r_status: 'còn trống' } });
-
+    if(bill.b_total == 0) {
+        await Bill.updateOne({ _id: req.params.id }, { $set: { b_total: customer.c_total} });
+    }
     res.redirect('/admin/bill');
 }
-
 
 module.exports = { showCheckIn, showCheckInBooking, showCheckInList, taophieu, store, edit, update, showDetail, updateBill, checkoutBill };
 

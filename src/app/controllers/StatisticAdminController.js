@@ -11,10 +11,7 @@ const statisticDay = async (req, res, next) => {
 }
 
 const filterMonth = async (req, res, next) => {
-
    const inputMonth = req.body.month;
-   console.log(inputMonth)
-
    const monthBill = await Bill.aggregate([
       { $match: { "b_status": "Đã thanh toán" } },
       {
@@ -43,7 +40,6 @@ const filterMonth = async (req, res, next) => {
          }
       }
    ])
-   // console.log(monthBill)
 
    const objMonth = Object.assign({}, monthBill);
    var countOrder = 0;
@@ -62,9 +58,6 @@ const filterMonth = async (req, res, next) => {
       total,
       countOrder
    });
- 
-
-   console.log(countOrder);
 
 }
 
@@ -104,9 +97,6 @@ const filter = async(req, res, next) => {
         ])
         const objHour = Object.assign({}, query);
         const countOrder = query.length;
-        for(let i in objHour) {
-            console.log(objHour[i]._id.getTime() < end.getTime() && objHour[i]._id.getTime() > start.getTime());
-        }
         var total = 0;
         for(var i in objHour) {
             total += parseFloat(objHour[i].price);
