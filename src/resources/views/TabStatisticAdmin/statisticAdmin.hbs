@@ -37,10 +37,7 @@
                             </a>
                         </div>
                     </div>
-
-                    <div class="col l-4 m-12 c-12">
-
-                    </div>
+                    <div class="col l-4 m-12 c-12"></div>
                 </div>
 
                 <div class="row filter-row-mobile">
@@ -57,30 +54,15 @@
                             </div>
 
                             <div class="col l-12 m-12 c-12">
-                                <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
-                                <div class="statistic-value">
-                                    <p class="statistic-content">{{countOrder}}</p>
-                                    <p class="statistic-content">đơn</p>
-                                </div>
+                                <p class="statistic-order">Tổng hoá đơn: {{countOrder}}</p>
+                                <p class="statistic-total">{{total}} đ</p>
                             </div>
-
                         </div>
                         {{else}}
-                        <div class="row statistic">
+                        <div class="row">
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng doanh thu</p>
-                                <div class="statistic-value">
-                                    <p class="statistic-content">0</p>
-                                    <i class="fa-solid fa-dong-sign statistic-content"></i>
-                                </div>
-                            </div>
-
-                            <div class="col l-12 m-12 c-12">
-                                <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
-                                <div class="statistic-value">
-                                    <p class="statistic-content">{{countOrder}}</p>
-                                    <p class="statistic-content">đơn</p>
-                                </div>
+                                <p class="statistic-total">Chưa có dữ liệu</p>
                             </div>
                         </div>
                         {{/if}}
@@ -98,29 +80,14 @@
                                 </div>
                             </div>
                             <div class="row no-gutters submit-btn-container">
-                                <button class="status-btn submit-btn ">Lọc doanh thu</button>
+                                <button class="status-btn submit-btn ">Thống kê doanh thu</button>
                             </div>
                         </form>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{{!--
-<script>
-    function formatDate(date) {
-        var date = new Date(date);
-        let dd = date.getDate();
-        let mm = date.getMonth() + 1;
-        let yyyy = date.getFullYear();
-        if (dd < 10) dd = '0' + dd;
-        if (mm < 10) mm = '0' + mm;
-        date = `${dd}/${mm}/${yyyy}`;
-        return date;
-    }
-</script> --}}
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
