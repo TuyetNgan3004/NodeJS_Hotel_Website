@@ -10,8 +10,11 @@ const statisticDay = async (req, res, next) => {
     res.render('TabStatisticAdmin/statisticAdmin', { layout: 'mainAdmin.hbs'});
 }
 
-const filterMonth = async (req, res, next) => {
+const statisticMonth = async (req, res, next) => {
+   res.render('TabStatisticAdmin/statisticAdminMonth', { layout: 'mainAdmin.hbs'})
+}
 
+const filterMonth = async (req, res, next) => {
    const inputMonth = req.body.month;
    console.log(inputMonth)
 
@@ -56,13 +59,12 @@ const filterMonth = async (req, res, next) => {
       }
    }
    total = Intl.NumberFormat().format(total);
-   res.render('TabStatisticAdmin/statisticAdmin', {
+   res.render('TabStatisticAdmin/statisticAdminMonth', {
       layout: 'mainAdmin.hbs',
       objMonth,
       total,
       countOrder
    });
- 
 
    console.log(countOrder);
 
@@ -115,4 +117,4 @@ const filter = async(req, res, next) => {
    res.render('TabStatisticAdmin/statisticAdmin', { layout: 'mainAdmin.hbs',  objHour, total, countOrder});
 }
 
-module.exports = { statisticDay, filterMonth, filter };
+module.exports = { statisticDay, statisticMonth, filterMonth, filter };

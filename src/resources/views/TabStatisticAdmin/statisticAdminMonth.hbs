@@ -32,7 +32,7 @@
                             <a href="/admin/statistic" class="filter-link">
                                 <span class="filter-box">Theo ngày</span>
                             </a>
-                            <a href="/admin/statisticMonth" class="filter-link filter-month">
+                            <a href="/admin/statisticMonth" class="filter-link ">
                                 <span class="filter-box ">Theo tháng</span>
                             </a>
                         </div>
@@ -42,10 +42,10 @@
 
                     </div>
                 </div>
-
+              
                 <div class="row filter-row-mobile">
                     <div class="col l-6 m-12 c-12">
-                        {{#if total}}
+                          {{#if total}}
                         <div class="row statistic">
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng doanh thu</p>
@@ -55,7 +55,7 @@
                                     <i class="fa-solid fa-dong-sign statistic-content"></i>
                                 </div>
                             </div>
-
+                            
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
                                 <div class="statistic-value">
@@ -65,8 +65,8 @@
                             </div>
 
                         </div>
-                        {{else}}
-                        <div class="row statistic">
+                         {{else}}
+                         <div class="row statistic">
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng doanh thu</p>
                                 <div class="statistic-value">
@@ -74,7 +74,7 @@
                                     <i class="fa-solid fa-dong-sign statistic-content"></i>
                                 </div>
                             </div>
-
+                            
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
                                 <div class="statistic-value">
@@ -83,44 +83,47 @@
                                 </div>
                             </div>
                         </div>
-                        {{/if}}
-                    </div>
-                    <div class="col l-6 m-12 c-12 statistic-day">
-                        <form action="./filter" method="POST">
-                            <div class="row">
-                                <div class=" col l-6 m-6 c-6">
-                                    <p class="page-title-statistic ">Từ ngày</p>
-                                    <input id="startDate" type="date" class="form-input booking-input" name="startDate">
-                                </div>
-                                <div class=" col l-6 m-6 c-6">
-                                    <p class="page-title-statistic ">Đến ngày</p>
-                                    <input id="endDate" type="date" class="form-input booking-input" name="endDate">
-                                </div>
-                            </div>
-                            <div class="row no-gutters submit-btn-container">
-                                <button class="status-btn submit-btn ">Lọc doanh thu</button>
+                          {{/if}}
+                    </div>                  
+
+                    <div class="col l-6 m-12 c-12 statistic-month">
+                        <form action="/admin/statistic/filterMonth" method="POST">
+                            <div class="row ">
+                                <p class="page-title-statistic ">Chọn tháng:</p>
+                                <select name="month" id="month" class="select-month">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <button class="status-btn statistic-filter-month">Lọc doanh thu</button>
                             </div>
                         </form>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{{!--
-<script>
+{{!-- <script>
     function formatDate(date) {
-        var date = new Date(date);
-        let dd = date.getDate();
-        let mm = date.getMonth() + 1;
-        let yyyy = date.getFullYear();
-        if (dd < 10) dd = '0' + dd;
-        if (mm < 10) mm = '0' + mm;
-        date = `${dd}/${mm}/${yyyy}`;
-        return date;
-    }
+    var date = new Date(date);
+    let dd = date.getDate();
+    let mm = date.getMonth() + 1;
+    let yyyy = date.getFullYear();
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+    date = `${dd}/${mm}/${yyyy}`;
+    return date;
+  }
 </script> --}}
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
