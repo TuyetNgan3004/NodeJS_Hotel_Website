@@ -10,6 +10,11 @@ const statisticDay = async (req, res, next) => {
     res.render('TabStatisticAdmin/statisticAdmin', { layout: 'mainAdmin.hbs'});
 }
 
+
+const statisticMonth = async (req, res, next) => {
+   res.render('TabStatisticAdmin/statisticAdminMonth', { layout: 'mainAdmin.hbs'})
+}
+
 const filterMonth = async (req, res, next) => {
    const inputMonth = req.body.month;
    const monthBill = await Bill.aggregate([
@@ -52,7 +57,7 @@ const filterMonth = async (req, res, next) => {
       }
    }
    total = Intl.NumberFormat().format(total);
-   res.render('TabStatisticAdmin/statisticAdmin', {
+   res.render('TabStatisticAdmin/statisticAdminMonth', {
       layout: 'mainAdmin.hbs',
       objMonth,
       total,
@@ -105,4 +110,4 @@ const filter = async(req, res, next) => {
    res.render('TabStatisticAdmin/statisticAdmin', { layout: 'mainAdmin.hbs',  objHour, total, countOrder});
 }
 
-module.exports = { statisticDay, filterMonth, filter };
+module.exports = { statisticDay, statisticMonth, filterMonth, filter };
