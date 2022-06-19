@@ -5,13 +5,13 @@ const { multipleToObject } = require('../../config/utility/mongoose');
 const { mongooseToObject } = require('../../config/utility/mongoose');
 
 //[GET] /admin/room/
-const showRoom = async(req, res, next) => {
+const showRoom = async (req, res, next) => {
     const rooms = await Room.find()
     res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) })
 }
 
 //[GET] /admin/room/query/:attribute
-const quickSearchRoom = async(req, res, next) => {
+const quickSearchRoom = async (req, res, next) => {
     // lấy giá trị bấm bên categories
     var room;
     if (req.params.attribute == 'controng') {
@@ -37,10 +37,11 @@ const add = (req, res, next) => {
 }
 
 
-const edit =(req, res, next) => {
+const edit = (req, res, next) => {
     Room.findById(req.params.id)
-        .then(rooms => res.render('TabRoomsAdmin/editRoomAdmin',{ layout: 'mainAdmin.hbs',
-        rooms: mongooseToObject(rooms)
+        .then(rooms => res.render('TabRoomsAdmin/editRoomAdmin', {
+            layout: 'mainAdmin.hbs',
+            rooms: mongooseToObject(rooms)
         }))
         .catch(next);
 }
@@ -51,12 +52,18 @@ const update = (req, res, next) => {
         .catch(next);
 }
 
-const store =  (req, res, next) => {
+const store = (req, res, next) => {
     const room = new Room(req.body);
     room.save()
         .then(res.redirect('/admin/room'))
-        .catch(error => {})
+        .catch(error => { })
 }
 
-module.exports = { showRoom, quickSearchRoom, add, edit, update, store };
+const deleteModal = (req, res, next) => {
+    Room.deleteOne({ _id: req.params.id })
+        .then(() => res.redirect('/admin/room'))
+        .catch(next)
+}
+
+module.exports = { showRoom, quickSearchRoom, add, edit, update, store, deleteModal };
 
