@@ -1,0 +1,77 @@
+<div class="main">
+   <div class="header">
+      <div class="menu-mobile">
+         <label for="nav-mobile-input">
+            <i class="fa-solid fa-bars"></i>
+         </label>
+      </div>
+
+      <div class="user-avatar">
+         <div class="user-img-container">
+            <img src="https://demo.dashboardpack.com/cryptocurrency-html/img/transfer/4.png" alt="" class="user-img">
+         </div>
+         <div class="user-info">
+            <p class="user-name">User Name</p>
+            <p class="user-role">User Role</p>
+         </div>
+
+         <div class="user-function">
+            <a href="" class="function-item">Log Out</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="content">
+      <div class="grid">
+         <p class="page-title">Danh sách hoá đơn</p>
+         <div class="table-list-container">
+            <div class="row filter-row-mobile">             
+               <div class="col l-4 m-12 c-12 l-o-8">
+                  <div class="search-bar">
+                     <i class="search-icon fas fa-search"></i>
+                     <input id="myInputAdmin" class="search-input" type="text" name="input-search"
+                        placeholder="Nhập tìm kiếm...">
+                  </div>
+               </div>
+
+            </div>
+
+            <div class="table-container">
+               <table class="data-table">
+                  <tr>
+                     {{!-- <th scope="col">Mã đơn đặt</th> --}}
+                     <th scope="col">Mã hoá đơn</th>
+                     <th scope="col">Tên khách hàng</th>
+                     <th scope="col">Số điện thoại</th>
+                     <th scope="col">Tình trạng</th>
+                     <th scope="col">Tổng hoá đơn</th>
+                     <th scope="col"></th>
+                  </tr>
+
+                  {{#each bills}}
+
+                  <tbody id="myTable">
+                     <tr>
+                        {{!-- <td>{{this._id}}</td> --}}
+                        <td>{{this._id}}</td>
+                        <td>{{this.customerID.c_name}}</td>
+                        <td>{{this.customerID.c_phone}}</td>
+                        <td>{{this.b_status}}</td>
+                        <td>{{this.b_total}} </td>
+                        <td class="td-btn">
+                           <a href="/admin/bill/{{this._id}}">
+                              <span class="status-btn">Xem chi tiết</span>
+                           </a>
+                        </td>
+                     </tr>
+
+                  </tbody>
+
+                  {{/each}}
+
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

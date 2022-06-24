@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="row statistic-container">
+                <div class="row filter-row-mobile">
                     <div class="col l-6 m-12 c-12">
                         {{#if total}}
                         <div class="row statistic">
@@ -55,10 +55,21 @@
                             </div>
                         </div>
                         {{else}}
-                        <div class="row">
+                        <div class="row statistic">
                             <div class="col l-12 m-12 c-12">
                                 <p class="page-title-statistic">Tổng doanh thu</p>
-                                <p class="statistic-total">Chưa có dữ liệu</p>
+                                <div class="statistic-value">
+                                    <p class="statistic-content">0</p>
+                                    <i class="fa-solid fa-dong-sign statistic-content"></i>
+                                </div>
+                            </div>
+
+                            <div class="col l-12 m-12 c-12">
+                                <p class="page-title-statistic">Tổng hoá đơn được tạo</p>
+                                <div class="statistic-value">
+                                    <p class="statistic-content">{{countOrder}}</p>
+                                    <p class="statistic-content">đơn</p>
+                                </div>
                             </div>
                         </div>
                         {{/if}}
