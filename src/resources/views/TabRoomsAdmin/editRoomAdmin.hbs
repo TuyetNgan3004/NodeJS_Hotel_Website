@@ -153,7 +153,7 @@
    })
 
    btnDeleteModal.onclick = function () {
-      deleteForm.action = '/admin/room/' + deleteId + '?_method=DELETE';
+      deleteForm.action = '/admin/room/' + deleteId + '?_method=POST';
       deleteForm.submit();
    }
 </script>
