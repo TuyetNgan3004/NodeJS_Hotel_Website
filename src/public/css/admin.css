@@ -481,6 +481,10 @@
     filter: brightness(60%);
 }
 
+.adm-room-status-not-used {
+    background-color: rgba(46, 60, 253, 0.7);
+}
+
 .adm-room-status.adm-room-status-booked {
     background-color: rgba(198, 201, 16, 0.7);
 }

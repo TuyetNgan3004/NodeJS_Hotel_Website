@@ -6,7 +6,7 @@ const { mongooseToObject } = require('../../config/utility/mongoose');
 
 //[GET] /admin/room/
 const showRoom = async (req, res, next) => {
-    const rooms = await Room.find()
+    const rooms = await Room.find( { r_status: { $in: ['còn trống', 'đã đặt', 'đang sử dụng'] }} )
     res.render('TabRoomsAdmin/roomsAdmin', { layout: 'mainAdmin.hbs', rooms: multipleToObject(rooms) })
 }
 
@@ -60,7 +60,7 @@ const store = (req, res, next) => {
 }
 
 const deleteModal = (req, res, next) => {
-    Room.deleteOne({ _id: req.params.id })
+    Room.updateOne({ _id: req.params.id }, { $set: { r_status: 'không phục vụ' } })
         .then(() => res.redirect('/admin/room'))
         .catch(next)
 }

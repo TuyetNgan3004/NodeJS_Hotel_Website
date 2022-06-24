@@ -71,6 +71,10 @@
                            <div class="adm-room-status adm-room-status-booked">Đã đặt</div>
                            {{/ifEquals}}
 
+                           {{#ifEquals r_status "không phục vụ"}}
+                           <div class="adm-room-status adm-room-status-not-used">Không phục vụ</div>
+                           {{/ifEquals}}
+
                            {{#ifEquals r_status "đang sử dụng"}}
                            <div class="adm-room-status adm-room-status-inuse">Đang sử dụng</div>
                            {{/ifEquals}}

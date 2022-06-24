@@ -9,7 +9,7 @@ const { db } = require('../models/Customer');
 
 const showCheckIn = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống'});
-    const roomBooked = await Customer.find({ c_status: 'Đã xác nhận' }).populate('roomID')
+    const roomBooked = await Customer.find({ c_status: 'Đã xác nhận' }).populate('room.roomID')
     var result = multipleToObject(roomBooked);
     for (var i in result) {
         result[i].c_checkin = result[i].c_checkin.toLocaleDateString('en-GB');
@@ -24,7 +24,7 @@ const showCheckIn = async (req, res, next) => {
 
 const showCheckInBooking = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
-    const roomBooked = await Customer.find({ c_status: 'Đã xác nhận' }).populate('roomID')
+    const roomBooked = await Customer.find({ c_status: 'Đã xác nhận' }).populate('room.roomID')
     var cusList = multipleToObject(roomBooked);
     for (var i in cusList) {
         cusList[i].c_checkin = cusList[i].c_checkin.toLocaleDateString('en-GB');
@@ -44,7 +44,7 @@ const showCheckInBooking = async (req, res, next) => {
 }
 
 const showCheckInList = async (req, res, next) => {
-    const roomsCheckIn = await Customer.find({ c_status: 'Đang checkin' }).populate('roomID')
+    const roomsCheckIn = await Customer.find({ c_status: 'Đang checkin' }).populate('room.roomID')
     var result = multipleToObject(roomsCheckIn);
     for (var i in result) {
         result[i].c_checkin = result[i].c_checkin.toLocaleDateString('en-GB');
@@ -103,7 +103,7 @@ const store = async (req, res, next) => {
 }
 const edit = async (req, res, next) => {
     const emptyRooms = await Room.find({ r_status: 'còn trống' });
-    const customer = await Customer.findById(req.params.id).populate('roomID');
+    const customer = await Customer.findById(req.params.id).populate('room.roomID');
 
 
     var result = mongooseToObject(customer);

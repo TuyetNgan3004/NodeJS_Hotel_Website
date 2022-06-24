@@ -3,7 +3,7 @@ const router = express.Router();
 
 const roomAdminController = require('../app/controllers/RoomAdminController');
 
-router.delete('/room/:id', roomAdminController.deleteModal);
+router.post('/room/:id', roomAdminController.deleteModal);
 router.post('/room/add/store', roomAdminController.store);
 router.put('/room/:id', roomAdminController.update);
 router.get('/room/:id/edit', roomAdminController.edit);
