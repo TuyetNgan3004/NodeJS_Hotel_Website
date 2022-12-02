@@ -59,17 +59,17 @@
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-img" class="form-label">Số phòng</label>
-                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.roomID.r_number}}">
+                     <input id="room-img" type="text" class="form-input" value="{{cusBooked.room.roomID.r_number}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-type" class="form-label">Tên phòng</label>
-                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.roomID.r_name}}">
+                     <input id="room-type" type="text" class="form-input" value="{{cusBooked.room.roomID.r_name}}">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-people" class="form-label">Giá phòng</label>
-                     <input id="room-people" type="text" class="form-input" value="{{cusBooked.roomID.r_price}}">
+                     <input id="room-people" type="text" class="form-input" value="{{cusBooked.room.roomID.r_price}}">
                   </div>
                </div>
                
@@ -107,8 +107,8 @@
                            {{#each roomBooked}}
                            <tbody id="myTable">
                               <tr>
-                              <td>{{this.roomID.r_number}}</td>
-                              <td>{{this.roomID.r_name}}</td>
+                              <td>{{this.room.roomID.r_number}}</td>
+                              <td>{{this.room.roomID.r_name}}</td>
                               <td>{{this.c_name}}</td>
                               <td>{{this.c_phone}}</td>
                               <td>{{this.c_checkin}}</td>

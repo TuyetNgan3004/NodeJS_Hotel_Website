@@ -48,25 +48,27 @@
                <div class="row">
                   <div class="col l-6 m-6 c-12">
                      <label for="checkin" class="form-label">Ngày nhận phòng</label>
-                     <input id="checkin" name="c_checkin" data-toggle="startDate" type="datetime-local" class="form-input"
-                        placeholder="Nhập ngày nhận phòng">
+                     <input id="checkin" name="c_checkin" data-toggle="startDate" type="datetime-local"
+                        class="form-input" placeholder="Nhập ngày nhận phòng">
                   </div>
 
                   <div class="col l-6 m-6 c-12">
                      <label for="checkout" class="form-label">Ngày trả phòng</label>
-                     <input id="checkout" data-toggle="endDate" name="c_checkout" type="datetime-local" class="form-input"
-                        placeholder="Nhập ngày trả phòng">
+                     <input id="checkout" data-toggle="endDate" name="c_checkout" type="datetime-local"
+                        class="form-input" placeholder="Nhập ngày trả phòng">
                   </div>
                </div>
                <div class="row">
                   <div class="col l-4 m-4 c-12">
                      <label for="room-id-input" class="form-label">Số phòng</label>
-                     <input id="room-id-input" name="r_number" type="text" class="form-input" placeholder="Nhập số phòng">
+                     <input id="room-id-input" name="r_number" type="text" class="form-input"
+                        placeholder="Nhập số phòng">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
                      <label for="room-name-input" class="form-label">Tên phòng</label>
-                     <input id="room-name-input" name="r_name" type="text" class="form-input" placeholder="Nhập tên phòng">
+                     <input id="room-name-input" name="r_name" type="text" class="form-input"
+                        placeholder="Nhập tên phòng">
                   </div>
 
                   <div class="col l-4 m-4 c-12">
@@ -97,7 +99,8 @@
                      <div class="col l-4 m-12 c-12 l-o-8">
                         <div class="search-bar">
                            <i class="search-icon fas fa-search"></i>
-                           <input id="myInputAdmin" class="search-input" type="text" name="input-search" placeholder="Nhập tìm kiếm...">
+                           <input id="myInputAdmin" class="search-input" type="text" name="input-search"
+                              placeholder="Nhập tìm kiếm...">
                         </div>
                      </div>
 
@@ -115,16 +118,16 @@
                            {{#each roomBooked}}
                            <tbody id="myTable">
                               <tr>
-                              <td>{{this.roomID.r_number}}</td>
-                              <td>{{this.roomID.r_name}}</td>
-                              <td>{{this.c_name}}</td>
-                              <td>{{this.c_phone}}</td>
-                              <td>{{this.c_checkin}}</td>
-                              <td>{{this.c_checkout}}</td>
-                              <td>
-                                 <a class="status-btn" href="/admin/checkIn/{{this._id}}/checkInBooking">Checkin</a>
-                              </td>
-                           </tr>
+                                 <td>{{this.room.roomID.r_number}}</td>
+                                 <td>{{this.room.roomID.r_name}}</td>
+                                 <td>{{this.c_name}}</td>
+                                 <td>{{this.c_phone}}</td>
+                                 <td>{{this.c_checkin}}</td>
+                                 <td>{{this.c_checkout}}</td>
+                                 <td>
+                                    <a class="status-btn" href="/admin/checkIn/{{this._id}}/checkInBooking">Checkin</a>
+                                 </td>
+                              </tr>
                            </tbody>
                            {{/each}}
                         </table>
@@ -137,8 +140,8 @@
                   {{!-- row row-staff filter-row-mobile filter-row-mobile-noreverse row-margin --}}
                   <div class="row">
                      <div class="col l-4 m-12 c-12 l-o-8">
-                       <div class="search-bar">
-                          <i class="search-icon fas fa-search"></i>
+                        <div class="search-bar">
+                           <i class="search-icon fas fa-search"></i>
                            <input id="myInput" class="search-bar-input" type="text" name="input-search"
                               placeholder="Nhập tìm kiếm...">
                         </div>
@@ -182,13 +185,13 @@
    var roomName_input = document.querySelector('#room-name-input');
    var roomPrice_input = document.querySelector('#room-price');
    var total = document.getElementById('total');
-   
+
    var rooms = document.querySelectorAll('.adm-room-link').forEach(room => {
       var roomID = room.querySelector('#room-id').innerText;
       var roomName = room.querySelector('#room-name').innerText;
       var roomPrice = room.querySelector('#room-pr').innerText;
 
-      room.addEventListener('click', function(){
+      room.addEventListener('click', function () {
          roomID_input.value = roomID;
          roomName_input.value = roomName;
          roomPrice_input.value = roomPrice;
@@ -196,4 +199,3 @@
    });
 </script>
 <script src="/js/ngan.js"></script>
-
